@@ -1,0 +1,67 @@
+@font-face {
+  font-family: 'XcodeDigits';
+  src: local('XcodeDigits Regular'), url('https://cdn.jsdelivr.net/gh/kyle1an/SF-Fonts@master/Fonts/XcodeDigits-regular.ttf');
+  unicode-range: @css { U+0030-0039 };
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.monaco-editor .margin-view-overlays,
+.editor-container .margin-view-overlays {
+  font-family: XcodeDigits !important;
+}
+
+[aria-label='Your Code installation appears to be corrupt. Please reinstall.\, notification'] {
+  display: none !important;
+}
+
+* {
+  /* 'cv01' 96, 'ss01' 1, 'ss02' 4, 'cv02', 'cv03' :J, 'cv04', 'cv05' I, 'cv06' l, 'ss07' a, 'cv07' , 'cv08' 0 zh, 'nlck', 'nalt' 0, 'ital',  'ss03' 0, 'ss04' 1, */
+  font-feature-settings: 'cv01', 'cv02', 'cv03';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.monaco-editor * {
+  -webkit-font-smoothing: auto !important;
+}
+
+.bb svg,
+.mac {
+  font-family: SF Compact Text, SF Pro Text, -apple-system, sans-serif !important;
+}
+
+.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab:hover:not(.active) {
+  outline: 1px dashed;
+  outline-offset: -5px;
+}
+
+// .monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.active,
+// .monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.active:hover {
+// outline: 1px solid;
+// outline-offset: -5px;
+// }
+.monaco-list .monaco-list-row:hover {
+  outline: 1px dashed #f38518;
+  outline-offset: -1px;
+}
+
+.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab {
+  padding-left: 0;
+  padding-right: 10px;
+}
+
+.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab .tab-label,
+.monaco-workbench .part.editor>.content .editor-group-container>.title .title-label {
+  order: 3;
+}
+
+.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab>.tab-actions {
+  order: 2;
+}
+
+.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab>.tab-actions .actions-container {
+  justify-content: flex-end;
+  display: flex;
+}
