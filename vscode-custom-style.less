@@ -1,15 +1,25 @@
 @font-face {
   font-family: 'XcodeDigits';
   src: local('XcodeDigits Regular'), url('https://cdn.jsdelivr.net/gh/kyle1an/SF-Fonts@master/Fonts/XcodeDigits-regular.ttf');
-  unicode-range: @css { U+0030-0039 };
+  unicode-range: U+0030-0039;
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
+:root {
+  --monospace-font: SF Mono, monospace, ui-monospace;
+  --xcode: XcodeDigits;
+  --compact: SF Compact Text, SF Pro Text, -apple-system, sans-serif;
+}
+
+.overlayWidgets [widgetid="editor.contrib.stickyScrollWidget"] [style*="--vscode-editorStickyScroll"]:first-of-type,
+#status\.editor\.selection a,
+.pane-body .detected-link,
+.marker-line,
 .monaco-editor .margin-view-overlays,
 .editor-container .margin-view-overlays {
-  font-family: XcodeDigits !important;
+  font-family: var(--xcode), var(--compact) !important;
 }
 
 [aria-label='Your Code installation appears to be corrupt. Please reinstall.\, notification'] {
@@ -19,17 +29,17 @@
 * {
   /* 'cv01' 96, 'ss01' 1, 'ss02' 4, 'cv02', 'cv03' :J, 'cv04', 'cv05' I, 'cv06' l, 'ss07' a, 'cv07' , 'cv08' 0 zh, 'nlck', 'nalt' 0, 'ital',  'ss03' 0, 'ss04' 1, */
   font-feature-settings: 'cv01', 'cv02', 'cv03';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  // -webkit-font-smoothing: antialiased;
+  // -moz-osx-font-smoothing: grayscale;
 }
 
-.monaco-editor * {
-  -webkit-font-smoothing: auto !important;
-}
+// .monaco-editor * {
+//   // -webkit-font-smoothing: auto !important;
+// }
 
 .bb svg,
 .mac {
-  font-family: SF Compact Text, SF Pro Text, -apple-system, sans-serif !important;
+  font-family: var(--compact) !important;
 }
 
 .monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab:hover:not(.active) {
@@ -64,4 +74,8 @@
 .monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab>.tab-actions .actions-container {
   justify-content: flex-end;
   display: flex;
+}
+
+.open-editors .monaco-list .monaco-list-row {
+  padding-left: 14px;
 }
