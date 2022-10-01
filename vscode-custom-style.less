@@ -13,6 +13,21 @@
   --compact: SF Compact Text, SF Pro Text, -apple-system, sans-serif;
 }
 
+* {
+  /* 'cv01' 96, 'ss01' 1, 'ss02' 4, 'cv02', 'cv03' :J, 'cv04', 'cv05' I, 'cv06' l, 'ss07' a, 'cv07' , 'cv08' 0 zh, 'nlck', 'nalt' 0, 'ital',  'ss03' 0, 'ss04' 1, */
+  font-feature-settings: 'cv01', 'cv02', 'cv03'; // -webkit-font-smoothing: antialiased;
+  // -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  -webkit-font-smoothing: antialiased !important;
+}
+
+.line-numbers {
+  -webkit-font-smoothing: initial !important;
+}
+
+.sticky-line-number,
 .overlayWidgets [widgetid="editor.contrib.stickyScrollWidget"] [style*="--vscode-editorStickyScroll"]:first-of-type,
 #status\.editor\.selection a,
 .pane-body .detected-link,
@@ -26,20 +41,25 @@
   display: none !important;
 }
 
-* {
-  /* 'cv01' 96, 'ss01' 1, 'ss02' 4, 'cv02', 'cv03' :J, 'cv04', 'cv05' I, 'cv06' l, 'ss07' a, 'cv07' , 'cv08' 0 zh, 'nlck', 'nalt' 0, 'ital',  'ss03' 0, 'ss04' 1, */
-  font-feature-settings: 'cv01', 'cv02', 'cv03';
-  // -webkit-font-smoothing: antialiased;
-  // -moz-osx-font-smoothing: grayscale;
-}
-
-// .monaco-editor * {
-//   // -webkit-font-smoothing: auto !important;
-// }
-
 .bb svg,
 .mac {
   font-family: var(--compact) !important;
+}
+
+.sticky-widget,
+.editor-scrollable {
+  // -webkit-font-smoothing: antialiased !important;
+  // -webkit-font-smoothing: auto !important;
+
+  span {
+    font-weight: 500;
+    letter-spacing: 0.015rem !important;
+
+    .mtkb {
+      -webkit-font-smoothing: initial !important;
+      font-weight: 800;
+    }
+  }
 }
 
 .monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab:hover:not(.active) {
@@ -57,25 +77,188 @@
   outline-offset: -1px;
 }
 
-.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab {
-  padding-left: 0;
-  padding-right: 10px;
-}
+.monaco-workbench .part.editor > .content .editor-group-container > .title {
+  .tabs-container > .tab .tab-label,
+  .title-label {
+    order: 3;
+  }
 
-.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab .tab-label,
-.monaco-workbench .part.editor>.content .editor-group-container>.title .title-label {
-  order: 3;
-}
+  .tabs-container > .tab {
+    padding-left: 0;
+    padding-right: 10px;
 
-.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab>.tab-actions {
-  order: 2;
-}
+    > .tab-actions {
+      order: 2;
 
-.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab>.tab-actions .actions-container {
-  justify-content: flex-end;
-  display: flex;
+      .actions-container {
+        justify-content: flex-end;
+        display: flex;
+      }
+    }
+  }
 }
 
 .open-editors .monaco-list .monaco-list-row {
   padding-left: 14px;
 }
+
+
+.load(@monoFamilies,
+        @tarMo,
+        @allWeights,
+        @allUnicode,
+        false);
+
+
+@monoFamilies: 'SF Mono',
+'SFMono-Regular',
+'ui-monospace';
+
+
+@repo: 'https://raw.githubusercontent.com/kyle1an/SF-1/main';
+@repo: 'https://cdn.jsdelivr.net/gh/kyle1an/SF-1@main';
+@repo: 'https://cdn.jsdelivr.net/gh/kyle1an/SF-Fonts@master';
+
+@styles: {
+  normal: '';
+  italic: 'Italic';
+}
+
+@thinWeights: {
+  Thin: 200;
+}
+
+@usualWeights: {
+  Light: 300;
+  Regular: 400;
+  Medium: 500;
+  Semibold: 600;
+  Bold: 700;
+}
+
+@boldWeights: {
+  Semibold: 600;
+  Bold: 700;
+}
+
+@allWeights: {
+  Thin: 200;
+  Light: 300;
+  Regular: 400;
+  Medium: 500;
+  Semibold: 600;
+  Bold: 700;
+  Heavy: 800;
+}
+
+@tarSF: {
+  nam: 'SF Pro Text';
+  dir: '/Fonts/SF-Pro-Text-';
+  ext: 'otf';
+}
+
+@tarMo: {
+  nam: 'SF Mono';
+  dir: '/Fonts/SF-Mono-';
+  ext: 'otf';
+}
+
+@tarCM: {
+  nam: 'SF Compact Text';
+  dir: '/Fonts/SF-Compact-Text-';
+  ext: 'otf';
+}
+
+@formats: {
+  @ttf: TrueType;
+  @otf: OpenType;
+}
+
+.load(@families,
+@tar,
+@weights,
+@unicode,
+@local: true) {
+  each(@families,
+  .(@family, @k1, @i1) {
+    each(@weights, .(@numeric, @weight-key, @i) {
+      each(@styles, .(@style-val, @style, @i2) {
+        // @keyword: extract(@weight, 1);
+        // @numeric: extract(@weight, 2);
+        @font-face {
+          font-family: @family;
+          .useSrc(@family, @tar, @repo, @weight-key, @style-val, @numeric, @style, @local);
+          unicode-range: @unicode;
+          font-weight: @numeric;
+          font-style: @style;
+          font-display: swap;
+        }
+      })
+    })
+  })
+}
+
+.useSrc(@family,
+@tar,
+@repo,
+@weight-key,
+@style-val,
+@numeric,
+@style,
+@local) {
+  @nam: @tar[nam];
+  @dir: @tar[dir];
+  @ext: @tar[ext];
+  @format: @formats[@@ext];
+  @italic: if(@style-val='',
+  e(''),
+  ' Italic');
+  src: url('@{repo}@{dir}@{weight-key}@{style-val}.@{ext}') format('@{format}');
+}
+
+.load-local(@families,
+@tar,
+@weights,
+@unicode,
+@styles,
+@local: true) {
+  each(@families,
+  .(@family,
+	@k1,
+	@i1) {
+    @font-face {
+      font-family: @family;
+      src: local(@family);
+      unicode-range: @unicode;
+      font-display: swap;
+    }
+  })
+}
+
+@generalUnicode: e('U+0000-024F'),
+e('U+02B0-052F'),
+e('U+1DC0-20CF'),
+e('U+2190-22FF'),
+e('U+2460-24FF'),
+e('U+25A0-25FF'),
+e('U+2700-27FF'),
+e('U+2900-2BFF'),
+e('U+2C60-2C7F'),
+e('U+2DE0-2E7F'),
+e('U+3200-32FF'),
+e('U+A640-A69F'),
+e('U+A700-A7FF'),
+e('U+E000-F8FF'),
+e('U+FFF0-FFFF'),
+e('U+F0000-10FFFF');
+@plusUnicode: e('U+0250-02AF'),
+e('U+1D00-1DBF'),
+e('U+2190-22FF');
+@allUnicode: @generalUnicode,
+@plusUnicode;
+
+@zhUnicode: e('U+4E00-9FFF'),
+e('U+3400-4DBF'),
+e('U+20000-2A6DF'),
+e('U+F900-FAFF'),
+e('U+2F800-2FA1F'); // e('U+2A700–2B73F, U+2B740–2B81F, U+2B820–2CEAF'),

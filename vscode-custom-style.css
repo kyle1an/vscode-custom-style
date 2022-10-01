@@ -11,6 +11,17 @@
   --xcode: XcodeDigits;
   --compact: SF Compact Text, SF Pro Text, -apple-system, sans-serif;
 }
+* {
+  /* 'cv01' 96, 'ss01' 1, 'ss02' 4, 'cv02', 'cv03' :J, 'cv04', 'cv05' I, 'cv06' l, 'ss07' a, 'cv07' , 'cv08' 0 zh, 'nlck', 'nalt' 0, 'ital',  'ss03' 0, 'ss04' 1, */
+  font-feature-settings: 'cv01', 'cv02', 'cv03';
+}
+html {
+  -webkit-font-smoothing: antialiased !important;
+}
+.line-numbers {
+  -webkit-font-smoothing: initial !important;
+}
+.sticky-line-number,
 .overlayWidgets [widgetid="editor.contrib.stickyScrollWidget"] [style*="--vscode-editorStickyScroll"]:first-of-type,
 #status\.editor\.selection a,
 .pane-body .detected-link,
@@ -22,13 +33,19 @@
 [aria-label='Your Code installation appears to be corrupt. Please reinstall.\, notification'] {
   display: none !important;
 }
-* {
-  /* 'cv01' 96, 'ss01' 1, 'ss02' 4, 'cv02', 'cv03' :J, 'cv04', 'cv05' I, 'cv06' l, 'ss07' a, 'cv07' , 'cv08' 0 zh, 'nlck', 'nalt' 0, 'ital',  'ss03' 0, 'ss04' 1, */
-  font-feature-settings: 'cv01', 'cv02', 'cv03';
-}
 .bb svg,
 .mac {
   font-family: var(--compact) !important;
+}
+.sticky-widget span,
+.editor-scrollable span {
+  font-weight: 500;
+  letter-spacing: 0.015rem !important;
+}
+.sticky-widget span .mtkb,
+.editor-scrollable span .mtkb {
+  -webkit-font-smoothing: initial !important;
+  font-weight: 800;
 }
 .monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab:hover:not(.active) {
   outline: 1px dashed;
@@ -38,13 +55,13 @@
   outline: 1px dashed #f38518;
   outline-offset: -1px;
 }
-.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab {
-  padding-left: 0;
-  padding-right: 10px;
-}
 .monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab .tab-label,
 .monaco-workbench .part.editor > .content .editor-group-container > .title .title-label {
   order: 3;
+}
+.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab {
+  padding-left: 0;
+  padding-right: 10px;
 }
 .monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab > .tab-actions {
   order: 2;
@@ -56,3 +73,340 @@
 .open-editors .monaco-list .monaco-list-row {
   padding-left: 14px;
 }
+@font-face {
+  font-family: 'SF Mono';
+  src: url('https://cdn.jsdelivr.net/gh/kyle1an/SF-Fonts@master/Fonts/SF-Mono-Thin.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SF Mono';
+  src: url('https://cdn.jsdelivr.net/gh/kyle1an/SF-Fonts@master/Fonts/SF-Mono-ThinItalic.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SF Mono';
+  src: url('https://cdn.jsdelivr.net/gh/kyle1an/SF-Fonts@master/Fonts/SF-Mono-Light.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SF Mono';
+  src: url('https://cdn.jsdelivr.net/gh/kyle1an/SF-Fonts@master/Fonts/SF-Mono-LightItalic.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SF Mono';
+  src: url('https://cdn.jsdelivr.net/gh/kyle1an/SF-Fonts@master/Fonts/SF-Mono-Regular.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SF Mono';
+  src: url('https://cdn.jsdelivr.net/gh/kyle1an/SF-Fonts@master/Fonts/SF-Mono-RegularItalic.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SF Mono';
+  src: url('https://cdn.jsdelivr.net/gh/kyle1an/SF-Fonts@master/Fonts/SF-Mono-Medium.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SF Mono';
+  src: url('https://cdn.jsdelivr.net/gh/kyle1an/SF-Fonts@master/Fonts/SF-Mono-MediumItalic.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SF Mono';
+  src: url('https://cdn.jsdelivr.net/gh/kyle1an/SF-Fonts@master/Fonts/SF-Mono-Semibold.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SF Mono';
+  src: url('https://cdn.jsdelivr.net/gh/kyle1an/SF-Fonts@master/Fonts/SF-Mono-SemiboldItalic.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SF Mono';
+  src: url('https://cdn.jsdelivr.net/gh/kyle1an/SF-Fonts@master/Fonts/SF-Mono-Bold.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SF Mono';
+  src: url('https://cdn.jsdelivr.net/gh/kyle1an/SF-Fonts@master/Fonts/SF-Mono-BoldItalic.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SF Mono';
+  src: url('https://cdn.jsdelivr.net/gh/kyle1an/SF-Fonts@master/Fonts/SF-Mono-Heavy.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SF Mono';
+  src: url('https://cdn.jsdelivr.net/gh/kyle1an/SF-Fonts@master/Fonts/SF-Mono-HeavyItalic.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SFMono-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/kyle1an/SF-Fonts@master/Fonts/SF-Mono-Thin.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SFMono-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/kyle1an/SF-Fonts@master/Fonts/SF-Mono-ThinItalic.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SFMono-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/kyle1an/SF-Fonts@master/Fonts/SF-Mono-Light.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SFMono-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/kyle1an/SF-Fonts@master/Fonts/SF-Mono-LightItalic.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SFMono-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/kyle1an/SF-Fonts@master/Fonts/SF-Mono-Regular.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SFMono-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/kyle1an/SF-Fonts@master/Fonts/SF-Mono-RegularItalic.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SFMono-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/kyle1an/SF-Fonts@master/Fonts/SF-Mono-Medium.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SFMono-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/kyle1an/SF-Fonts@master/Fonts/SF-Mono-MediumItalic.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SFMono-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/kyle1an/SF-Fonts@master/Fonts/SF-Mono-Semibold.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SFMono-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/kyle1an/SF-Fonts@master/Fonts/SF-Mono-SemiboldItalic.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SFMono-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/kyle1an/SF-Fonts@master/Fonts/SF-Mono-Bold.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SFMono-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/kyle1an/SF-Fonts@master/Fonts/SF-Mono-BoldItalic.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SFMono-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/kyle1an/SF-Fonts@master/Fonts/SF-Mono-Heavy.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SFMono-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/kyle1an/SF-Fonts@master/Fonts/SF-Mono-HeavyItalic.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ui-monospace';
+  src: url('https://cdn.jsdelivr.net/gh/kyle1an/SF-Fonts@master/Fonts/SF-Mono-Thin.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ui-monospace';
+  src: url('https://cdn.jsdelivr.net/gh/kyle1an/SF-Fonts@master/Fonts/SF-Mono-ThinItalic.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ui-monospace';
+  src: url('https://cdn.jsdelivr.net/gh/kyle1an/SF-Fonts@master/Fonts/SF-Mono-Light.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ui-monospace';
+  src: url('https://cdn.jsdelivr.net/gh/kyle1an/SF-Fonts@master/Fonts/SF-Mono-LightItalic.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ui-monospace';
+  src: url('https://cdn.jsdelivr.net/gh/kyle1an/SF-Fonts@master/Fonts/SF-Mono-Regular.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ui-monospace';
+  src: url('https://cdn.jsdelivr.net/gh/kyle1an/SF-Fonts@master/Fonts/SF-Mono-RegularItalic.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ui-monospace';
+  src: url('https://cdn.jsdelivr.net/gh/kyle1an/SF-Fonts@master/Fonts/SF-Mono-Medium.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ui-monospace';
+  src: url('https://cdn.jsdelivr.net/gh/kyle1an/SF-Fonts@master/Fonts/SF-Mono-MediumItalic.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ui-monospace';
+  src: url('https://cdn.jsdelivr.net/gh/kyle1an/SF-Fonts@master/Fonts/SF-Mono-Semibold.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ui-monospace';
+  src: url('https://cdn.jsdelivr.net/gh/kyle1an/SF-Fonts@master/Fonts/SF-Mono-SemiboldItalic.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ui-monospace';
+  src: url('https://cdn.jsdelivr.net/gh/kyle1an/SF-Fonts@master/Fonts/SF-Mono-Bold.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ui-monospace';
+  src: url('https://cdn.jsdelivr.net/gh/kyle1an/SF-Fonts@master/Fonts/SF-Mono-BoldItalic.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ui-monospace';
+  src: url('https://cdn.jsdelivr.net/gh/kyle1an/SF-Fonts@master/Fonts/SF-Mono-Heavy.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ui-monospace';
+  src: url('https://cdn.jsdelivr.net/gh/kyle1an/SF-Fonts@master/Fonts/SF-Mono-HeavyItalic.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+/*# sourceMappingURL=vscode-custom-style.css.map */
