@@ -30,11 +30,14 @@ html {
 .sticky-line-number,
 .overlayWidgets [widgetid="editor.contrib.stickyScrollWidget"] [style*="--vscode-editorStickyScroll"]:first-of-type,
 #status\.editor\.selection a,
-.pane-body .detected-link,
 .marker-line,
 .monaco-editor .margin-view-overlays,
 .editor-container .margin-view-overlays {
   font-family: var(--xcode), var(--compact) !important;
+}
+
+.pane-body .detected-link {
+  font-family: var(--xcode), var(--monospace-font) !important;
 }
 
 [aria-label='Your Code installation appears to be corrupt. Please reinstall.\, notification'] {
