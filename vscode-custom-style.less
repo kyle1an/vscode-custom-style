@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'XcodeDigits';
-  src: local('XcodeDigits Regular'), url('https://cdn.jsdelivr.net/gh/kyle1an/SF-Fonts@master/Fonts/XcodeDigits-regular.ttf');
+  src: local('XcodeDigits Regular'), url('https://cdn.jsdelivr.net/gh/kyle1an/SF-Fonts/Fonts/XcodeDigits-regular.ttf');
   unicode-range: U+0030-0039;
   font-weight: 400;
   font-style: normal;
@@ -14,8 +14,7 @@
 }
 
 * {
-  /* 'cv01' 96, 'ss01' 1, 'ss02' 4, 'cv02', 'cv03' :J, 'cv04', 'cv05' I, 'cv06' l, 'ss07' a, 'cv07' , 'cv08' 0 zh, 'nlck', 'nalt' 0, 'ital',  'ss03' 0, 'ss04' 1, */
-  font-feature-settings: 'cv01', 'cv02', 'cv03'; // -webkit-font-smoothing: antialiased;
+  font-feature-settings: 'cv01', 'cv02', 'cv03', 'ss04' 0; // -webkit-font-smoothing: antialiased;
   // -moz-osx-font-smoothing: grayscale;
 }
 
@@ -40,8 +39,12 @@ html {
   font-family: var(--xcode), var(--monospace-font) !important;
 }
 
-[aria-label='Your Code installation appears to be corrupt. Please reinstall.\, notification'] {
+.notification-toast-container [aria-label='Your Code installation appears to be corrupt. Please reinstall.\, notification'] {
   display: none !important;
+}
+
+.notification-toast.notification-fade-in-done:has([aria-label='Your Code installation appears to be corrupt. Please reinstall.\, notification']) {
+  box-shadow: none !important;
 }
 
 .bb svg,
@@ -53,10 +56,9 @@ html {
 .editor-scrollable {
   // -webkit-font-smoothing: antialiased !important;
   // -webkit-font-smoothing: auto !important;
-
   span {
     font-weight: 500;
-    letter-spacing: 0.015rem !important;
+    //letter-spacing: 0.015rem !important;
 
     .mtkb {
       -webkit-font-smoothing: initial !important;
@@ -105,22 +107,21 @@ html {
   padding-left: 14px;
 }
 
+div.scm-editor-placeholder {
+  font-family: var(--compact) !important;
+}
 
-.load(@monoFamilies,
+.load-fonts(@monoFamilies,
         @tarMo,
-        @allWeights,
-        @allUnicode,
-        false);
+        @monoWeights,
+        @allUnicode);
 
 
 @monoFamilies: 'SF Mono',
 'SFMono-Regular',
 'ui-monospace';
 
-
-@repo: 'https://raw.githubusercontent.com/kyle1an/SF-1/main';
-@repo: 'https://cdn.jsdelivr.net/gh/kyle1an/SF-1@main';
-@repo: 'https://cdn.jsdelivr.net/gh/kyle1an/SF-Fonts@master';
+@repo: 'https://cdn.jsdelivr.net/gh/kyle1an/SF-Fonts';
 
 @styles: {
   normal: '';
@@ -144,6 +145,16 @@ html {
   Bold: 700;
 }
 
+@monoWeights: {
+  Thin: 200;
+  Light: 300;
+  Medium: 400;
+  Medium: 500;
+  Semibold: 600;
+  Bold: 700;
+  Heavy: 800;
+}
+
 @allWeights: {
   Thin: 200;
   Light: 300;
@@ -152,36 +163,39 @@ html {
   Semibold: 600;
   Bold: 700;
   Heavy: 800;
+  Black: 900;
 }
 
-@tarSF: {
+@tarPT: {
   nam: 'SF Pro Text';
   dir: '/Fonts/SF-Pro-Text-';
-  ext: 'otf';
+  ext: 'woff2';
 }
 
 @tarMo: {
   nam: 'SF Mono';
   dir: '/Fonts/SF-Mono-';
-  ext: 'otf';
+  ext: 'woff2';
 }
 
 @tarCM: {
   nam: 'SF Compact Text';
   dir: '/Fonts/SF-Compact-Text-';
-  ext: 'otf';
+  ext: 'woff2';
 }
 
 @formats: {
   @ttf: TrueType;
   @otf: OpenType;
+  @woff: woff;
+  @woff2: woff2;
 }
 
-.load(@families,
+.load-fonts(@families,
 @tar,
 @weights,
 @unicode,
-@local: true) {
+@local: false) {
   each(@families,
   .(@family, @k1, @i1) {
     each(@weights, .(@numeric, @weight-key, @i) {
@@ -190,7 +204,7 @@ html {
         // @numeric: extract(@weight, 2);
         @font-face {
           font-family: @family;
-          .useSrc(@family, @tar, @repo, @weight-key, @style-val, @numeric, @style, @local);
+          .use-src(@family, @tar, @repo, @weight-key, @style-val, @numeric, @style, @local);
           unicode-range: @unicode;
           font-weight: @numeric;
           font-style: @style;
@@ -201,7 +215,7 @@ html {
   })
 }
 
-.useSrc(@family,
+.use-src(@family,
 @tar,
 @repo,
 @weight-key,
@@ -219,16 +233,16 @@ html {
   src: url('@{repo}@{dir}@{weight-key}@{style-val}.@{ext}') format('@{format}');
 }
 
-.load-local(@families,
+.load-local-fonts(@families,
 @tar,
 @weights,
 @unicode,
 @styles,
-@local: true) {
+@local: false) {
   each(@families,
   .(@family,
-	@k1,
-	@i1) {
+  @k1,
+  @i1) {
     @font-face {
       font-family: @family;
       src: local(@family);
