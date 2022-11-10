@@ -8,9 +8,13 @@
 }
 
 :root {
-  --monospace-font: SF Mono, monospace, ui-monospace;
+  --monospace-font: 'SF Mono', ui-monospace, monospace;
   --xcode: XcodeDigits;
-  --compact: SF Compact Text, SF Pro Text, -apple-system, sans-serif;
+  --compact: 'SF Compact Text', 'SF Pro Text', -apple-system, sans-serif;
+  --compact-rounded: 'SF Compact Rounded', 'SF Pro Text', -apple-system, sans-serif;
+  --pro-text: 'SF Pro Text', -apple-system, sans-serif;
+  --pro: 'SF Pro', -apple-system, sans-serif;
+  --font-family: var(--pro-text);
 }
 
 * {
@@ -101,6 +105,14 @@ html {
       }
     }
   }
+
+  .tabs-container > .tab.sizing-fit {
+    width: initial;
+  }
+}
+
+.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab > .tab-actions > .monaco-action-bar {
+  width: 27px;
 }
 
 .open-editors .monaco-list .monaco-list-row {
@@ -111,11 +123,18 @@ div.scm-editor-placeholder {
   font-family: var(--compact) !important;
 }
 
+.timeline-timestamp {
+  font-family: var(--compact-rounded) !important;
+}
+
 .load-fonts(@monoFamilies,
         @tarMo,
         @monoWeights,
         @allUnicode);
+.load-fonts(@textFamilies, @tarPT, @allWeights, @generalUnicode, true);
+.load-stretch-fonts(@textFamilies, @tarCd, @allWeights, @generalUnicode, true);
 
+@textFamilies: 'SF Pro', 'Arial', 'Helvetica Neue', 'Helvetica';
 
 @monoFamilies: 'SF Mono',
 'SFMono-Regular',
@@ -184,6 +203,12 @@ div.scm-editor-placeholder {
   ext: 'woff2';
 }
 
+@tarCd: {
+  nam: 'SF Pro';
+  dir: '/Fonts/SF-Pro';
+  ext: 'woff2';
+}
+
 @formats: {
   @ttf: TrueType;
   @otf: OpenType;
@@ -222,7 +247,7 @@ div.scm-editor-placeholder {
 @style-val,
 @numeric,
 @style,
-@local) {
+@local:false) {
   @nam: @tar[nam];
   @dir: @tar[dir];
   @ext: @tar[ext];
@@ -252,6 +277,54 @@ div.scm-editor-placeholder {
   })
 }
 
+.load-stretch-fonts(@families,
+@tar,
+@weights,
+@unicode,
+@local: false) {
+  each(@families,
+  .(@family,
+  @k1,
+  @i1) {
+    each(@weights,
+    .(@numeric,
+    @weight-key,
+    @i) {
+      @font-face {
+        font-family: @family;
+        .use-stretch-src(@family,
+                @tar,
+                @repo,
+                @weight-key,
+                '',
+                @numeric,
+                '',
+                @local);
+        unicode-range: @unicode;
+        font-weight: @numeric;
+        font-stretch: condensed;
+        font-display: swap;
+      }
+    })
+  })
+}
+
+.use-stretch-src(@family,
+@tar,
+@repo,
+@weight-key,
+@style-val,
+@numeric,
+@style,
+@local) {
+  @nam: @tar[nam];
+  @dir: @tar[dir];
+  @ext: @tar[ext];
+  @format: @formats[@@ext];
+  src: if(@local,
+  local('@{nam} Condensed @{weight-key}') e(','),) url('@{repo}@{dir}.@{ext}') format('@{format}');
+}
+
 @generalUnicode: e('U+0000-024F'),
 e('U+02B0-052F'),
 e('U+1DC0-20CF'),
@@ -278,4 +351,5 @@ e('U+2190-22FF');
 e('U+3400-4DBF'),
 e('U+20000-2A6DF'),
 e('U+F900-FAFF'),
-e('U+2F800-2FA1F'); // e('U+2A700–2B73F, U+2B740–2B81F, U+2B820–2CEAF'),
+e('U+2F800-2FA1F');
+// e('U+2A700–2B73F, U+2B740–2B81F, U+2B820–2CEAF'),
