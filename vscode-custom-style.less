@@ -51,8 +51,10 @@ html {
   box-shadow: none !important;
 }
 
-.bb svg,
-.mac {
+
+.windows,
+.mac,
+.bb svg {
   font-family: var(--compact) !important;
 }
 
@@ -127,14 +129,13 @@ div.scm-editor-placeholder {
   font-family: var(--compact-rounded) !important;
 }
 
-.load-fonts(@monoFamilies,
-        @tarMo,
-        @monoWeights,
-        @allUnicode);
+.load-fonts(@monoFamilies, @tarMo, @monoWeights, @allUnicode);
 .load-fonts(@textFamilies, @tarPT, @allWeights, @generalUnicode, true);
+.load-fonts(@compactFamilies, @tarCM, @allWeights, @generalUnicode, true);
 .load-stretch-fonts(@textFamilies, @tarCd, @allWeights, @generalUnicode, true);
 
 @textFamilies: 'SF Pro', 'Arial', 'Helvetica Neue', 'Helvetica';
+@compactFamilies: 'SF Compact Text';
 
 @monoFamilies: 'SF Mono',
 'SFMono-Regular',
