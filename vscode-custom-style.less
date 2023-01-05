@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'XcodeDigits';
-  src: local('XcodeDigits Regular'), url('https://cdn.jsdelivr.net/gh/meewill/SF/Fonts/XcodeDigits-regular.ttf');
+  src: local('Xcode Digits Regular'), url('https://cdn.jsdelivr.net/gh/meewill/SF/Fonts/XcodeDigits-regular.ttf');
   unicode-range: U+0030-0039;
   font-weight: 400;
   font-style: normal;
@@ -8,13 +8,11 @@
 }
 
 :root {
-  --monospace-font: 'SF Mono', ui-monospace, monospace;
+  --mono: 'SF Mono', ui-monospace, monospace;
   --xcode: XcodeDigits;
-  --compact: 'SF Compact Text', 'SF Pro Text', -apple-system, sans-serif;
-  --compact-rounded: 'SF Compact Rounded', 'SF Pro Text', -apple-system, sans-serif;
-  --pro-text: 'SF Pro Text', -apple-system, sans-serif;
-  --pro: 'SF Pro', -apple-system, sans-serif;
-  --font-family: var(--pro-text);
+  --compact: 'SF Compact Text', var(--pro);
+  --compact-rounded: 'SF Compact Rounded', var(--pro);
+  --pro: 'SF Pro Text', -apple-system, sans-serif;
 }
 
 * {
@@ -40,7 +38,7 @@ html {
 }
 
 .pane-body .detected-link {
-  font-family: var(--xcode), var(--monospace-font) !important;
+  font-family: var(--xcode), var(--mono) !important;
 }
 
 .notification-toast-container [aria-label='Your Code installation appears to be corrupt. Please reinstall.\, notification'] {
@@ -129,7 +127,13 @@ div.scm-editor-placeholder {
   font-family: var(--compact-rounded) !important;
 }
 
-.load-fonts(@monoFamilies, @tarMo, @monoWeights, @allUnicode);
+.search-view .linematch > .match {
+  font-family: var(--mono);
+  font-size: 0.9em;
+  letter-spacing: -0.015em;
+}
+
+.load-fonts(@monoFamilies, @tarMo, @monoWeights, @allUnicode, true);
 .load-fonts(@textFamilies, @tarPT, @allWeights, @generalUnicode, true);
 .load-fonts(@compactFamilies, @tarCM, @allWeights, @generalUnicode, true);
 .load-stretch-fonts(@textFamilies, @tarCd, @allWeights, @generalUnicode, true);
@@ -217,15 +221,16 @@ div.scm-editor-placeholder {
   @woff2: woff2;
 }
 
-.load-fonts(@families,
-@tar,
-@weights,
-@unicode,
-@local: false) {
-  each(@families,
-  .(@family, @k1, @i1) {
-    each(@weights, .(@numeric, @weight-key, @i) {
-      each(@styles, .(@style-val, @style, @i2) {
+.load-fonts(
+  @families,
+  @tar,
+  @weights,
+  @unicode,
+  @local: false
+) {
+  each(@families, .(@family) {
+    each(@weights, .(@numeric, @weight-key) {
+      each(@styles, .(@style-val, @style) {
         // @keyword: extract(@weight, 1);
         // @numeric: extract(@weight, 2);
         @font-face {
@@ -241,34 +246,33 @@ div.scm-editor-placeholder {
   })
 }
 
-.use-src(@family,
-@tar,
-@repo,
-@weight-key,
-@style-val,
-@numeric,
-@style,
-@local:false) {
+.use-src(
+  @family,
+  @tar,
+  @repo,
+  @weight-key,
+  @style-val,
+  @numeric,
+  @style,
+  @local: false
+) {
   @nam: @tar[nam];
   @dir: @tar[dir];
   @ext: @tar[ext];
   @format: @formats[@@ext];
-  @italic: if(@style-val='',
-  e(''),
-  ' Italic');
-  src: url('@{repo}@{dir}@{weight-key}@{style-val}.@{ext}') format('@{format}');
+  @italic: if(@style-val='', e(''), ' Italic');
+  src: if(@local, local('@{nam} @{weight-key}@{italic}') e(','),) url('@{repo}@{dir}@{weight-key}@{style-val}.@{ext}') format('@{format}');
 }
 
-.load-local-fonts(@families,
-@tar,
-@weights,
-@unicode,
-@styles,
-@local: false) {
-  each(@families,
-  .(@family,
-  @k1,
-  @i1) {
+.load-local-fonts(
+  @families,
+  @tar,
+  @weights,
+  @unicode,
+  @styles,
+  @local: false
+) {
+  each(@families, .(@family) {
     @font-face {
       font-family: @family;
       src: local(@family);
@@ -278,29 +282,27 @@ div.scm-editor-placeholder {
   })
 }
 
-.load-stretch-fonts(@families,
-@tar,
-@weights,
-@unicode,
-@local: false) {
-  each(@families,
-  .(@family,
-  @k1,
-  @i1) {
-    each(@weights,
-    .(@numeric,
-    @weight-key,
-    @i) {
+.load-stretch-fonts(
+  @families,
+  @tar,
+  @weights,
+  @unicode,
+  @local: false
+) {
+  each(@families, .(@family) {
+    each(@weights, .(@numeric, @weight-key) {
       @font-face {
         font-family: @family;
-        .use-stretch-src(@family,
+        .use-stretch-src(
+                @family,
                 @tar,
                 @repo,
                 @weight-key,
                 '',
                 @numeric,
                 '',
-                @local);
+                @local
+        );
         unicode-range: @unicode;
         font-weight: @numeric;
         font-stretch: condensed;
@@ -310,20 +312,21 @@ div.scm-editor-placeholder {
   })
 }
 
-.use-stretch-src(@family,
-@tar,
-@repo,
-@weight-key,
-@style-val,
-@numeric,
-@style,
-@local) {
+.use-stretch-src(
+  @family,
+  @tar,
+  @repo,
+  @weight-key,
+  @style-val,
+  @numeric,
+  @style,
+  @local
+) {
   @nam: @tar[nam];
   @dir: @tar[dir];
   @ext: @tar[ext];
   @format: @formats[@@ext];
-  src: if(@local,
-  local('@{nam} Condensed @{weight-key}') e(','),) url('@{repo}@{dir}.@{ext}') format('@{format}');
+  src: if(@local, local('@{nam} Condensed @{weight-key}') e(','),) url('@{repo}@{dir}.@{ext}') format('@{format}');
 }
 
 @generalUnicode: e('U+0000-024F'),
