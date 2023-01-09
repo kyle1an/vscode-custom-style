@@ -44,14 +44,16 @@ html {
 .bb svg {
   font-family: var(--compact) !important;
 }
+.hover-contents span,
 .sticky-widget span,
 .editor-scrollable span {
   font-weight: 500;
 }
+.hover-contents span .mtkb,
 .sticky-widget span .mtkb,
 .editor-scrollable span .mtkb {
   -webkit-font-smoothing: initial !important;
-  font-weight: 800;
+  font-weight: 900;
 }
 .monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab:hover:not(.active) {
   outline: 1px dashed;
