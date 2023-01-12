@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
+//@import 'load-fonts-fn.less';
 
 @font-face {
   font-family: 'XcodeDigits';
@@ -50,7 +51,6 @@ html {
 .notification-toast.notification-fade-in-done:has([aria-label='Your Code installation appears to be corrupt. Please reinstall.\, notification']) {
   box-shadow: none !important;
 }
-
 
 .windows,
 .mac,
@@ -112,10 +112,10 @@ html {
   .tabs-container > .tab.sizing-fit {
     width: initial;
   }
-}
 
-.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab > .tab-actions > .monaco-action-bar {
-  width: 27px;
+  .tabs-container > .tab > .tab-actions > .monaco-action-bar {
+    width: 27px;
+  }
 }
 
 .open-editors .monaco-list .monaco-list-row {
@@ -136,14 +136,40 @@ div.scm-editor-placeholder {
   letter-spacing: -0.015em;
 }
 
-.load-fonts(@monoFamilies, @tarMo, @monoWeights, @allUnicode, true);
-.load-fonts(@textFamilies, @tarPT, @allWeights, @generalUnicode, true);
-.load-fonts(@compactFamilies, @tarCM, @allWeights, @generalUnicode, true);
-.load-stretch-fonts(@textFamilies, @tarCd, @allWeights, @generalUnicode, true);
+.load-fonts(@monoFamilies, {
+  nam: 'SF Mono';
+  dir: '/Fonts/SF-Mono-';
+  ext: 'woff2';
+}, {
+  Thin: 200;
+  Light: 300;
+  Medium: 400;
+  Medium: 500;
+  Semibold: 600;
+  Bold: 700;
+  Heavy: 800;
+}, @allUnicode, true);
+
+.load-fonts(@textFamilies, {
+  nam: 'SF Pro Text';
+  dir: '/Fonts/SF-Pro-Text-';
+  ext: 'woff2';
+}, @allWeights, @generalUnicode, true);
+
+.load-fonts(@compactFamilies, {
+  nam: 'SF Compact Text';
+  dir: '/Fonts/SF-Compact-Text-';
+  ext: 'woff2';
+}, @allWeights, @generalUnicode, true);
+
+.load-stretch-fonts(@textFamilies, {
+  nam: 'SF Pro';
+  dir: '/Fonts/SF-Pro';
+  ext: 'woff2';
+}, @allWeights, @generalUnicode, true);
 
 @textFamilies: 'SF Pro', 'Arial', 'Helvetica Neue', 'Helvetica';
 @compactFamilies: 'SF Compact Text';
-
 @monoFamilies: 'SF Mono',
 'SFMono-Regular',
 'ui-monospace';
@@ -172,16 +198,6 @@ div.scm-editor-placeholder {
   Bold: 700;
 }
 
-@monoWeights: {
-  Thin: 200;
-  Light: 300;
-  Medium: 400;
-  Medium: 500;
-  Semibold: 600;
-  Bold: 700;
-  Heavy: 800;
-}
-
 @allWeights: {
   Thin: 200;
   Light: 300;
@@ -191,30 +207,6 @@ div.scm-editor-placeholder {
   Bold: 700;
   Heavy: 800;
   Black: 900;
-}
-
-@tarPT: {
-  nam: 'SF Pro Text';
-  dir: '/Fonts/SF-Pro-Text-';
-  ext: 'woff2';
-}
-
-@tarMo: {
-  nam: 'SF Mono';
-  dir: '/Fonts/SF-Mono-';
-  ext: 'woff2';
-}
-
-@tarCM: {
-  nam: 'SF Compact Text';
-  dir: '/Fonts/SF-Compact-Text-';
-  ext: 'woff2';
-}
-
-@tarCd: {
-  nam: 'SF Pro';
-  dir: '/Fonts/SF-Pro';
-  ext: 'woff2';
 }
 
 @formats: {
