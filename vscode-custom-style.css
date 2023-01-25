@@ -133,6 +133,12 @@ div.scm-editor-placeholder {
   font-size: 0.9em;
   letter-spacing: -0.015em;
 }
+[class|="mtk1 dyn-rule"] + [class|="mtk1 dyn-rule"] {
+  border-radius: 3px;
+}
+span [class|="mtk1 dyn-rule"] {
+  font-weight: 400;
+}
 @font-face {
   font-family: 'SF Mono';
   src: local('SF Mono Thin') , url('https://cdn.jsdelivr.net/gh/meewill/SF/Fonts/SF-Mono-Thin.woff2') format('woff2');
