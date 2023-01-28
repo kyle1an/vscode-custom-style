@@ -129,7 +129,6 @@ div.scm-editor-placeholder {
   font-family: var(--compact-rounded) !important;
 }
 .search-view .linematch > .match {
-  font-family: var(--mono);
   font-size: 0.9em;
   letter-spacing: -0.015em;
 }
