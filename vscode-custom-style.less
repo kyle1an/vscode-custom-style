@@ -74,6 +74,11 @@ html {
   }
 }
 
+.debug-view-content .value.string {
+  -webkit-font-smoothing: initial !important;
+  font-weight: 900;
+}
+
 .monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab:hover:not(.active) {
   outline: 1px dashed;
   outline-offset: -5px;
@@ -92,15 +97,15 @@ html {
 .monaco-workbench .part.editor > .content .editor-group-container > .title {
   .tabs-container > .tab .tab-label,
   .title-label {
-    order: 3;
+    //order: 3;
   }
 
   .tabs-container > .tab {
-    padding-left: 0;
-    padding-right: 10px;
+    //padding-left: 0;
+    //padding-right: 10px;
 
     > .tab-actions {
-      order: 2;
+      //order: 2;
 
       .actions-container {
         justify-content: flex-end;
@@ -110,7 +115,7 @@ html {
   }
 
   .tabs-container > .tab.sizing-fit {
-    width: initial;
+    //width: initial;
   }
 
   .tabs-container > .tab > .tab-actions > .monaco-action-bar {
@@ -142,6 +147,10 @@ div.scm-editor-placeholder {
 
 span [class|="mtk1 dyn-rule"] {
   font-weight: 400;
+}
+
+.windows {
+  --monaco-monospace-font: var(--mono);
 }
 
 .load-fonts(@monoFamilies, {
@@ -179,6 +188,8 @@ span [class|="mtk1 dyn-rule"] {
 @textFamilies: 'SF Pro', 'Arial', 'Helvetica Neue', 'Helvetica';
 @compactFamilies: 'SF Compact Text';
 @monoFamilies: 'SF Mono',
+'Consolas',
+'Courier New',
 'SFMono-Regular',
 'ui-monospace';
 
