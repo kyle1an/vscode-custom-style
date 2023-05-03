@@ -79,6 +79,10 @@ html {
 .bb svg {
   font-family: var(--compact) !important;
 }
+.outline-element.monaco-breadcrumb-item,
+.monaco-tl-contents.outline-element {
+  font-family: var(--mono);
+}
 .hover-contents span,
 .sticky-widget span,
 .editor-scrollable span {
