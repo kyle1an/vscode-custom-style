@@ -68,11 +68,8 @@ html {
 .pane-body .detected-link {
   font-family: var(--xcode), var(--mono) !important;
 }
-.notification-toast-container [aria-label='Your Code installation appears to be corrupt. Please reinstall.\, notification'] {
+.notification-toast-container:has([aria-label='Your Code installation appears to be corrupt. Please reinstall., notification']) {
   display: none !important;
-}
-.notification-toast.notification-fade-in-done:has([aria-label='Your Code installation appears to be corrupt. Please reinstall.\, notification']) {
-  box-shadow: none !important;
 }
 .windows,
 .mac,
