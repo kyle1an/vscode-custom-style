@@ -12,10 +12,12 @@
 
 :root {
   --mono: 'SF Mono', ui-monospace, monospace;
+  --fira: 'Fira Code', var(--mono);
   --xcode: XcodeDigits;
   --compact: 'SF Compact Text', var(--pro);
   --compact-rounded: 'SF Compact Rounded', var(--pro);
   --pro: 'SF Pro Text', -apple-system, sans-serif;
+  --vscode-font-family: var(--compact);
 }
 
 * {
@@ -54,9 +56,58 @@ html {
   font-family: var(--compact) !important;
 }
 
+/* sidebar */
+.monaco-icon-label-container {
+  display: flex;
+}
+
+.scm-view .monaco-list-row .resource-group > .name {
+  font-family: var(--fira);
+  font-weight: bold; 
+  letter-spacing: 0.02em; 
+}  
+
+// git history author and time
+.monaco-icon-label > .monaco-icon-label-container > .monaco-icon-description-container > .label-description {
+  font-size: .78em;
+  letter-spacing: -0.02em;
+}
+
 .outline-element.monaco-breadcrumb-item,
 .monaco-tl-contents.outline-element {
   font-family: var(--mono);
+  letter-spacing: 0.02em;
+  font-size: 0.9em;
+}
+
+.monaco-editor .codicon.codicon-symbol-function,
+.monaco-workbench .codicon.codicon-symbol-function {
+  + .monaco-icon-label {
+    font-style: italic;
+  }
+}
+
+.codelens-decoration {
+  letter-spacing: 0.02em;
+}
+
+// file blame
+.view-line [class*="-TextEditorDecorationType"]:first-of-type::before {
+  font-family: var(--fira);
+}
+
+// git line history
+.view-line [class*="-TextEditorDecorationType"]:last-of-type::after {
+  font-style: italic !important;
+}
+
+.search-results [class*="ced-1-TextEditorDecorationType"] {
+  //font-family: var(--xcode);
+  font-weight: normal;
+}
+
+.search-view .linematch .matchLineNum {
+    font-family: var(--xcode);
 }
 
 .hover-contents,
