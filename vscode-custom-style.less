@@ -21,12 +21,13 @@
 }
 
 * {
-  font-feature-settings: 'cv01', 'cv02', 'cv03', 'ss04' 0; // -webkit-font-smoothing: antialiased;
+  //font-feature-settings: 'cv01', 'cv02', 'cv03', 'ss04' 0;
+  // -webkit-font-smoothing: antialiased;
   // -moz-osx-font-smoothing: grayscale;
 }
 
 html {
-  -webkit-font-smoothing: antialiased !important;
+  // -webkit-font-smoothing: antialiased !important;
 }
 
 .line-numbers {
@@ -56,16 +57,63 @@ html {
   font-family: var(--compact) !important;
 }
 
+.folder.monaco-breadcrumb-item,
+.codicon-folder + .monaco-icon-label-container,
+.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab .tab-label a,
+.monaco-workbench .part.editor > .content .editor-group-container > .title .title-label a,
+.monaco-editor .diff-hidden-lines-widget,
+:is(.folder-icon, .file-icon).monaco-icon-label > .monaco-icon-label-container > .monaco-icon-name-container > .label-name {
+  font-family: Berkeley Mono,
+  var(--compact) !important;
+  font-size: 0.75rem;
+  letter-spacing: 0.015em;
+}
+
+.monaco-editor .find-widget .monaco-findInput .input[title="Find"],
+.monaco-inputbox > .ibwrapper > .input[title="Search"],
+.monaco-inputbox > .ibwrapper > .input[title="Replace"],
+html .search-view .linematch > .match {
+  font-family: var(--mono), Berkeley Mono;
+  font-size: 0.6875rem;
+  letter-spacing: normal;
+}
+
+.timeline-timestamp,
+.vs .monaco-icon-label > .monaco-icon-label-container > .monaco-icon-description-container > .label-description {
+  font-variant-numeric: tabular-nums;
+}
+
+.search-view .linematch .matchLineNum {
+  order: -1;
+  margin-left: 0;
+  margin-right: 8px;
+  min-width: 26px;
+  text-align: right;
+  opacity: 0.35;
+}
+
 /* sidebar */
 .monaco-icon-label-container {
   display: flex;
 }
 
 .scm-view .monaco-list-row .resource-group > .name {
-  font-family: var(--fira);
-  font-weight: bold; 
-  letter-spacing: 0.02em; 
-}  
+  font-weight: bold;
+  letter-spacing: 0.02em;
+}
+
+[aria-label="NPM Scripts Section"] + .pane-body {
+  .monaco-icon-label > .monaco-icon-label-container > .monaco-icon-name-container > .label-name {
+    font-size: 0.75rem;
+    font-family: var(--mono);
+    letter-spacing: 0.01em;
+  }
+
+  .monaco-icon-label > .monaco-icon-label-container > .monaco-icon-description-container > .label-description {
+    font-family: var(--mono);
+    letter-spacing: 0.01em;
+  }
+}
 
 // git history author and time
 .monaco-icon-label > .monaco-icon-label-container > .monaco-icon-description-container > .label-description {
@@ -77,7 +125,7 @@ html {
 .monaco-tl-contents.outline-element {
   font-family: var(--mono);
   letter-spacing: 0.02em;
-  font-size: 0.9em;
+  font-size: 0.7rem;
 }
 
 .monaco-editor .codicon.codicon-symbol-function,
@@ -88,12 +136,12 @@ html {
 }
 
 .codelens-decoration {
-  letter-spacing: 0.02em;
+  letter-spacing: 0.025em;
 }
 
 // file blame
 .view-line [class*="-TextEditorDecorationType"]:first-of-type::before {
-  font-family: var(--fira);
+  font-family: Berkeley Mono, var(--fira);
 }
 
 // git line history
@@ -107,7 +155,13 @@ html {
 }
 
 .search-view .linematch .matchLineNum {
-    font-family: var(--xcode);
+  font-family: var(--xcode);
+}
+
+// inlay hint
+span [class|="mtk1 dyn-rule"],
+[class|="dyn-rule"] {
+  vertical-align: baseline !important;
 }
 
 .hover-contents,
@@ -116,7 +170,7 @@ html {
   // -webkit-font-smoothing: antialiased !important;
   // -webkit-font-smoothing: auto !important;
   span {
-    font-weight: 500;
+    //font-weight: 500;
     //letter-spacing: 0.015rem !important;
 
     .mtkb {
@@ -212,7 +266,7 @@ span [class|="mtk1 dyn-rule"] {
 }, {
   Thin: 200;
   Light: 300;
-  Medium: 400;
+  Regular: 400;
   Medium: 500;
   Semibold: 600;
   Bold: 700;
@@ -237,8 +291,13 @@ span [class|="mtk1 dyn-rule"] {
   ext: 'woff2';
 }, @allWeights, @generalUnicode, true);
 
-@textFamilies: 'SF Pro', 'Arial', 'Helvetica Neue', 'Helvetica';
+@textFamilies: 'SF Pro',
+'Arial',
+'Helvetica Neue',
+'Helvetica';
+
 @compactFamilies: 'SF Compact Text';
+
 @monoFamilies: 'SF Mono',
 'Consolas',
 'Courier New',
