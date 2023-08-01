@@ -34,6 +34,13 @@ html {
   -webkit-font-smoothing: initial !important;
 }
 
+.monaco-editor {
+  .sticky-line-number,
+  .margin-view-overlays .line-numbers:not(.active-line-number) {
+    opacity: 0.6;
+  }
+}
+
 .sticky-line-number,
 .overlayWidgets [widgetid="editor.contrib.stickyScrollWidget"] [style*="--vscode-editorStickyScroll"]:first-of-type,
 #status\.editor\.selection a,
@@ -296,7 +303,7 @@ span [class|="mtk1 dyn-rule"] {
 'Helvetica Neue',
 'Helvetica';
 
-@compactFamilies: 'SF Compact Text';
+@compactFamilies: 'SF Compact Text', "Segoe WPC", "Segoe UI";
 
 @monoFamilies: 'SF Mono',
 'Consolas',
