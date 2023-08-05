@@ -49,6 +49,7 @@
   --compact-rounded: 'SF Compact Rounded', var(--pro);
   --pro: 'SF Pro Text', -apple-system, sans-serif;
   --vscode-font-family: var(--compact);
+  --bold-weight: 900;
 }
 .line-numbers {
   -webkit-font-smoothing: initial !important;
@@ -64,6 +65,7 @@
 .monaco-editor .margin-view-overlays,
 .editor-container .margin-view-overlays {
   font-family: var(--xcode), var(--compact) !important;
+  font-weight: normal !important;
 }
 .pane-body .detected-link {
   font-family: var(--xcode), var(--mono) !important;
@@ -114,6 +116,9 @@ html .search-view .linematch > .match {
   font-weight: bold;
   letter-spacing: 0.02em;
 }
+.editor-actions {
+  box-shadow: var(--vscode-scrollbar-shadow) 5px 0 6px -6px inset;
+}
 [aria-label="NPM Scripts Section"] + .pane-body .monaco-icon-label > .monaco-icon-label-container > .monaco-icon-name-container > .label-name {
   font-size: 0.75rem;
   font-family: var(--mono);
@@ -162,6 +167,7 @@ html .search-view .linematch > .match {
 }
 .search-view .linematch .matchLineNum {
   font-family: var(--xcode);
+  font-weight: normal !important;
 }
 span [class|="mtk1 dyn-rule"],
 [class|="dyn-rule"] {
@@ -171,11 +177,11 @@ span [class|="mtk1 dyn-rule"],
 .sticky-widget span .mtkb,
 .editor-scrollable span .mtkb {
   -webkit-font-smoothing: initial !important;
-  font-weight: 900;
+  font-weight: var(--bold-weight);
 }
 .debug-view-content .value.string {
   -webkit-font-smoothing: initial !important;
-  font-weight: 900;
+  font-weight: var(--bold-weight);
 }
 .monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab:hover:not(.active) {
   outline: 1px dashed;

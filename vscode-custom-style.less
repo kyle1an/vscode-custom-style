@@ -18,6 +18,7 @@
   --compact-rounded: 'SF Compact Rounded', var(--pro);
   --pro: 'SF Pro Text', -apple-system, sans-serif;
   --vscode-font-family: var(--compact);
+  --bold-weight: 900;
 }
 
 * {
@@ -48,6 +49,7 @@ html {
 .monaco-editor .margin-view-overlays,
 .editor-container .margin-view-overlays {
   font-family: var(--xcode), var(--compact) !important;
+  font-weight: normal !important;
 }
 
 .pane-body .detected-link {
@@ -107,6 +109,10 @@ html .search-view .linematch > .match {
 .scm-view .monaco-list-row .resource-group > .name {
   font-weight: bold;
   letter-spacing: 0.02em;
+}
+
+.editor-actions {
+  box-shadow: var(--vscode-scrollbar-shadow) 5px 0 6px -6px inset;
 }
 
 [aria-label="NPM Scripts Section"] + .pane-body {
@@ -177,6 +183,7 @@ html .search-view .linematch > .match {
 
 .search-view .linematch .matchLineNum {
   font-family: var(--xcode);
+  font-weight: normal !important;
 }
 
 // inlay hint
@@ -196,14 +203,14 @@ span [class|="mtk1 dyn-rule"],
 
     .mtkb {
       -webkit-font-smoothing: initial !important;
-      font-weight: 900;
+      font-weight: var(--bold-weight);
     }
   }
 }
 
 .debug-view-content .value.string {
   -webkit-font-smoothing: initial !important;
-  font-weight: 900;
+  font-weight: var(--bold-weight);
 }
 
 .monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab:hover:not(.active) {
