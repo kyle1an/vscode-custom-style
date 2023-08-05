@@ -125,7 +125,21 @@ html .search-view .linematch > .match {
 // git history author and time
 .monaco-icon-label > .monaco-icon-label-container > .monaco-icon-description-container > .label-description {
   font-size: .78em;
-  letter-spacing: -0.02em;
+}
+
+.monaco-list-row > .monaco-icon-label:not([class*="monaco-decoration-itemBadge"])::after {
+  content: "";
+  color: var(--vscode-gitDecoration-stageModifiedResourceForeground);
+  visibility: hidden;
+}
+
+.monaco-icon-label:after {
+  min-width: 10px;
+  font-variant-numeric: tabular-nums;
+}
+
+[aria-label="Open Editors"] .monaco-icon-label-container {
+  justify-content: space-between;
 }
 
 .outline-element.monaco-breadcrumb-item,
@@ -238,6 +252,10 @@ span [class|="mtk1 dyn-rule"],
 
 .open-editors .monaco-list .monaco-list-row {
   padding-left: 14px;
+}
+
+.monaco-list-row[aria-label="Changes"] {
+  border-top: 1px solid var(--vscode-list-focusAndSelectionOutline, var(--vscode-contrastActiveBorder, var(--vscode-list-focusOutline)));;
 }
 
 div.scm-editor-placeholder {
