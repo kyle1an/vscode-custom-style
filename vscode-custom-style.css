@@ -74,7 +74,6 @@
 .notification-toast-container:has([aria-label='Your Code installation appears to be corrupt. Please reinstall., notification']) {
   display: none !important;
 }
-.windows,
 .mac,
 .bb svg {
   font-family: var(--compact) !important;
@@ -93,7 +92,7 @@
 .monaco-inputbox > .ibwrapper > .input[title="Search"],
 .monaco-inputbox > .ibwrapper > .input[title="Replace"],
 html .search-view .linematch > .match {
-  font-family: var(--mono), Berkeley Mono;
+  font-family: var(--mono);
   font-size: 0.6875rem;
   letter-spacing: var(--vs-lt-sp);
 }
@@ -162,8 +161,20 @@ a:has(>.codicon-git-branch),
 .codelens-decoration {
   letter-spacing: 0.025em;
 }
-.view-line [class*="-TextEditorDecorationType"]:first-of-type::before {
-  font-family: Berkeley Mono, var(--fira);
+.sticky-line,
+.view-line {
+  --avatar-size: 15px;
+}
+.windows .view-line,
+.windows .sticky-line {
+  --avatar-size: 14px;
+}
+:is(.sticky-line, .view-line) span:first-of-type [class*="-TextEditorDecorationType"]:nth-of-type(2)::after,
+:is(.sticky-line, .view-line) span:first-of-type [class*="-TextEditorDecorationType"]:nth-of-type(3)::after {
+  top: 0 !important;
+  height: var(--avatar-size) !important;
+  width: var(--avatar-size) !important;
+  background-size: var(--avatar-size) var(--avatar-size) !important;
 }
 .view-line [class*="-TextEditorDecorationType"]:last-of-type::after {
   font-style: italic !important;
@@ -1415,7 +1426,7 @@ span [class|="mtk1 dyn-rule"] {
 }
 @font-face {
   font-family: 'SF Compact Text';
-  src: local('SF Compact Text Thin') , url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Thin.otf') format('OpenType');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Thin.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 200;
   font-style: normal;
@@ -1423,7 +1434,7 @@ span [class|="mtk1 dyn-rule"] {
 }
 @font-face {
   font-family: 'SF Compact Text';
-  src: local('SF Compact Text Thin Italic') , url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-ThinItalic.otf') format('OpenType');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-ThinItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 200;
   font-style: italic;
@@ -1431,7 +1442,7 @@ span [class|="mtk1 dyn-rule"] {
 }
 @font-face {
   font-family: 'SF Compact Text';
-  src: local('SF Compact Text Light') , url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Light.otf') format('OpenType');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Light.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 300;
   font-style: normal;
@@ -1439,7 +1450,7 @@ span [class|="mtk1 dyn-rule"] {
 }
 @font-face {
   font-family: 'SF Compact Text';
-  src: local('SF Compact Text Light Italic') , url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-LightItalic.otf') format('OpenType');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-LightItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 300;
   font-style: italic;
@@ -1447,7 +1458,7 @@ span [class|="mtk1 dyn-rule"] {
 }
 @font-face {
   font-family: 'SF Compact Text';
-  src: local('SF Compact Text Regular') , url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Regular.otf') format('OpenType');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Regular.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 400;
   font-style: normal;
@@ -1455,7 +1466,7 @@ span [class|="mtk1 dyn-rule"] {
 }
 @font-face {
   font-family: 'SF Compact Text';
-  src: local('SF Compact Text Regular Italic') , url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-RegularItalic.otf') format('OpenType');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-RegularItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 400;
   font-style: italic;
@@ -1463,7 +1474,7 @@ span [class|="mtk1 dyn-rule"] {
 }
 @font-face {
   font-family: 'SF Compact Text';
-  src: local('SF Compact Text Medium') , url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Medium.otf') format('OpenType');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Medium.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 500;
   font-style: normal;
@@ -1471,7 +1482,7 @@ span [class|="mtk1 dyn-rule"] {
 }
 @font-face {
   font-family: 'SF Compact Text';
-  src: local('SF Compact Text Medium Italic') , url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-MediumItalic.otf') format('OpenType');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-MediumItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 500;
   font-style: italic;
@@ -1479,7 +1490,7 @@ span [class|="mtk1 dyn-rule"] {
 }
 @font-face {
   font-family: 'SF Compact Text';
-  src: local('SF Compact Text Semibold') , url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Semibold.otf') format('OpenType');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Semibold.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 600;
   font-style: normal;
@@ -1487,7 +1498,7 @@ span [class|="mtk1 dyn-rule"] {
 }
 @font-face {
   font-family: 'SF Compact Text';
-  src: local('SF Compact Text Semibold Italic') , url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-SemiboldItalic.otf') format('OpenType');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-SemiboldItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 600;
   font-style: italic;
@@ -1495,7 +1506,7 @@ span [class|="mtk1 dyn-rule"] {
 }
 @font-face {
   font-family: 'SF Compact Text';
-  src: local('SF Compact Text Bold') , url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Bold.otf') format('OpenType');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Bold.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 700;
   font-style: normal;
@@ -1503,7 +1514,7 @@ span [class|="mtk1 dyn-rule"] {
 }
 @font-face {
   font-family: 'SF Compact Text';
-  src: local('SF Compact Text Bold Italic') , url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-BoldItalic.otf') format('OpenType');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-BoldItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 700;
   font-style: italic;
@@ -1511,7 +1522,7 @@ span [class|="mtk1 dyn-rule"] {
 }
 @font-face {
   font-family: 'SF Compact Text';
-  src: local('SF Compact Text Heavy') , url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Heavy.otf') format('OpenType');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Heavy.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 800;
   font-style: normal;
@@ -1519,7 +1530,7 @@ span [class|="mtk1 dyn-rule"] {
 }
 @font-face {
   font-family: 'SF Compact Text';
-  src: local('SF Compact Text Heavy Italic') , url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-HeavyItalic.otf') format('OpenType');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-HeavyItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 800;
   font-style: italic;
@@ -1527,7 +1538,7 @@ span [class|="mtk1 dyn-rule"] {
 }
 @font-face {
   font-family: 'SF Compact Text';
-  src: local('SF Compact Text Black') , url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Black.otf') format('OpenType');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Black.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 900;
   font-style: normal;
@@ -1535,7 +1546,7 @@ span [class|="mtk1 dyn-rule"] {
 }
 @font-face {
   font-family: 'SF Compact Text';
-  src: local('SF Compact Text Black Italic') , url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-BlackItalic.otf') format('OpenType');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-BlackItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 900;
   font-style: italic;
@@ -1543,7 +1554,7 @@ span [class|="mtk1 dyn-rule"] {
 }
 @font-face {
   font-family: "Segoe WPC";
-  src: local('SF Compact Text Thin') , url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Thin.otf') format('OpenType');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Thin.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 200;
   font-style: normal;
@@ -1551,7 +1562,7 @@ span [class|="mtk1 dyn-rule"] {
 }
 @font-face {
   font-family: "Segoe WPC";
-  src: local('SF Compact Text Thin Italic') , url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-ThinItalic.otf') format('OpenType');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-ThinItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 200;
   font-style: italic;
@@ -1559,7 +1570,7 @@ span [class|="mtk1 dyn-rule"] {
 }
 @font-face {
   font-family: "Segoe WPC";
-  src: local('SF Compact Text Light') , url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Light.otf') format('OpenType');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Light.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 300;
   font-style: normal;
@@ -1567,7 +1578,7 @@ span [class|="mtk1 dyn-rule"] {
 }
 @font-face {
   font-family: "Segoe WPC";
-  src: local('SF Compact Text Light Italic') , url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-LightItalic.otf') format('OpenType');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-LightItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 300;
   font-style: italic;
@@ -1575,7 +1586,7 @@ span [class|="mtk1 dyn-rule"] {
 }
 @font-face {
   font-family: "Segoe WPC";
-  src: local('SF Compact Text Regular') , url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Regular.otf') format('OpenType');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Regular.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 400;
   font-style: normal;
@@ -1583,7 +1594,7 @@ span [class|="mtk1 dyn-rule"] {
 }
 @font-face {
   font-family: "Segoe WPC";
-  src: local('SF Compact Text Regular Italic') , url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-RegularItalic.otf') format('OpenType');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-RegularItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 400;
   font-style: italic;
@@ -1591,7 +1602,7 @@ span [class|="mtk1 dyn-rule"] {
 }
 @font-face {
   font-family: "Segoe WPC";
-  src: local('SF Compact Text Medium') , url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Medium.otf') format('OpenType');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Medium.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 500;
   font-style: normal;
@@ -1599,7 +1610,7 @@ span [class|="mtk1 dyn-rule"] {
 }
 @font-face {
   font-family: "Segoe WPC";
-  src: local('SF Compact Text Medium Italic') , url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-MediumItalic.otf') format('OpenType');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-MediumItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 500;
   font-style: italic;
@@ -1607,7 +1618,7 @@ span [class|="mtk1 dyn-rule"] {
 }
 @font-face {
   font-family: "Segoe WPC";
-  src: local('SF Compact Text Semibold') , url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Semibold.otf') format('OpenType');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Semibold.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 600;
   font-style: normal;
@@ -1615,7 +1626,7 @@ span [class|="mtk1 dyn-rule"] {
 }
 @font-face {
   font-family: "Segoe WPC";
-  src: local('SF Compact Text Semibold Italic') , url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-SemiboldItalic.otf') format('OpenType');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-SemiboldItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 600;
   font-style: italic;
@@ -1623,7 +1634,7 @@ span [class|="mtk1 dyn-rule"] {
 }
 @font-face {
   font-family: "Segoe WPC";
-  src: local('SF Compact Text Bold') , url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Bold.otf') format('OpenType');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Bold.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 700;
   font-style: normal;
@@ -1631,7 +1642,7 @@ span [class|="mtk1 dyn-rule"] {
 }
 @font-face {
   font-family: "Segoe WPC";
-  src: local('SF Compact Text Bold Italic') , url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-BoldItalic.otf') format('OpenType');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-BoldItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 700;
   font-style: italic;
@@ -1639,7 +1650,7 @@ span [class|="mtk1 dyn-rule"] {
 }
 @font-face {
   font-family: "Segoe WPC";
-  src: local('SF Compact Text Heavy') , url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Heavy.otf') format('OpenType');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Heavy.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 800;
   font-style: normal;
@@ -1647,7 +1658,7 @@ span [class|="mtk1 dyn-rule"] {
 }
 @font-face {
   font-family: "Segoe WPC";
-  src: local('SF Compact Text Heavy Italic') , url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-HeavyItalic.otf') format('OpenType');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-HeavyItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 800;
   font-style: italic;
@@ -1655,7 +1666,7 @@ span [class|="mtk1 dyn-rule"] {
 }
 @font-face {
   font-family: "Segoe WPC";
-  src: local('SF Compact Text Black') , url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Black.otf') format('OpenType');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Black.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 900;
   font-style: normal;
@@ -1663,7 +1674,7 @@ span [class|="mtk1 dyn-rule"] {
 }
 @font-face {
   font-family: "Segoe WPC";
-  src: local('SF Compact Text Black Italic') , url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-BlackItalic.otf') format('OpenType');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-BlackItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 900;
   font-style: italic;
@@ -1671,7 +1682,7 @@ span [class|="mtk1 dyn-rule"] {
 }
 @font-face {
   font-family: "Segoe UI";
-  src: local('SF Compact Text Thin') , url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Thin.otf') format('OpenType');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Thin.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 200;
   font-style: normal;
@@ -1679,7 +1690,7 @@ span [class|="mtk1 dyn-rule"] {
 }
 @font-face {
   font-family: "Segoe UI";
-  src: local('SF Compact Text Thin Italic') , url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-ThinItalic.otf') format('OpenType');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-ThinItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 200;
   font-style: italic;
@@ -1687,7 +1698,7 @@ span [class|="mtk1 dyn-rule"] {
 }
 @font-face {
   font-family: "Segoe UI";
-  src: local('SF Compact Text Light') , url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Light.otf') format('OpenType');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Light.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 300;
   font-style: normal;
@@ -1695,7 +1706,7 @@ span [class|="mtk1 dyn-rule"] {
 }
 @font-face {
   font-family: "Segoe UI";
-  src: local('SF Compact Text Light Italic') , url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-LightItalic.otf') format('OpenType');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-LightItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 300;
   font-style: italic;
@@ -1703,7 +1714,7 @@ span [class|="mtk1 dyn-rule"] {
 }
 @font-face {
   font-family: "Segoe UI";
-  src: local('SF Compact Text Regular') , url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Regular.otf') format('OpenType');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Regular.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 400;
   font-style: normal;
@@ -1711,7 +1722,7 @@ span [class|="mtk1 dyn-rule"] {
 }
 @font-face {
   font-family: "Segoe UI";
-  src: local('SF Compact Text Regular Italic') , url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-RegularItalic.otf') format('OpenType');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-RegularItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 400;
   font-style: italic;
@@ -1719,7 +1730,7 @@ span [class|="mtk1 dyn-rule"] {
 }
 @font-face {
   font-family: "Segoe UI";
-  src: local('SF Compact Text Medium') , url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Medium.otf') format('OpenType');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Medium.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 500;
   font-style: normal;
@@ -1727,7 +1738,7 @@ span [class|="mtk1 dyn-rule"] {
 }
 @font-face {
   font-family: "Segoe UI";
-  src: local('SF Compact Text Medium Italic') , url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-MediumItalic.otf') format('OpenType');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-MediumItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 500;
   font-style: italic;
@@ -1735,7 +1746,7 @@ span [class|="mtk1 dyn-rule"] {
 }
 @font-face {
   font-family: "Segoe UI";
-  src: local('SF Compact Text Semibold') , url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Semibold.otf') format('OpenType');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Semibold.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 600;
   font-style: normal;
@@ -1743,7 +1754,7 @@ span [class|="mtk1 dyn-rule"] {
 }
 @font-face {
   font-family: "Segoe UI";
-  src: local('SF Compact Text Semibold Italic') , url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-SemiboldItalic.otf') format('OpenType');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-SemiboldItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 600;
   font-style: italic;
@@ -1751,7 +1762,7 @@ span [class|="mtk1 dyn-rule"] {
 }
 @font-face {
   font-family: "Segoe UI";
-  src: local('SF Compact Text Bold') , url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Bold.otf') format('OpenType');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Bold.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 700;
   font-style: normal;
@@ -1759,7 +1770,7 @@ span [class|="mtk1 dyn-rule"] {
 }
 @font-face {
   font-family: "Segoe UI";
-  src: local('SF Compact Text Bold Italic') , url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-BoldItalic.otf') format('OpenType');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-BoldItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 700;
   font-style: italic;
@@ -1767,7 +1778,7 @@ span [class|="mtk1 dyn-rule"] {
 }
 @font-face {
   font-family: "Segoe UI";
-  src: local('SF Compact Text Heavy') , url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Heavy.otf') format('OpenType');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Heavy.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 800;
   font-style: normal;
@@ -1775,7 +1786,7 @@ span [class|="mtk1 dyn-rule"] {
 }
 @font-face {
   font-family: "Segoe UI";
-  src: local('SF Compact Text Heavy Italic') , url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-HeavyItalic.otf') format('OpenType');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-HeavyItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 800;
   font-style: italic;
@@ -1783,7 +1794,7 @@ span [class|="mtk1 dyn-rule"] {
 }
 @font-face {
   font-family: "Segoe UI";
-  src: local('SF Compact Text Black') , url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Black.otf') format('OpenType');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Black.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 900;
   font-style: normal;
@@ -1791,7 +1802,7 @@ span [class|="mtk1 dyn-rule"] {
 }
 @font-face {
   font-family: "Segoe UI";
-  src: local('SF Compact Text Black Italic') , url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-BlackItalic.otf') format('OpenType');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-BlackItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 900;
   font-style: italic;

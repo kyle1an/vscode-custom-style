@@ -62,7 +62,7 @@ html {
   display: none !important;
 }
 
-.windows,
+//.windows,
 .mac,
 .bb svg {
   font-family: var(--compact) !important;
@@ -83,7 +83,7 @@ html {
 .monaco-inputbox > .ibwrapper > .input[title="Search"],
 .monaco-inputbox > .ibwrapper > .input[title="Replace"],
 html .search-view .linematch > .match {
-  font-family: var(--mono), Berkeley Mono;
+  font-family: var(--mono);
   font-size: 0.6875rem;
   letter-spacing: var(--vs-lt-sp);
 }
@@ -175,7 +175,25 @@ a:has(>.codicon-git-branch),
 
 // file blame
 .view-line [class*="-TextEditorDecorationType"]:first-of-type::before {
-  font-family: Berkeley Mono, var(--fira);
+  //font-family: var(--mono), var(--fira);
+}
+
+.sticky-line,
+.view-line {
+  --avatar-size: 15px;
+}
+
+.windows .view-line,
+.windows .sticky-line{
+  --avatar-size: 14px;
+}
+
+:is(.sticky-line, .view-line) span:first-of-type [class*="-TextEditorDecorationType"]:nth-of-type(2)::after,
+:is(.sticky-line, .view-line) span:first-of-type [class*="-TextEditorDecorationType"]:nth-of-type(3)::after {
+  top: 0 !important;
+  height: var(--avatar-size) !important;
+  width: var(--avatar-size) !important;
+  background-size: var(--avatar-size) var(--avatar-size) !important;
 }
 
 // git line history
@@ -322,7 +340,7 @@ span [class|="mtk1 dyn-rule"] {
   nam: 'SF Compact Text';
   dir: '/Fonts/SF-Compact-Text-';
   ext: 'otf';
-}, @weight-all, @unicode-general, true);
+}, @weight-all, @unicode-general);
 
 .load-stretch-fonts(@family-text, {
   nam: 'SF Pro';
