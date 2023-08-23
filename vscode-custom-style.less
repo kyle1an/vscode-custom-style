@@ -20,7 +20,11 @@
   --vscode-font-family: var(--compact);
   --bold-weight: 900;
 
-  --vs-lt-sp: 0.02em;
+  --vs-lt-sp-mono: 0.02em;
+  --vs-lt-sp-text: 0.02em;
+
+  --vs-lt-sp-file-name: 0.015em;
+  --vs-lt-sp-file-name: 0;
 }
 
 * {
@@ -31,6 +35,7 @@
 
 html {
   // -webkit-font-smoothing: antialiased !important;
+  letter-spacing: var(--vs-lt-sp-text);
 }
 
 .line-numbers {
@@ -68,6 +73,9 @@ html {
   font-family: var(--compact) !important;
 }
 
+.zone-widget [aria-label="References"] .monaco-list-row .referenceMatch,
+.reference-file .monaco-highlighted-label,
+.filename,
 .folder.monaco-breadcrumb-item,
 .codicon-folder + .monaco-icon-label-container,
 .monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab .tab-label a,
@@ -76,7 +84,7 @@ html {
 :is(.folder-icon, .file-icon).monaco-icon-label > .monaco-icon-label-container > .monaco-icon-name-container > .label-name {
   font-family: var(--mono) !important;
   font-size: 0.85em;
-  letter-spacing: 0.015em;
+  letter-spacing: var(--vs-lt-sp-file-name);
 }
 
 .monaco-editor .find-widget .monaco-findInput .input[title="Find"],
@@ -85,7 +93,7 @@ html {
 html .search-view .linematch > .match {
   font-family: var(--mono);
   font-size: 0.6875rem;
-  letter-spacing: var(--vs-lt-sp);
+  letter-spacing: var(--vs-lt-sp-mono);
 }
 
 .timeline-timestamp,
@@ -152,7 +160,7 @@ html .search-view .linematch > .match {
 .outline-element.monaco-breadcrumb-item,
 .monaco-tl-contents.outline-element {
   font-family: var(--mono);
-  letter-spacing: var(--vs-lt-sp);
+  letter-spacing: var(--vs-lt-sp-mono);
   font-size: 0.7rem;
 }
 
@@ -184,7 +192,7 @@ a:has(>.codicon-git-branch),
 }
 
 .windows .view-line,
-.windows .sticky-line{
+.windows .sticky-line {
   --avatar-size: 14px;
 }
 
@@ -206,9 +214,16 @@ a:has(>.codicon-git-branch),
   font-weight: normal;
 }
 
-.search-view .linematch .matchLineNum {
-  font-family: var(--xcode);
-  font-weight: normal !important;
+#workbench\.view\.search {
+  .search-view .linematch .matchLineNum {
+    font-family: emptychar, var(--xcode);
+    font-weight: normal !important;
+  }
+
+  [class="monaco-tl-twistie"] {
+    padding-right: 0;
+    padding-left: 14px !important;
+  }
 }
 
 // inlay hint
@@ -316,6 +331,14 @@ span [class|="mtk1 dyn-rule"] {
   --monaco-monospace-font: var(--mono);
 }
 
+@font-face {
+  font-family: "emptychar";
+  src: url("https://cdn.jsdelivr.net/gh/meewill/SF@latest/plus/empty.woff2");
+  font-weight: 400;
+  unicode-range: U+003A;
+  /* : */
+}
+
 .load-fonts(@family-mono, {
   nam: 'SF Mono';
   dir: '/Fonts/Mono-Wide-';
@@ -396,7 +419,7 @@ span [class|="mtk1 dyn-rule"] {
   Black: 900;
 }
 
-@formats: {
+@font-format-map: {
   @ttf: TrueType;
   @otf: OpenType;
   @woff: woff;
@@ -441,7 +464,7 @@ span [class|="mtk1 dyn-rule"] {
   @nam: @tar[nam];
   @dir: @tar[dir];
   @ext: @tar[ext];
-  @format: @formats[@@ext];
+  @format: @font-format-map[@@ext];
   @italic: if(@style-val='', e(''), ' Italic');
   src: if(@local, local('@{nam} @{weight-key}@{italic}') e(','),) url('@{repo}@{dir}@{weight-key}@{style-val}.@{ext}') format('@{format}');
 }
@@ -507,7 +530,7 @@ span [class|="mtk1 dyn-rule"] {
   @nam: @tar[nam];
   @dir: @tar[dir];
   @ext: @tar[ext];
-  @format: @formats[@@ext];
+  @format: @font-format-map[@@ext];
   src: if(@local, local('@{nam} Condensed @{weight-key}') e(','),) url('@{repo}@{dir}.@{ext}') format('@{format}');
 }
 

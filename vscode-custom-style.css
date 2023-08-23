@@ -50,7 +50,13 @@
   --pro: 'SF Pro Text', -apple-system, sans-serif;
   --vscode-font-family: var(--compact);
   --bold-weight: 900;
-  --vs-lt-sp: 0.02em;
+  --vs-lt-sp-mono: 0.02em;
+  --vs-lt-sp-text: 0.02em;
+  --vs-lt-sp-file-name: 0.015em;
+  --vs-lt-sp-file-name: 0;
+}
+html {
+  letter-spacing: var(--vs-lt-sp-text);
 }
 .line-numbers {
   -webkit-font-smoothing: initial !important;
@@ -78,6 +84,9 @@
 .bb svg {
   font-family: var(--compact) !important;
 }
+.zone-widget [aria-label="References"] .monaco-list-row .referenceMatch,
+.reference-file .monaco-highlighted-label,
+.filename,
 .folder.monaco-breadcrumb-item,
 .codicon-folder + .monaco-icon-label-container,
 .monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab .tab-label a,
@@ -86,7 +95,7 @@
 :is(.folder-icon, .file-icon).monaco-icon-label > .monaco-icon-label-container > .monaco-icon-name-container > .label-name {
   font-family: var(--mono) !important;
   font-size: 0.85em;
-  letter-spacing: 0.015em;
+  letter-spacing: var(--vs-lt-sp-file-name);
 }
 .monaco-editor .find-widget .monaco-findInput .input[title="Find"],
 .monaco-inputbox > .ibwrapper > .input[title="Search"],
@@ -94,7 +103,7 @@
 html .search-view .linematch > .match {
   font-family: var(--mono);
   font-size: 0.6875rem;
-  letter-spacing: var(--vs-lt-sp);
+  letter-spacing: var(--vs-lt-sp-mono);
 }
 .timeline-timestamp,
 .vs .monaco-icon-label > .monaco-icon-label-container > .monaco-icon-description-container > .label-description {
@@ -146,7 +155,7 @@ html .search-view .linematch > .match {
 .outline-element.monaco-breadcrumb-item,
 .monaco-tl-contents.outline-element {
   font-family: var(--mono);
-  letter-spacing: var(--vs-lt-sp);
+  letter-spacing: var(--vs-lt-sp-mono);
   font-size: 0.7rem;
 }
 a:has(>.codicon-git-branch),
@@ -182,9 +191,13 @@ a:has(>.codicon-git-branch),
 .search-results [class*="ced-1-TextEditorDecorationType"] {
   font-weight: normal;
 }
-.search-view .linematch .matchLineNum {
-  font-family: var(--xcode);
+#workbench\.view\.search .search-view .linematch .matchLineNum {
+  font-family: emptychar, var(--xcode);
   font-weight: normal !important;
+}
+#workbench\.view\.search [class="monaco-tl-twistie"] {
+  padding-right: 0;
+  padding-left: 14px !important;
 }
 span [class|="mtk1 dyn-rule"],
 [class|="dyn-rule"] {
@@ -239,6 +252,13 @@ span [class|="mtk1 dyn-rule"] {
 }
 .windows {
   --monaco-monospace-font: var(--mono);
+}
+@font-face {
+  font-family: "emptychar";
+  src: url("https://cdn.jsdelivr.net/gh/meewill/SF@latest/plus/empty.woff2");
+  font-weight: 400;
+  unicode-range: U+003A;
+  /* : */
 }
 @font-face {
   font-family: 'Mono Widest';
