@@ -49,6 +49,7 @@ html {
   }
 }
 
+.debug-pane .line-number,
 .sticky-line-number,
 .overlayWidgets [widgetid="editor.contrib.stickyScrollWidget"] [style*="--vscode-editorStickyScroll"]:first-of-type,
 #status\.editor\.selection a,
@@ -115,6 +116,18 @@ html .search-view .linematch > .match {
   display: flex;
 }
 
+.monaco-decoration-itemBadge--y6p4kb, // "▲, ✔"
+.monaco-decoration-itemBadge--3u9omn,
+.monaco-decoration-itemBadge-pfrgek {
+  &:after {
+    opacity: 1;
+  }
+
+  .monaco-icon-label-container span {
+    font-weight: 900;
+  }
+}
+
 .scm-view .monaco-list-row .resource-group > .name {
   font-weight: bold;
   letter-spacing: 0.02em;
@@ -165,7 +178,7 @@ html .search-view .linematch > .match {
 }
 
 a:has(>.codicon-git-branch),
-[style$="icon-branch.svg\"\)\;"] + div > .monaco-icon-name-container {
+[style*="/images/light/icon-branch"] + div > .monaco-icon-name-container {
   font-family: var(--mono);
   font-size: 0.9em;
 }
@@ -248,9 +261,20 @@ span [class|="mtk1 dyn-rule"],
   }
 }
 
-.debug-view-content .value.string {
+.monaco-workbench .monaco-list-row .expression .value.string,
+.monaco-workbench .debug-hover-widget .value.string {
   -webkit-font-smoothing: initial !important;
   font-weight: var(--bold-weight);
+}
+
+.monaco-workbench .monaco-list-row .expression .value.number,
+.monaco-workbench .debug-hover-widget .value.number {
+  color: #0080FF;
+}
+
+.monaco-workbench .debug-hover-widget .monaco-list-row .expression,
+.monaco-workbench .debug-pane .monaco-list-row .expression {
+  font-size: 11px;
 }
 
 .monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab:hover:not(.active) {
