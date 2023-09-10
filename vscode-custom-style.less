@@ -44,13 +44,15 @@ html {
 
 .monaco-editor {
   .sticky-line-number,
+  .sticky-line-number-inner,
   .margin-view-overlays .line-numbers:not(.active-line-number) {
-    opacity: 0.6;
+    color: rgba(110, 118, 129, 0.5);
   }
 }
 
 .debug-pane .line-number,
 .sticky-line-number,
+.sticky-line-number-inner,
 .overlayWidgets [widgetid="editor.contrib.stickyScrollWidget"] [style*="--vscode-editorStickyScroll"]:first-of-type,
 #status\.editor\.selection a,
 .marker-line,
@@ -87,6 +89,7 @@ html {
   font-family: var(--mono) !important;
   font-size: 0.85em;
   letter-spacing: var(--vs-lt-sp-file-name);
+  -webkit-font-smoothing: antialiased;
 }
 
 // git tree compare
@@ -131,7 +134,7 @@ html .search-view .linematch > .match {
 [aria-label^="this, value "],
 [aria-label^="Return value, value "] {
   .name {
-    color: rgb(95, 99, 104)
+    color: rgb(95, 99, 104) !important;
   }
 }
 
@@ -160,6 +163,28 @@ html .search-view .linematch > .match {
     padding: 6px;
     background-color: #dddddd;
     border-radius: 10px;
+  }
+}
+
+.composite.title:has([title="Bookmarks: Explorer"]) + .content .custom-view-tree-node-item-icon + .monaco-icon-label-container {
+  .monaco-icon-description-container {
+    order: -1;
+    font-family: var(--xcode), var(--compact);
+    opacity: 0.6;
+
+    .label-description {
+      margin-left: 0;
+      margin-right: 0.5em;
+    }
+  }
+
+  .monaco-icon-name-container {
+    font-family: var(--mono);
+    font-size: 0.8em;
+
+    .label-name {
+      line-height: 24px;
+    }
   }
 }
 
@@ -205,11 +230,13 @@ html .search-view .linematch > .match {
   justify-content: space-between;
 }
 
+.diff-hidden-lines,
+.monaco-editor .diff-hidden-lines-widget .breadcrumb-item,
 .outline-element.monaco-breadcrumb-item,
 .monaco-tl-contents.outline-element {
   font-family: var(--mono);
   letter-spacing: var(--vs-lt-sp-mono);
-  font-size: 0.7rem;
+  font-size: 10.8px !important;
 }
 
 a:has(>.codicon-git-branch),
@@ -299,7 +326,7 @@ span [class|="mtk1 dyn-rule"],
     //letter-spacing: 0.015rem !important;
 
     .mtkb {
-      -webkit-font-smoothing: initial !important;
+      //-webkit-font-smoothing: initial !important;
       font-weight: var(--bold-weight);
     }
   }
@@ -307,7 +334,7 @@ span [class|="mtk1 dyn-rule"],
 
 .monaco-workbench .monaco-list-row .expression .value.string,
 .monaco-workbench .debug-hover-widget .value.string {
-  -webkit-font-smoothing: initial !important;
+  //-webkit-font-smoothing: initial !important;
   font-weight: var(--bold-weight);
 }
 
