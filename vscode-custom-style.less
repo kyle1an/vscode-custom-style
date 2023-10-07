@@ -50,6 +50,10 @@ html {
   }
 }
 
+.action-item.command-center-center.multiple {
+  padding-left: 0 !important;
+}
+
 .debug-pane .line-number,
 .sticky-line-number,
 .sticky-line-number-inner,
@@ -68,6 +72,10 @@ html {
 
 .notification-toast-container:has([aria-label='Your Code installation appears to be corrupt. Please reinstall., notification']) {
   display: none !important;
+}
+
+.notifications-list-container:has([title="Quokka.js (Extension)"]) {
+  display: none;
 }
 
 //.windows,
@@ -254,6 +262,8 @@ span:has(.codicon-git-branch) {
   font-size: 11px !important;
 }
 
+.monaco-editor .codicon.codicon-symbol-method,
+.monaco-workbench .codicon.codicon-symbol-method,
 .monaco-editor .codicon.codicon-symbol-function,
 .monaco-workbench .codicon.codicon-symbol-function {
   + .monaco-icon-label {
@@ -306,6 +316,9 @@ span:has(.codicon-git-branch) {
 
   [class="monaco-tl-twistie"] {
     padding-right: 0;
+  }
+
+  [aria-level="2"] [class="monaco-tl-twistie"] {
     padding-left: 14px !important;
   }
 }
@@ -422,6 +435,10 @@ span [class|="mtk1 dyn-rule"] {
   font-weight: 400;
 }
 
+[aria-label="Stashes Section"] ~ .pane-body .monaco-list-row[aria-level="1"] {
+  font-variant-numeric: tabular-nums;
+}
+
 .windows {
   --monaco-monospace-font: var(--mono);
 }
@@ -440,7 +457,7 @@ span [class|="mtk1 dyn-rule"] {
   ext: 'woff2';
 }, {
   Thin: 200;
-  Light: 300;
+  Regular: 300;
   Semibold: 400;
   Semibold: 500;
   Semibold: 600;
