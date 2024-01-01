@@ -97,7 +97,8 @@ html {
   font-family: var(--mono) !important;
   font-size: 0.85em;
   letter-spacing: var(--vs-lt-sp-file-name);
-  -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased; /* // windows */
+  //font-weight: 500; /* windows */
 }
 
 // git tree compare
@@ -106,12 +107,12 @@ html {
   font-size: 11px;
 }
 
-.monaco-editor .find-widget>.find-part .monaco-inputbox>.ibwrapper>.input,
+.monaco-editor .find-widget > .find-part .monaco-inputbox > .ibwrapper > .input,
 .search-view .search-widget .monaco-inputbox > .ibwrapper > textarea.input,
 .monaco-workbench .simple-find-part .monaco-findInput input,
 .monaco-editor .find-widget .monaco-findInput .input[title="Find"],
 .monaco-inputbox > .ibwrapper > .input[title="Search"],
-.monaco-inputbox > .ibwrapper > .input[title="Replace"],
+.monaco-inputbox > .ibwrapper > .input[aria-label="Replace"],
 html .search-view .linematch > .match {
   font-family: var(--mono);
   font-size: 0.6875rem;
