@@ -167,14 +167,31 @@ html .search-view .linematch > .match {
   }
 }
 
+:root {
+  --action-bar-icon-padding: 4.6px;
+  --unchecked-icon-color: #adadad;
+}
+
 // sidebar checked action item
 .monaco-action-bar .action-item.icon.checked {
   a:before {
     color: black;
-    padding: 6px;
+    padding: var(--action-bar-icon-padding);
     background-color: #dddddd;
-    border-radius: 10px;
+    border-radius: calc(var(--action-bar-icon-padding) / 0.618);
   }
+}
+
+.action-item.icon .action-label {
+  color: var(--unchecked-icon-color) !important;
+}
+
+.monaco-workbench .activitybar > .content :not(.monaco-menu) > .monaco-action-bar .action-label:not(.codicon) {
+  background-color: var(--unchecked-icon-color) !important;
+}
+
+.monaco-workbench .activitybar > .content :not(.monaco-menu) > .monaco-action-bar .checked .action-label:not(.codicon) {
+  background-color: black !important;
 }
 
 .composite.title:has([title="Bookmarks: Explorer"]) + .content .custom-view-tree-node-item-icon + .monaco-icon-label-container {
