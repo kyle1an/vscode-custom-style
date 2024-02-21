@@ -206,12 +206,12 @@ html .search-view .linematch > .match {
 .editor-actions {
   box-shadow: var(--vscode-scrollbar-shadow) 5px 0 6px -6px inset;
 }
-[aria-label="NPM Scripts Section"] + .pane-body .monaco-icon-label > .monaco-icon-label-container > .monaco-icon-name-container > .label-name {
+[aria-label="NPM Scripts Section"] ~ .pane-body .monaco-icon-label > .monaco-icon-label-container > .monaco-icon-name-container > .label-name {
   font-size: 0.75rem;
   font-family: var(--mono);
   letter-spacing: 0.01em;
 }
-[aria-label="NPM Scripts Section"] + .pane-body .monaco-icon-label > .monaco-icon-label-container > .monaco-icon-description-container > .label-description {
+[aria-label="NPM Scripts Section"] ~ .pane-body .monaco-icon-label > .monaco-icon-label-container > .monaco-icon-description-container > .label-description {
   font-family: var(--mono);
   letter-spacing: 0.01em;
 }
