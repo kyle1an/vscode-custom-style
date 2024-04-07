@@ -84,6 +84,10 @@ html {
   font-family: var(--compact) !important;
 }
 
+.terminal-groups-container {
+  font-family: var(--mono) !important;
+}
+
 .monaco-workbench .explorer-folders-view .explorer-item .monaco-inputbox > .ibwrapper > .input, // rename input
 .zone-widget [aria-label="References"] .monaco-list-row .referenceMatch,
 .reference-file .monaco-highlighted-label,
@@ -102,6 +106,7 @@ html {
 }
 
 // git tree compare
+#workbench\.view\.extension\.gitTreeCompare .monaco-highlighted-label,
 .sidebar > .title:has([title^="Git Tree Compare:"]) + .content .custom-view-tree-node-item-resourceLabel .monaco-highlighted-label {
   font-family: var(--mono) !important;
   font-size: 11px;
