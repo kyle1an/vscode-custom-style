@@ -27,6 +27,10 @@
   --vs-lt-sp-file-name: 0;
 }
 
+.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container {
+  --vs-lt-sp-file-name: -0.015em;
+}
+
 * {
   //font-feature-settings: 'cv01', 'cv02', 'cv03', 'ss04' 0;
   // -webkit-font-smoothing: antialiased;
@@ -57,7 +61,7 @@ html {
 .debug-pane .line-number,
 .sticky-line-number,
 .sticky-line-number-inner,
-.overlayWidgets [widgetid="editor.contrib.stickyScrollWidget"] [style*="--vscode-editorStickyScroll"]:first-of-type,
+.overlayWidgets [widgetid='editor.contrib.stickyScrollWidget'] [style*='--vscode-editorStickyScroll']:first-of-type,
 #status\.editor\.selection a,
 .marker-line,
 .monaco-editor .margin-view-overlays,
@@ -74,7 +78,7 @@ html {
   display: none !important;
 }
 
-.notifications-list-container:has([title="Quokka.js (Extension)"]) {
+.notifications-list-container:has([title='Quokka.js (Extension)']) {
   display: none;
 }
 
@@ -82,6 +86,11 @@ html {
 .mac,
 .bb svg {
   font-family: var(--compact) !important;
+}
+
+[aria-label='Debug Launch Configurations'] {
+  font-weight: bold;
+  letter-spacing: 0.04em;
 }
 
 .terminal-groups-container {
@@ -107,7 +116,7 @@ html {
 
 // git tree compare
 #workbench\.view\.extension\.gitTreeCompare .monaco-highlighted-label,
-.sidebar > .title:has([title^="Git Tree Compare:"]) + .content .custom-view-tree-node-item-resourceLabel .monaco-highlighted-label {
+.sidebar > .title:has([title^='Git Tree Compare:']) + .content .custom-view-tree-node-item-resourceLabel .monaco-highlighted-label {
   font-family: var(--mono) !important;
   font-size: 11px;
 }
@@ -115,16 +124,17 @@ html {
 .monaco-editor .find-widget > .find-part .monaco-inputbox > .ibwrapper > .input,
 .search-view .search-widget .monaco-inputbox > .ibwrapper > textarea.input,
 .monaco-workbench .simple-find-part .monaco-findInput input,
-.monaco-editor .find-widget .monaco-findInput .input[title="Find"],
-.monaco-inputbox > .ibwrapper > .input[title="Search"],
-.monaco-inputbox > .ibwrapper > .input[aria-label="Replace"],
+.monaco-editor .find-widget .monaco-findInput .input[title='Find'],
+.monaco-inputbox > .ibwrapper > .input[title='Search'],
+.monaco-inputbox > .ibwrapper > .input[aria-label='Replace'],
 html .search-view .linematch > .match {
   font-family: var(--mono);
   font-size: 0.6875rem;
   letter-spacing: var(--vs-lt-sp-mono);
 }
 
-.test-explorer .test-item .label, .test-output-peek-tree .test-peek-item .name {
+.test-explorer .test-item .label,
+.test-output-peek-tree .test-peek-item .name {
   font-variant-numeric: tabular-nums;
 }
 
@@ -147,15 +157,15 @@ html .search-view .linematch > .match {
   display: flex;
 }
 
-[aria-label^="this, value "],
-[aria-label^="Return value, value "] {
+[aria-label^='this, value '],
+[aria-label^='Return value, value '] {
   .name {
     color: rgb(95, 99, 104) !important;
   }
 }
 
-[title="function"],
-[title="Function"] {
+[title='function'],
+[title='Function'] {
   font-style: italic;
 }
 
@@ -199,7 +209,7 @@ html .search-view .linematch > .match {
   background-color: black !important;
 }
 
-.composite.title:has([title="Bookmarks: Explorer"]) + .content .custom-view-tree-node-item-icon + .monaco-icon-label-container {
+.composite.title:has([title='Bookmarks: Explorer']) + .content .custom-view-tree-node-item-icon + .monaco-icon-label-container {
   .monaco-icon-description-container {
     order: -1;
     font-family: var(--xcode), var(--compact);
@@ -230,7 +240,7 @@ html .search-view .linematch > .match {
   box-shadow: var(--vscode-scrollbar-shadow) 5px 0 6px -6px inset;
 }
 
-[aria-label="NPM Scripts Section"] ~ .pane-body {
+[aria-label='NPM Scripts Section'] ~ .pane-body {
   .monaco-icon-label > .monaco-icon-label-container > .monaco-icon-name-container > .label-name {
     font-size: 0.75rem;
     font-family: var(--mono);
@@ -245,11 +255,11 @@ html .search-view .linematch > .match {
 
 // git history author and time
 .monaco-icon-label > .monaco-icon-label-container > .monaco-icon-description-container > .label-description {
-  font-size: .78em;
+  font-size: 0.78em;
 }
 
-.monaco-list-row > .monaco-icon-label:not([class*="monaco-decoration-itemBadge"])::after {
-  content: "";
+.monaco-list-row > .monaco-icon-label:not([class*='monaco-decoration-itemBadge'])::after {
+  content: '';
   color: var(--vscode-gitDecoration-stageModifiedResourceForeground);
   visibility: hidden;
 }
@@ -259,7 +269,7 @@ html .search-view .linematch > .match {
   font-variant-numeric: tabular-nums;
 }
 
-[aria-label="Open Editors"] .monaco-icon-label-container {
+[aria-label='Open Editors'] .monaco-icon-label-container {
   justify-content: space-between;
 }
 
@@ -272,14 +282,18 @@ html .search-view .linematch > .match {
   font-size: 10.8px !important;
 }
 
-a:has(>.codicon-git-branch),
-[style*="/images/light/icon-branch"] + div > .monaco-icon-name-container {
+a:has(> .codicon-git-branch),
+[style*='/images/light/icon-branch'] + div > .monaco-icon-name-container {
   font-family: var(--mono);
   font-size: 0.9em;
 }
 
 // branch name
-.quick-input-widget.show-file-icons > .quick-input-header:has([placeholder="Select a ref to use as comparison base"]) ~ .quick-input-list .monaco-list-row .label-name:not(:has(.codicon)),
+.quick-input-widget.show-file-icons
+  > .quick-input-header:has([placeholder='Select a ref to use as comparison base'])
+  ~ .quick-input-list
+  .monaco-list-row
+  .label-name:not(:has(.codicon)),
 .custom-view-tree-node-item-icon.codicon.codicon-git-compare + .monaco-icon-label-container .label-name,
 span:has(.codicon-cloud),
 span:has(.codicon-git-branch) {
@@ -301,7 +315,7 @@ span:has(.codicon-git-branch) {
 }
 
 // file blame
-.view-line [class*="-TextEditorDecorationType"]:first-of-type::before {
+.view-line [class*='-TextEditorDecorationType']:first-of-type::before {
   //font-family: var(--mono), var(--fira);
 }
 
@@ -315,8 +329,8 @@ span:has(.codicon-git-branch) {
   --avatar-size: 14px;
 }
 
-:is(.sticky-line, .view-line) span:first-of-type [class*="-TextEditorDecorationType"]:nth-of-type(2)::after,
-:is(.sticky-line, .view-line) span:first-of-type [class*="-TextEditorDecorationType"]:nth-of-type(3)::after {
+:is(.sticky-line, .view-line) span:first-of-type [class*='-TextEditorDecorationType']:nth-of-type(2)::after,
+:is(.sticky-line, .view-line) span:first-of-type [class*='-TextEditorDecorationType']:nth-of-type(3)::after {
   top: 0 !important;
   height: var(--avatar-size) !important;
   width: var(--avatar-size) !important;
@@ -324,11 +338,11 @@ span:has(.codicon-git-branch) {
 }
 
 // git line history
-.view-line [class*="-TextEditorDecorationType"]:last-of-type::after {
+.view-line [class*='-TextEditorDecorationType']:last-of-type::after {
   font-style: italic !important;
 }
 
-.search-results [class*="ced-1-TextEditorDecorationType"] {
+.search-results [class*='ced-1-TextEditorDecorationType'] {
   //font-family: var(--xcode);
   font-weight: normal;
 }
@@ -339,18 +353,18 @@ span:has(.codicon-git-branch) {
     font-weight: normal !important;
   }
 
-  [class="monaco-tl-twistie"] {
+  [class='monaco-tl-twistie'] {
     padding-right: 0;
   }
 
-  [aria-level="2"] [class="monaco-tl-twistie"] {
+  [aria-level='2'] [class='monaco-tl-twistie'] {
     padding-left: 14px !important;
   }
 }
 
 // inlay hint
-span [class|="mtk1 dyn-rule"],
-[class|="dyn-rule"] {
+span [class|='mtk1 dyn-rule'],
+[class|='dyn-rule'] {
   vertical-align: baseline !important;
 }
 
@@ -378,7 +392,7 @@ span [class|="mtk1 dyn-rule"],
 
 .monaco-workbench .monaco-list-row .expression .value.number,
 .monaco-workbench .debug-hover-widget .value.number {
-  color: #0080FF;
+  color: #0080ff;
 }
 
 .monaco-workbench .debug-hover-widget .monaco-list-row .expression,
@@ -434,8 +448,8 @@ span [class|="mtk1 dyn-rule"],
   padding-left: 14px;
 }
 
-.monaco-list-row[aria-label="Changes"] {
-  border-top: 1px solid var(--vscode-list-focusAndSelectionOutline, var(--vscode-contrastActiveBorder, var(--vscode-list-focusOutline)));;
+.monaco-list-row[aria-label='Changes'] {
+  border-top: 1px solid var(--vscode-list-focusAndSelectionOutline, var(--vscode-contrastActiveBorder, var(--vscode-list-focusOutline)));
 }
 
 div.scm-editor-placeholder {
@@ -452,15 +466,15 @@ div.scm-editor-placeholder {
   letter-spacing: -0.015em;
 }
 
-[class|="mtk1 dyn-rule"] + [class|="mtk1 dyn-rule"] {
+[class|='mtk1 dyn-rule'] + [class|='mtk1 dyn-rule'] {
   border-radius: 3px;
 }
 
-span [class|="mtk1 dyn-rule"] {
+span [class|='mtk1 dyn-rule'] {
   font-weight: 400;
 }
 
-[aria-label="Stashes Section"] ~ .pane-body .monaco-list-row[aria-level="1"] {
+[aria-label='Stashes Section'] ~ .pane-body .monaco-list-row[aria-level='1'] {
   font-variant-numeric: tabular-nums;
 }
 
@@ -469,8 +483,8 @@ span [class|="mtk1 dyn-rule"] {
 }
 
 @font-face {
-  font-family: "emptychar";
-  src: url("https://cdn.jsdelivr.net/gh/meewill/SF@latest/plus/empty.woff2");
+  font-family: 'emptychar';
+  src: url('https://cdn.jsdelivr.net/gh/meewill/SF@latest/plus/empty.woff2');
   font-weight: 400;
   unicode-range: U+003A;
   /* : */
@@ -508,29 +522,22 @@ span [class|="mtk1 dyn-rule"] {
   ext: 'woff2';
 }, @weight-all, @unicode-general, true);
 
-@family-text: 'SF Pro',
-'Arial',
-'Helvetica Neue',
-'Helvetica';
+@family-text: 'SF Pro', 'Arial', 'Helvetica Neue', 'Helvetica';
 
-@family-compact: 'SF Compact Text', "Segoe WPC", "Segoe UI";
+@family-compact: 'SF Compact Text', 'Segoe WPC', 'Segoe UI';
 
-@family-mono: 'Mono Widest', 'SF Mono',
-'Consolas',
-'Courier New',
-'SFMono-Regular',
-'ui-monospace';
+@family-mono: 'Mono Widest', 'SF Mono', 'Consolas', 'Courier New', 'SFMono-Regular', 'ui-monospace';
 
 @repo: 'https://cdn.jsdelivr.net/gh/meewill/SF@main';
 
 @styles: {
   normal: '';
   italic: 'Italic';
-}
+};
 
 @weight-thin: {
   Thin: 200;
-}
+};
 
 @weight-usual: {
   Light: 300;
@@ -538,12 +545,12 @@ span [class|="mtk1 dyn-rule"] {
   Medium: 500;
   Semibold: 600;
   Bold: 700;
-}
+};
 
 @weight-bold: {
   Semibold: 600;
   Bold: 700;
-}
+};
 
 @weight-all: {
   Thin: 200;
@@ -554,14 +561,14 @@ span [class|="mtk1 dyn-rule"] {
   Bold: 700;
   Heavy: 800;
   Black: 900;
-}
+};
 
 @font-format-map: {
   @ttf: TrueType;
   @otf: OpenType;
   @woff: woff;
   @woff2: woff2;
-}
+};
 
 .load-fonts(
   @families,
@@ -585,7 +592,7 @@ span [class|="mtk1 dyn-rule"] {
         }
       })
     })
-  })
+  });
 }
 
 .use-src(
@@ -602,8 +609,8 @@ span [class|="mtk1 dyn-rule"] {
   @dir: @tar[dir];
   @ext: @tar[ext];
   @format: @font-format-map[@@ext];
-  @italic: if(@style-val='', e(''), ' Italic');
-  src: if(@local, local('@{nam} @{weight-key}@{italic}') e(','),) url('@{repo}@{dir}@{weight-key}@{style-val}.@{ext}') format('@{format}');
+  @italic: if(@style-val= '', e(''), ' Italic');
+  src: if(@local, local('@{nam} @{weight-key}@{italic}') e(',')) url('@{repo}@{dir}@{weight-key}@{style-val}.@{ext}') format('@{format}');
 }
 
 .load-local-fonts(
@@ -621,7 +628,7 @@ span [class|="mtk1 dyn-rule"] {
       unicode-range: @unicode;
       font-display: swap;
     }
-  })
+  });
 }
 
 .load-stretch-fonts(
@@ -651,7 +658,7 @@ span [class|="mtk1 dyn-rule"] {
         font-display: swap;
       }
     })
-  })
+  });
 }
 
 .use-stretch-src(
@@ -668,34 +675,13 @@ span [class|="mtk1 dyn-rule"] {
   @dir: @tar[dir];
   @ext: @tar[ext];
   @format: @font-format-map[@@ext];
-  src: if(@local, local('@{nam} Condensed @{weight-key}') e(','),) url('@{repo}@{dir}.@{ext}') format('@{format}');
+  src: if(@local, local('@{nam} Condensed @{weight-key}') e(',')) url('@{repo}@{dir}.@{ext}') format('@{format}');
 }
 
-@unicode-general: e('U+0000-024F'),
-e('U+02B0-052F'),
-e('U+1DC0-20CF'),
-e('U+2190-22FF'),
-e('U+2460-24FF'),
-e('U+25A0-25FF'),
-e('U+2700-27FF'),
-e('U+2900-2BFF'),
-e('U+2C60-2C7F'),
-e('U+2DE0-2E7F'),
-e('U+3200-32FF'),
-e('U+A640-A69F'),
-e('U+A700-A7FF'),
-e('U+E000-F8FF'),
-e('U+FFF0-FFFF'),
-e('U+F0000-10FFFF');
-@unicode-plus: e('U+0250-02AF'),
-e('U+1D00-1DBF'),
-e('U+2190-22FF');
-@unicode-all: @unicode-general,
-@unicode-plus;
+@unicode-general: e('U+0000-024F'), e('U+02B0-052F'), e('U+1DC0-20CF'), e('U+2190-22FF'), e('U+2460-24FF'), e('U+25A0-25FF'), e('U+2700-27FF'), e('U+2900-2BFF'), e('U+2C60-2C7F'),
+  e('U+2DE0-2E7F'), e('U+3200-32FF'), e('U+A640-A69F'), e('U+A700-A7FF'), e('U+E000-F8FF'), e('U+FFF0-FFFF'), e('U+F0000-10FFFF');
+@unicode-plus: e('U+0250-02AF'), e('U+1D00-1DBF'), e('U+2190-22FF');
+@unicode-all: @unicode-general, @unicode-plus;
 
-@unicode-zh: e('U+4E00-9FFF'),
-e('U+3400-4DBF'),
-e('U+20000-2A6DF'),
-e('U+F900-FAFF'),
-e('U+2F800-2FA1F');
+@unicode-zh: e('U+4E00-9FFF'), e('U+3400-4DBF'), e('U+20000-2A6DF'), e('U+F900-FAFF'), e('U+2F800-2FA1F');
 // e('U+2A700–2B73F, U+2B740–2B81F, U+2B820–2CEAF'),

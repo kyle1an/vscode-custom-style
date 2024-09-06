@@ -55,6 +55,9 @@
   --vs-lt-sp-file-name: 0.015em;
   --vs-lt-sp-file-name: 0;
 }
+.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container {
+  --vs-lt-sp-file-name: -0.015em;
+}
 html {
   letter-spacing: var(--vs-lt-sp-text);
 }
@@ -72,7 +75,7 @@ html {
 .debug-pane .line-number,
 .sticky-line-number,
 .sticky-line-number-inner,
-.overlayWidgets [widgetid="editor.contrib.stickyScrollWidget"] [style*="--vscode-editorStickyScroll"]:first-of-type,
+.overlayWidgets [widgetid='editor.contrib.stickyScrollWidget'] [style*='--vscode-editorStickyScroll']:first-of-type,
 #status\.editor\.selection a,
 .marker-line,
 .monaco-editor .margin-view-overlays,
@@ -86,12 +89,16 @@ html {
 .notification-toast-container:has([aria-label='Your Code installation appears to be corrupt. Please reinstall., notification']) {
   display: none !important;
 }
-.notifications-list-container:has([title="Quokka.js (Extension)"]) {
+.notifications-list-container:has([title='Quokka.js (Extension)']) {
   display: none;
 }
 .mac,
 .bb svg {
   font-family: var(--compact) !important;
+}
+[aria-label='Debug Launch Configurations'] {
+  font-weight: bold;
+  letter-spacing: 0.04em;
 }
 .terminal-groups-container {
   font-family: var(--mono) !important;
@@ -113,16 +120,16 @@ html {
   /* // windows */
 }
 #workbench\.view\.extension\.gitTreeCompare .monaco-highlighted-label,
-.sidebar > .title:has([title^="Git Tree Compare:"]) + .content .custom-view-tree-node-item-resourceLabel .monaco-highlighted-label {
+.sidebar > .title:has([title^='Git Tree Compare:']) + .content .custom-view-tree-node-item-resourceLabel .monaco-highlighted-label {
   font-family: var(--mono) !important;
   font-size: 11px;
 }
 .monaco-editor .find-widget > .find-part .monaco-inputbox > .ibwrapper > .input,
 .search-view .search-widget .monaco-inputbox > .ibwrapper > textarea.input,
 .monaco-workbench .simple-find-part .monaco-findInput input,
-.monaco-editor .find-widget .monaco-findInput .input[title="Find"],
-.monaco-inputbox > .ibwrapper > .input[title="Search"],
-.monaco-inputbox > .ibwrapper > .input[aria-label="Replace"],
+.monaco-editor .find-widget .monaco-findInput .input[title='Find'],
+.monaco-inputbox > .ibwrapper > .input[title='Search'],
+.monaco-inputbox > .ibwrapper > .input[aria-label='Replace'],
 html .search-view .linematch > .match {
   font-family: var(--mono);
   font-size: 0.6875rem;
@@ -148,12 +155,12 @@ html .search-view .linematch > .match {
 .monaco-icon-label-container {
   display: flex;
 }
-[aria-label^="this, value "] .name,
-[aria-label^="Return value, value "] .name {
+[aria-label^='this, value '] .name,
+[aria-label^='Return value, value '] .name {
   color: #5f6368 !important;
 }
-[title="function"],
-[title="Function"] {
+[title='function'],
+[title='Function'] {
   font-style: italic;
 }
 .monaco-decoration-itemBadge-17lktv:after,
@@ -187,20 +194,20 @@ html .search-view .linematch > .match {
 .monaco-workbench .activitybar > .content :not(.monaco-menu) > .monaco-action-bar .checked .action-label:not(.codicon) {
   background-color: black !important;
 }
-.composite.title:has([title="Bookmarks: Explorer"]) + .content .custom-view-tree-node-item-icon + .monaco-icon-label-container .monaco-icon-description-container {
+.composite.title:has([title='Bookmarks: Explorer']) + .content .custom-view-tree-node-item-icon + .monaco-icon-label-container .monaco-icon-description-container {
   order: -1;
   font-family: var(--xcode), var(--compact);
   opacity: 0.6;
 }
-.composite.title:has([title="Bookmarks: Explorer"]) + .content .custom-view-tree-node-item-icon + .monaco-icon-label-container .monaco-icon-description-container .label-description {
+.composite.title:has([title='Bookmarks: Explorer']) + .content .custom-view-tree-node-item-icon + .monaco-icon-label-container .monaco-icon-description-container .label-description {
   margin-left: 0;
   margin-right: 0.5em;
 }
-.composite.title:has([title="Bookmarks: Explorer"]) + .content .custom-view-tree-node-item-icon + .monaco-icon-label-container .monaco-icon-name-container {
+.composite.title:has([title='Bookmarks: Explorer']) + .content .custom-view-tree-node-item-icon + .monaco-icon-label-container .monaco-icon-name-container {
   font-family: var(--mono);
   font-size: 0.8em;
 }
-.composite.title:has([title="Bookmarks: Explorer"]) + .content .custom-view-tree-node-item-icon + .monaco-icon-label-container .monaco-icon-name-container .label-name {
+.composite.title:has([title='Bookmarks: Explorer']) + .content .custom-view-tree-node-item-icon + .monaco-icon-label-container .monaco-icon-name-container .label-name {
   line-height: 24px;
 }
 .scm-view .monaco-list-row .resource-group > .name {
@@ -210,20 +217,20 @@ html .search-view .linematch > .match {
 .editor-actions {
   box-shadow: var(--vscode-scrollbar-shadow) 5px 0 6px -6px inset;
 }
-[aria-label="NPM Scripts Section"] ~ .pane-body .monaco-icon-label > .monaco-icon-label-container > .monaco-icon-name-container > .label-name {
+[aria-label='NPM Scripts Section'] ~ .pane-body .monaco-icon-label > .monaco-icon-label-container > .monaco-icon-name-container > .label-name {
   font-size: 0.75rem;
   font-family: var(--mono);
   letter-spacing: 0.01em;
 }
-[aria-label="NPM Scripts Section"] ~ .pane-body .monaco-icon-label > .monaco-icon-label-container > .monaco-icon-description-container > .label-description {
+[aria-label='NPM Scripts Section'] ~ .pane-body .monaco-icon-label > .monaco-icon-label-container > .monaco-icon-description-container > .label-description {
   font-family: var(--mono);
   letter-spacing: 0.01em;
 }
 .monaco-icon-label > .monaco-icon-label-container > .monaco-icon-description-container > .label-description {
   font-size: 0.78em;
 }
-.monaco-list-row > .monaco-icon-label:not([class*="monaco-decoration-itemBadge"])::after {
-  content: "";
+.monaco-list-row > .monaco-icon-label:not([class*='monaco-decoration-itemBadge'])::after {
+  content: '';
   color: var(--vscode-gitDecoration-stageModifiedResourceForeground);
   visibility: hidden;
 }
@@ -231,7 +238,7 @@ html .search-view .linematch > .match {
   min-width: 10px;
   font-variant-numeric: tabular-nums;
 }
-[aria-label="Open Editors"] .monaco-icon-label-container {
+[aria-label='Open Editors'] .monaco-icon-label-container {
   justify-content: space-between;
 }
 .diff-hidden-lines,
@@ -242,12 +249,12 @@ html .search-view .linematch > .match {
   letter-spacing: var(--vs-lt-sp-mono);
   font-size: 10.8px !important;
 }
-a:has(>.codicon-git-branch),
-[style*="/images/light/icon-branch"] + div > .monaco-icon-name-container {
+a:has(> .codicon-git-branch),
+[style*='/images/light/icon-branch'] + div > .monaco-icon-name-container {
   font-family: var(--mono);
   font-size: 0.9em;
 }
-.quick-input-widget.show-file-icons > .quick-input-header:has([placeholder="Select a ref to use as comparison base"]) ~ .quick-input-list .monaco-list-row .label-name:not(:has(.codicon)),
+.quick-input-widget.show-file-icons > .quick-input-header:has([placeholder='Select a ref to use as comparison base']) ~ .quick-input-list .monaco-list-row .label-name:not(:has(.codicon)),
 .custom-view-tree-node-item-icon.codicon.codicon-git-compare + .monaco-icon-label-container .label-name,
 span:has(.codicon-cloud),
 span:has(.codicon-git-branch) {
@@ -271,31 +278,31 @@ span:has(.codicon-git-branch) {
 .windows .sticky-line {
   --avatar-size: 14px;
 }
-:is(.sticky-line, .view-line) span:first-of-type [class*="-TextEditorDecorationType"]:nth-of-type(2)::after,
-:is(.sticky-line, .view-line) span:first-of-type [class*="-TextEditorDecorationType"]:nth-of-type(3)::after {
+:is(.sticky-line, .view-line) span:first-of-type [class*='-TextEditorDecorationType']:nth-of-type(2)::after,
+:is(.sticky-line, .view-line) span:first-of-type [class*='-TextEditorDecorationType']:nth-of-type(3)::after {
   top: 0 !important;
   height: var(--avatar-size) !important;
   width: var(--avatar-size) !important;
   background-size: var(--avatar-size) var(--avatar-size) !important;
 }
-.view-line [class*="-TextEditorDecorationType"]:last-of-type::after {
+.view-line [class*='-TextEditorDecorationType']:last-of-type::after {
   font-style: italic !important;
 }
-.search-results [class*="ced-1-TextEditorDecorationType"] {
+.search-results [class*='ced-1-TextEditorDecorationType'] {
   font-weight: normal;
 }
 #workbench\.view\.search .search-view .linematch .matchLineNum {
   font-family: emptychar, var(--xcode);
   font-weight: normal !important;
 }
-#workbench\.view\.search [class="monaco-tl-twistie"] {
+#workbench\.view\.search [class='monaco-tl-twistie'] {
   padding-right: 0;
 }
-#workbench\.view\.search [aria-level="2"] [class="monaco-tl-twistie"] {
+#workbench\.view\.search [aria-level='2'] [class='monaco-tl-twistie'] {
   padding-left: 14px !important;
 }
-span [class|="mtk1 dyn-rule"],
-[class|="dyn-rule"] {
+span [class|='mtk1 dyn-rule'],
+[class|='dyn-rule'] {
   vertical-align: baseline !important;
 }
 .hover-contents span .mtkb,
@@ -309,7 +316,7 @@ span [class|="mtk1 dyn-rule"],
 }
 .monaco-workbench .monaco-list-row .expression .value.number,
 .monaco-workbench .debug-hover-widget .value.number {
-  color: #0080FF;
+  color: #0080ff;
 }
 .monaco-workbench .debug-hover-widget .monaco-list-row .expression,
 .monaco-workbench .debug-pane .monaco-list-row .expression {
@@ -333,7 +340,7 @@ span [class|="mtk1 dyn-rule"],
 .open-editors .monaco-list .monaco-list-row {
   padding-left: 14px;
 }
-.monaco-list-row[aria-label="Changes"] {
+.monaco-list-row[aria-label='Changes'] {
   border-top: 1px solid var(--vscode-list-focusAndSelectionOutline, var(--vscode-contrastActiveBorder, var(--vscode-list-focusOutline)));
 }
 div.scm-editor-placeholder {
@@ -346,21 +353,21 @@ div.scm-editor-placeholder {
   font-size: 0.9em;
   letter-spacing: -0.015em;
 }
-[class|="mtk1 dyn-rule"] + [class|="mtk1 dyn-rule"] {
+[class|='mtk1 dyn-rule'] + [class|='mtk1 dyn-rule'] {
   border-radius: 3px;
 }
-span [class|="mtk1 dyn-rule"] {
+span [class|='mtk1 dyn-rule'] {
   font-weight: 400;
 }
-[aria-label="Stashes Section"] ~ .pane-body .monaco-list-row[aria-level="1"] {
+[aria-label='Stashes Section'] ~ .pane-body .monaco-list-row[aria-level='1'] {
   font-variant-numeric: tabular-nums;
 }
 .windows {
   --monaco-monospace-font: var(--mono);
 }
 @font-face {
-  font-family: "emptychar";
-  src: url("https://cdn.jsdelivr.net/gh/meewill/SF@latest/plus/empty.woff2");
+  font-family: 'emptychar';
+  src: url('https://cdn.jsdelivr.net/gh/meewill/SF@latest/plus/empty.woff2');
   font-weight: 400;
   unicode-range: U+003A;
   /* : */
@@ -1678,7 +1685,7 @@ span [class|="mtk1 dyn-rule"] {
   font-display: swap;
 }
 @font-face {
-  font-family: "Segoe WPC";
+  font-family: 'Segoe WPC';
   src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Thin.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 200;
@@ -1686,7 +1693,7 @@ span [class|="mtk1 dyn-rule"] {
   font-display: swap;
 }
 @font-face {
-  font-family: "Segoe WPC";
+  font-family: 'Segoe WPC';
   src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-ThinItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 200;
@@ -1694,7 +1701,7 @@ span [class|="mtk1 dyn-rule"] {
   font-display: swap;
 }
 @font-face {
-  font-family: "Segoe WPC";
+  font-family: 'Segoe WPC';
   src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Light.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 300;
@@ -1702,7 +1709,7 @@ span [class|="mtk1 dyn-rule"] {
   font-display: swap;
 }
 @font-face {
-  font-family: "Segoe WPC";
+  font-family: 'Segoe WPC';
   src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-LightItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 300;
@@ -1710,7 +1717,7 @@ span [class|="mtk1 dyn-rule"] {
   font-display: swap;
 }
 @font-face {
-  font-family: "Segoe WPC";
+  font-family: 'Segoe WPC';
   src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Regular.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 400;
@@ -1718,7 +1725,7 @@ span [class|="mtk1 dyn-rule"] {
   font-display: swap;
 }
 @font-face {
-  font-family: "Segoe WPC";
+  font-family: 'Segoe WPC';
   src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-RegularItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 400;
@@ -1726,7 +1733,7 @@ span [class|="mtk1 dyn-rule"] {
   font-display: swap;
 }
 @font-face {
-  font-family: "Segoe WPC";
+  font-family: 'Segoe WPC';
   src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Medium.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 500;
@@ -1734,7 +1741,7 @@ span [class|="mtk1 dyn-rule"] {
   font-display: swap;
 }
 @font-face {
-  font-family: "Segoe WPC";
+  font-family: 'Segoe WPC';
   src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-MediumItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 500;
@@ -1742,7 +1749,7 @@ span [class|="mtk1 dyn-rule"] {
   font-display: swap;
 }
 @font-face {
-  font-family: "Segoe WPC";
+  font-family: 'Segoe WPC';
   src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Semibold.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 600;
@@ -1750,7 +1757,7 @@ span [class|="mtk1 dyn-rule"] {
   font-display: swap;
 }
 @font-face {
-  font-family: "Segoe WPC";
+  font-family: 'Segoe WPC';
   src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-SemiboldItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 600;
@@ -1758,7 +1765,7 @@ span [class|="mtk1 dyn-rule"] {
   font-display: swap;
 }
 @font-face {
-  font-family: "Segoe WPC";
+  font-family: 'Segoe WPC';
   src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Bold.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 700;
@@ -1766,7 +1773,7 @@ span [class|="mtk1 dyn-rule"] {
   font-display: swap;
 }
 @font-face {
-  font-family: "Segoe WPC";
+  font-family: 'Segoe WPC';
   src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-BoldItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 700;
@@ -1774,7 +1781,7 @@ span [class|="mtk1 dyn-rule"] {
   font-display: swap;
 }
 @font-face {
-  font-family: "Segoe WPC";
+  font-family: 'Segoe WPC';
   src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Heavy.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 800;
@@ -1782,7 +1789,7 @@ span [class|="mtk1 dyn-rule"] {
   font-display: swap;
 }
 @font-face {
-  font-family: "Segoe WPC";
+  font-family: 'Segoe WPC';
   src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-HeavyItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 800;
@@ -1790,7 +1797,7 @@ span [class|="mtk1 dyn-rule"] {
   font-display: swap;
 }
 @font-face {
-  font-family: "Segoe WPC";
+  font-family: 'Segoe WPC';
   src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Black.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 900;
@@ -1798,7 +1805,7 @@ span [class|="mtk1 dyn-rule"] {
   font-display: swap;
 }
 @font-face {
-  font-family: "Segoe WPC";
+  font-family: 'Segoe WPC';
   src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-BlackItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 900;
@@ -1806,7 +1813,7 @@ span [class|="mtk1 dyn-rule"] {
   font-display: swap;
 }
 @font-face {
-  font-family: "Segoe UI";
+  font-family: 'Segoe UI';
   src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Thin.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 200;
@@ -1814,7 +1821,7 @@ span [class|="mtk1 dyn-rule"] {
   font-display: swap;
 }
 @font-face {
-  font-family: "Segoe UI";
+  font-family: 'Segoe UI';
   src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-ThinItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 200;
@@ -1822,7 +1829,7 @@ span [class|="mtk1 dyn-rule"] {
   font-display: swap;
 }
 @font-face {
-  font-family: "Segoe UI";
+  font-family: 'Segoe UI';
   src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Light.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 300;
@@ -1830,7 +1837,7 @@ span [class|="mtk1 dyn-rule"] {
   font-display: swap;
 }
 @font-face {
-  font-family: "Segoe UI";
+  font-family: 'Segoe UI';
   src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-LightItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 300;
@@ -1838,7 +1845,7 @@ span [class|="mtk1 dyn-rule"] {
   font-display: swap;
 }
 @font-face {
-  font-family: "Segoe UI";
+  font-family: 'Segoe UI';
   src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Regular.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 400;
@@ -1846,7 +1853,7 @@ span [class|="mtk1 dyn-rule"] {
   font-display: swap;
 }
 @font-face {
-  font-family: "Segoe UI";
+  font-family: 'Segoe UI';
   src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-RegularItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 400;
@@ -1854,7 +1861,7 @@ span [class|="mtk1 dyn-rule"] {
   font-display: swap;
 }
 @font-face {
-  font-family: "Segoe UI";
+  font-family: 'Segoe UI';
   src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Medium.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 500;
@@ -1862,7 +1869,7 @@ span [class|="mtk1 dyn-rule"] {
   font-display: swap;
 }
 @font-face {
-  font-family: "Segoe UI";
+  font-family: 'Segoe UI';
   src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-MediumItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 500;
@@ -1870,7 +1877,7 @@ span [class|="mtk1 dyn-rule"] {
   font-display: swap;
 }
 @font-face {
-  font-family: "Segoe UI";
+  font-family: 'Segoe UI';
   src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Semibold.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 600;
@@ -1878,7 +1885,7 @@ span [class|="mtk1 dyn-rule"] {
   font-display: swap;
 }
 @font-face {
-  font-family: "Segoe UI";
+  font-family: 'Segoe UI';
   src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-SemiboldItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 600;
@@ -1886,7 +1893,7 @@ span [class|="mtk1 dyn-rule"] {
   font-display: swap;
 }
 @font-face {
-  font-family: "Segoe UI";
+  font-family: 'Segoe UI';
   src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Bold.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 700;
@@ -1894,7 +1901,7 @@ span [class|="mtk1 dyn-rule"] {
   font-display: swap;
 }
 @font-face {
-  font-family: "Segoe UI";
+  font-family: 'Segoe UI';
   src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-BoldItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 700;
@@ -1902,7 +1909,7 @@ span [class|="mtk1 dyn-rule"] {
   font-display: swap;
 }
 @font-face {
-  font-family: "Segoe UI";
+  font-family: 'Segoe UI';
   src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Heavy.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 800;
@@ -1910,7 +1917,7 @@ span [class|="mtk1 dyn-rule"] {
   font-display: swap;
 }
 @font-face {
-  font-family: "Segoe UI";
+  font-family: 'Segoe UI';
   src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-HeavyItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 800;
@@ -1918,7 +1925,7 @@ span [class|="mtk1 dyn-rule"] {
   font-display: swap;
 }
 @font-face {
-  font-family: "Segoe UI";
+  font-family: 'Segoe UI';
   src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-Black.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 900;
@@ -1926,7 +1933,7 @@ span [class|="mtk1 dyn-rule"] {
   font-display: swap;
 }
 @font-face {
-  font-family: "Segoe UI";
+  font-family: 'Segoe UI';
   src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Compact-Text-BlackItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF;
   font-weight: 900;
@@ -2189,4 +2196,3 @@ span [class|="mtk1 dyn-rule"] {
   font-stretch: condensed;
   font-display: swap;
 }
-/*# sourceMappingURL=vscode-custom-style.css.map */
