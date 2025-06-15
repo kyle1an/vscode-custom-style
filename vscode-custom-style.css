@@ -263,6 +263,14 @@ span:has(.codicon-git-branch) {
 .monaco-workbench .codicon.codicon-symbol-function + .monaco-icon-label {
   font-style: italic;
 }
+.quick-input-list .codicon + div .label-name {
+  font-family: var(--mono);
+  font-size: 0.875em;
+  letter-spacing: 0.01em;
+}
+.quick-input-list .monaco-list .monaco-list-row .monaco-highlighted-label .highlight {
+  font-weight: 800;
+}
 .codelens-decoration {
   letter-spacing: 0.025em;
 }
