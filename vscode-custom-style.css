@@ -3,35 +3,35 @@
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/firacode/v22/uU9eCBsR6Z2vfE9aq3bL0fxyUs4tcw4W_GNsFVc.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/firacode/v26/uU9eCBsR6Z2vfE9aq3bL0fxyUs4tcw4W_GNsFVc.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Fira Code';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/firacode/v22/uU9eCBsR6Z2vfE9aq3bL0fxyUs4tcw4W_D1sFVc.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/firacode/v26/uU9eCBsR6Z2vfE9aq3bL0fxyUs4tcw4W_D1sFVc.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Fira Code';
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/firacode/v22/uU9eCBsR6Z2vfE9aq3bL0fxyUs4tcw4W_A9sFVc.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/firacode/v26/uU9eCBsR6Z2vfE9aq3bL0fxyUs4tcw4W_A9sFVc.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Fira Code';
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/firacode/v22/uU9eCBsR6Z2vfE9aq3bL0fxyUs4tcw4W_ONrFVc.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/firacode/v26/uU9eCBsR6Z2vfE9aq3bL0fxyUs4tcw4W_ONrFVc.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Fira Code';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/firacode/v22/uU9eCBsR6Z2vfE9aq3bL0fxyUs4tcw4W_NprFVc.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/firacode/v26/uU9eCBsR6Z2vfE9aq3bL0fxyUs4tcw4W_NprFVc.ttf) format('truetype');
 }
 @font-face {
   font-family: 'XcodeDigits';
@@ -45,6 +45,7 @@
   --mono: 'Mono Widest', 'SF Mono Widest', 'SF Mono', ui-monospace, monospace;
   --fira: 'Fira Code', var(--mono);
   --xcode: XcodeDigits;
+  --tracking-xcode: 0.03em;
   --compact: 'SF Compact Text', var(--pro);
   --compact-rounded: 'SF Compact Rounded', var(--pro);
   --pro: 'SF Pro Text', -apple-system, sans-serif;
@@ -57,9 +58,6 @@
 }
 .monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container {
   --vs-lt-sp-file-name: -0.015em;
-}
-html {
-  letter-spacing: var(--vs-lt-sp-text);
 }
 .line-numbers {
   -webkit-font-smoothing: initial !important;
@@ -82,9 +80,7 @@ html {
 .editor-container .margin-view-overlays {
   font-family: var(--xcode), var(--compact) !important;
   font-weight: normal !important;
-}
-.pane-body .detected-link {
-  font-family: var(--xcode), var(--mono) !important;
+  letter-spacing: var(--tracking-xcode) !important;
 }
 .notification-toast-container:has([aria-label='Your Code installation appears to be corrupt. Please reinstall., notification']) {
   display: none !important;
@@ -179,7 +175,7 @@ html .search-view .linematch > .match {
   --action-bar-icon-padding: 4.6px;
   --unchecked-icon-color: #adadad;
 }
-.monaco-action-bar .action-item.icon.checked a:before {
+.activitybar .monaco-action-bar.vertical .action-item.icon.checked a:before {
   color: black;
   padding: var(--action-bar-icon-padding);
   background-color: #dddddd;
@@ -293,6 +289,7 @@ span:has(.codicon-git-branch) {
 }
 #workbench\.view\.search .search-view .linematch .matchLineNum {
   font-family: emptychar, var(--xcode);
+  letter-spacing: var(--tracking-xcode) !important;
   font-weight: normal !important;
 }
 #workbench\.view\.search [class='monaco-tl-twistie'] {
@@ -365,6 +362,16 @@ span [class|='mtk1 dyn-rule'] {
 .windows {
   --monaco-monospace-font: var(--mono);
 }
+.monaco-workbench .part.titlebar > .titlebar-container .monaco-toolbar .actions-container .actions-container {
+  gap: 0;
+}
+.monaco-workbench .part.titlebar > .titlebar-container .monaco-toolbar .actions-container .monaco-toolbar + .codicon.codicon-circle-small-filled {
+  padding: 0 !important;
+}
+.monaco-workbench .debug-toolbar .monaco-action-bar .action-item.menu-entry {
+  margin-right: 0;
+}
+/* fonts */
 @font-face {
   font-family: 'emptychar';
   src: url('https://cdn.jsdelivr.net/gh/meewill/SF@latest/plus/empty.woff2');

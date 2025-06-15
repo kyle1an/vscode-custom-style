@@ -14,6 +14,7 @@
   --mono: 'Mono Widest', 'SF Mono Widest', 'SF Mono', ui-monospace, monospace;
   --fira: 'Fira Code', var(--mono);
   --xcode: XcodeDigits;
+  --tracking-xcode: 0.03em;
   --compact: 'SF Compact Text', var(--pro);
   --compact-rounded: 'SF Compact Rounded', var(--pro);
   --pro: 'SF Pro Text', -apple-system, sans-serif;
@@ -37,10 +38,10 @@
   // -moz-osx-font-smoothing: grayscale;
 }
 
-html {
-  // -webkit-font-smoothing: antialiased !important;
-  letter-spacing: var(--vs-lt-sp-text);
-}
+// html {
+//   // -webkit-font-smoothing: antialiased !important;
+//   letter-spacing: var(--vs-lt-sp-text);
+// }
 
 .line-numbers {
   -webkit-font-smoothing: initial !important;
@@ -68,11 +69,12 @@ html {
 .editor-container .margin-view-overlays {
   font-family: var(--xcode), var(--compact) !important;
   font-weight: normal !important;
+  letter-spacing: var(--tracking-xcode) !important;
 }
 
-.pane-body .detected-link {
-  font-family: var(--xcode), var(--mono) !important;
-}
+// .pane-body .detected-link {
+//   font-family: var(--xcode), var(--mono) !important;
+// }
 
 .notification-toast-container:has([aria-label='Your Code installation appears to be corrupt. Please reinstall., notification']) {
   display: none !important;
@@ -188,12 +190,14 @@ html .search-view .linematch > .match {
 }
 
 // sidebar checked action item
-.monaco-action-bar .action-item.icon.checked {
-  a:before {
-    color: black;
-    padding: var(--action-bar-icon-padding);
-    background-color: #dddddd;
-    border-radius: calc(var(--action-bar-icon-padding) / 0.618);
+.activitybar {
+  .monaco-action-bar.vertical .action-item.icon.checked {
+    a:before {
+      color: black;
+      padding: var(--action-bar-icon-padding);
+      background-color: #dddddd;
+      border-radius: calc(var(--action-bar-icon-padding) / 0.618);
+    }
   }
 }
 
@@ -350,6 +354,7 @@ span:has(.codicon-git-branch) {
 #workbench\.view\.search {
   .search-view .linematch .matchLineNum {
     font-family: emptychar, var(--xcode);
+    letter-spacing: var(--tracking-xcode) !important;
     font-weight: normal !important;
   }
 
@@ -481,6 +486,21 @@ span [class|='mtk1 dyn-rule'] {
 .windows {
   --monaco-monospace-font: var(--mono);
 }
+
+.monaco-workbench .part.titlebar > .titlebar-container .monaco-toolbar .actions-container {
+  .actions-container {
+    gap: 0;
+  }
+  .monaco-toolbar + .codicon.codicon-circle-small-filled {
+    padding: 0 !important;
+  }
+}
+
+.monaco-workbench .debug-toolbar .monaco-action-bar .action-item.menu-entry {
+  margin-right: 0;
+}
+
+/* fonts */
 
 @font-face {
   font-family: 'emptychar';
