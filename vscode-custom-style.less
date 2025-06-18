@@ -14,12 +14,12 @@
   --mono: 'Mono Widest', 'SF Mono Widest', 'SF Mono', ui-monospace, monospace;
   --fira: 'Fira Code', var(--mono);
   --xcode: XcodeDigits;
-  --tracking-xcode: 0.03em;
+  --tracking-xcode: 0.035em;
   --compact: 'SF Compact Text', var(--pro);
   --compact-rounded: 'SF Compact Rounded', var(--pro);
   --pro: 'SF Pro Text', -apple-system, sans-serif;
   --vscode-font-family: var(--compact);
-  --bold-weight: 900;
+  --bold-weight: 800;
 
   --vs-lt-sp-mono: 0.02em;
   --vs-lt-sp-text: 0.02em;
@@ -32,14 +32,13 @@
   --vs-lt-sp-file-name: -0.015em;
 }
 
-* {
-  //font-feature-settings: 'cv01', 'cv02', 'cv03', 'ss04' 0;
-  // -webkit-font-smoothing: antialiased;
-  // -moz-osx-font-smoothing: grayscale;
-}
+// * {
+//   font-feature-settings: 'cv01', 'cv02', 'cv03', 'ss04' 0;
+//   -webkit-font-smoothing: antialiased;
+//   -moz-osx-font-smoothing: grayscale;
+// }
 
 // html {
-//   // -webkit-font-smoothing: antialiased !important;
 //   letter-spacing: var(--vs-lt-sp-text);
 // }
 
@@ -329,9 +328,9 @@ span:has(.codicon-git-branch) {
 }
 
 // file blame
-.view-line [class*='-TextEditorDecorationType']:first-of-type::before {
-  //font-family: var(--mono), var(--fira);
-}
+// .view-line [class*='-TextEditorDecorationType']:first-of-type::before {
+//   font-family: var(--mono), var(--fira);
+// }
 
 .sticky-line,
 .view-line {
@@ -431,10 +430,10 @@ span [class|='mtk1 dyn-rule'],
 }
 
 .monaco-workbench .part.editor > .content .editor-group-container > .title {
-  .tabs-container > .tab .tab-label,
-  .title-label {
-    //order: 3;
-  }
+  // .tabs-container > .tab .tab-label,
+  // .title-label {
+  //   order: 3;
+  // }
 
   .tabs-container > .tab {
     //padding-left: 0;
@@ -450,9 +449,9 @@ span [class|='mtk1 dyn-rule'],
     }
   }
 
-  .tabs-container > .tab.sizing-fit {
-    //width: initial;
-  }
+  // .tabs-container > .tab.sizing-fit {
+  //   width: initial;
+  // }
 
   .tabs-container > .tab > .tab-actions > .monaco-action-bar {
     width: 27px;
@@ -511,7 +510,6 @@ span [class|='mtk1 dyn-rule'] {
 }
 
 /* fonts */
-
 @font-face {
   font-family: 'emptychar';
   src: url('https://cdn.jsdelivr.net/gh/meewill/SF@latest/plus/empty.woff2');
@@ -525,10 +523,10 @@ span [class|='mtk1 dyn-rule'] {
   dir: '/Fonts/Mono-Wide-';
   ext: 'woff2';
 }, {
-  Thin: 200;
+  Light: 200;
   Regular: 300;
-  Semibold: 400;
-  Semibold: 500;
+  Medium: 400;
+  Medium: 500;
   Semibold: 600;
   Bold: 700;
   Heavy: 800;
@@ -612,6 +610,7 @@ span [class|='mtk1 dyn-rule'] {
       each(@styles, .(@style-val, @style) {
         // @keyword: extract(@weight, 1);
         // @numeric: extract(@weight, 2);
+
         @font-face {
           font-family: @family;
           .use-src(@family, @tar, @repo, @weight-key, @style-val, @numeric, @style, @local);
@@ -673,14 +672,14 @@ span [class|='mtk1 dyn-rule'] {
       @font-face {
         font-family: @family;
         .use-stretch-src(
-                @family,
-                @tar,
-                @repo,
-                @weight-key,
-                '',
-                @numeric,
-                '',
-                @local
+          @family,
+          @tar,
+          @repo,
+          @weight-key,
+          '',
+          @numeric,
+          '',
+          @local
         );
         unicode-range: @unicode;
         font-weight: @numeric;
@@ -712,6 +711,3 @@ span [class|='mtk1 dyn-rule'] {
   e('U+2DE0-2E7F'), e('U+3200-32FF'), e('U+A640-A69F'), e('U+A700-A7FF'), e('U+E000-F8FF'), e('U+FFF0-FFFF'), e('U+F0000-10FFFF');
 @unicode-plus: e('U+0250-02AF'), e('U+1D00-1DBF'), e('U+2190-22FF');
 @unicode-all: @unicode-general, @unicode-plus;
-
-@unicode-zh: e('U+4E00-9FFF'), e('U+3400-4DBF'), e('U+20000-2A6DF'), e('U+F900-FAFF'), e('U+2F800-2FA1F');
-// e('U+2A700–2B73F, U+2B740–2B81F, U+2B820–2CEAF'),
