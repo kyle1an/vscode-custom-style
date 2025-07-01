@@ -46,6 +46,10 @@
   -webkit-font-smoothing: initial !important;
 }
 
+.vscode-theme-defaults-themes-light_modern-json {
+  --vscode-terminalStickyScroll-background: rgb(248, 248, 248);
+}
+
 .monaco-editor {
   .sticky-line-number,
   .sticky-line-number-inner,
@@ -75,8 +79,21 @@
 //   font-family: var(--xcode), var(--mono) !important;
 // }
 
-.notification-toast-container:has([aria-label='Your Code installation appears to be corrupt. Please reinstall., notification']) {
-  display: none !important;
+/*
+[aria-label='Improve Copilot Agents with Nx-specific context? (MCP server & conventions file), source: Nx Console, notification, Inspect the response in the accessible view with Alt+F2'],
+[aria-label='Improve Copilot Agents with Nx-specific context?, source: Nx Console, notification, Inspect the response in the accessible view with Alt+F2'],
+[aria-label="It's time to migrate! \n To keep using Nx Console's powerful capabilities, please transition your Angular workspace to Nx. , source: Nx Console, notification, Inspect the response in the accessible view with Alt+F2"],
+[aria-label$="To keep using Nx Console's powerful capabilities, please transition your Angular workspace to Nx. , source: Nx Console, notification, Inspect the response in the accessible view with Alt+F2"],
+*/
+[aria-label='Your Code installation appears to be corrupt. Please reinstall., notification, Inspect the response in the accessible view with Alt+F2'],
+[aria-label='Your Code installation appears to be corrupt. Please reinstall., notification'] {
+  .notification-toast-container:has(&) {
+    display: none !important;
+  }
+}
+
+.notification-toast-container .notifications-list-container:has(.monaco-list-rows:empty) {
+  display: none;
 }
 
 .notifications-list-container:has([title='Quokka.js (Extension)']) {
@@ -518,10 +535,25 @@ span [class|='mtk1 dyn-rule'] {
   /* : */
 }
 
+/*
+.load-fonts(@family-mono-original, {
+  nam: 'SF Mono';
+  dir: '/Fonts/Mono-';
+  ext: 'woff2';
+}, {
+  Thin: 200;
+  Regular: 300;
+  Medium: 400;
+  Semibold: 500;
+  Bold: 600;
+  Heavy: 700;
+  Heavy: 800;
+}, @unicode-all);
+*/
 .load-fonts(@family-mono, {
   nam: 'SF Mono';
-  dir: '/Fonts/Mono-Wide-';
-  ext: 'woff2';
+  dir: '/Fonts/SF-Mono-025em-';
+  ext: 'otf';
 }, {
   Light: 200;
   Regular: 300;
@@ -554,7 +586,9 @@ span [class|='mtk1 dyn-rule'] {
 
 @family-compact: 'SF Compact Text', 'Segoe WPC', 'Segoe UI';
 
-@family-mono: 'Mono Widest', 'SF Mono', 'Consolas', 'Courier New', 'SFMono-Regular', 'ui-monospace';
+@family-mono-original: 'SF Mono';
+
+@family-mono: 'Mono Wide', 'Mono Wider', 'Mono Widest', @family-mono-original, 'Consolas', 'Courier New', 'SFMono-Regular', 'ui-monospace';
 
 @repo: 'https://cdn.jsdelivr.net/gh/meewill/SF@main';
 

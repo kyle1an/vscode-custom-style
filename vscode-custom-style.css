@@ -62,6 +62,9 @@
 .line-numbers {
   -webkit-font-smoothing: initial !important;
 }
+.vscode-theme-defaults-themes-light_modern-json {
+  --vscode-terminalStickyScroll-background: #f8f8f8;
+}
 .monaco-editor .sticky-line-number,
 .monaco-editor .sticky-line-number-inner,
 .monaco-editor .margin-view-overlays .line-numbers:not(.active-line-number) {
@@ -82,8 +85,18 @@
   font-weight: normal !important;
   letter-spacing: var(--tracking-xcode) !important;
 }
+/*
+[aria-label='Improve Copilot Agents with Nx-specific context? (MCP server & conventions file), source: Nx Console, notification, Inspect the response in the accessible view with Alt+F2'],
+[aria-label='Improve Copilot Agents with Nx-specific context?, source: Nx Console, notification, Inspect the response in the accessible view with Alt+F2'],
+[aria-label="It's time to migrate! \n To keep using Nx Console's powerful capabilities, please transition your Angular workspace to Nx. , source: Nx Console, notification, Inspect the response in the accessible view with Alt+F2"],
+[aria-label$="To keep using Nx Console's powerful capabilities, please transition your Angular workspace to Nx. , source: Nx Console, notification, Inspect the response in the accessible view with Alt+F2"],
+*/
+.notification-toast-container:has([aria-label='Your Code installation appears to be corrupt. Please reinstall., notification, Inspect the response in the accessible view with Alt+F2']),
 .notification-toast-container:has([aria-label='Your Code installation appears to be corrupt. Please reinstall., notification']) {
   display: none !important;
+}
+.notification-toast-container .notifications-list-container:has(.monaco-list-rows:empty) {
+  display: none;
 }
 .notifications-list-container:has([title='Quokka.js (Extension)']) {
   display: none;
@@ -387,9 +400,248 @@ span [class|='mtk1 dyn-rule'] {
   unicode-range: U+003A;
   /* : */
 }
+/*
+.load-fonts(@family-mono-original, {
+  nam: 'SF Mono';
+  dir: '/Fonts/Mono-';
+  ext: 'woff2';
+}, {
+  Thin: 200;
+  Regular: 300;
+  Medium: 400;
+  Semibold: 500;
+  Bold: 600;
+  Heavy: 700;
+  Heavy: 800;
+}, @unicode-all);
+*/
+@font-face {
+  font-family: 'Mono Wide';
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-Light.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Mono Wide';
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-LightItalic.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Mono Wide';
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-Regular.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Mono Wide';
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-RegularItalic.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Mono Wide';
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-Medium.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Mono Wide';
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-MediumItalic.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Mono Wide';
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-Medium.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Mono Wide';
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-MediumItalic.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Mono Wide';
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-Semibold.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Mono Wide';
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-SemiboldItalic.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Mono Wide';
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-Bold.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Mono Wide';
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-BoldItalic.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Mono Wide';
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-Heavy.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Mono Wide';
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-HeavyItalic.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Mono Wider';
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-Light.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Mono Wider';
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-LightItalic.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Mono Wider';
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-Regular.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Mono Wider';
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-RegularItalic.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Mono Wider';
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-Medium.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Mono Wider';
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-MediumItalic.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Mono Wider';
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-Medium.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Mono Wider';
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-MediumItalic.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Mono Wider';
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-Semibold.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Mono Wider';
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-SemiboldItalic.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Mono Wider';
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-Bold.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Mono Wider';
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-BoldItalic.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Mono Wider';
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-Heavy.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Mono Wider';
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-HeavyItalic.otf') format('OpenType');
+  unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
 @font-face {
   font-family: 'Mono Widest';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-Light.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-Light.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 200;
   font-style: normal;
@@ -397,7 +649,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'Mono Widest';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-LightItalic.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-LightItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 200;
   font-style: italic;
@@ -405,7 +657,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'Mono Widest';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-Regular.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-Regular.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 300;
   font-style: normal;
@@ -413,7 +665,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'Mono Widest';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-RegularItalic.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-RegularItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 300;
   font-style: italic;
@@ -421,7 +673,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'Mono Widest';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-Medium.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-Medium.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 400;
   font-style: normal;
@@ -429,7 +681,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'Mono Widest';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-MediumItalic.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-MediumItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 400;
   font-style: italic;
@@ -437,7 +689,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'Mono Widest';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-Medium.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-Medium.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 500;
   font-style: normal;
@@ -445,7 +697,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'Mono Widest';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-MediumItalic.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-MediumItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 500;
   font-style: italic;
@@ -453,7 +705,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'Mono Widest';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-Semibold.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-Semibold.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 600;
   font-style: normal;
@@ -461,7 +713,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'Mono Widest';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-SemiboldItalic.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-SemiboldItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 600;
   font-style: italic;
@@ -469,7 +721,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'Mono Widest';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-Bold.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-Bold.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 700;
   font-style: normal;
@@ -477,7 +729,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'Mono Widest';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-BoldItalic.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-BoldItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 700;
   font-style: italic;
@@ -485,7 +737,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'Mono Widest';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-Heavy.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-Heavy.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 800;
   font-style: normal;
@@ -493,7 +745,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'Mono Widest';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-HeavyItalic.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-HeavyItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 800;
   font-style: italic;
@@ -501,7 +753,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'SF Mono';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-Light.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-Light.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 200;
   font-style: normal;
@@ -509,7 +761,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'SF Mono';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-LightItalic.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-LightItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 200;
   font-style: italic;
@@ -517,7 +769,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'SF Mono';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-Regular.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-Regular.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 300;
   font-style: normal;
@@ -525,7 +777,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'SF Mono';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-RegularItalic.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-RegularItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 300;
   font-style: italic;
@@ -533,7 +785,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'SF Mono';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-Medium.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-Medium.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 400;
   font-style: normal;
@@ -541,7 +793,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'SF Mono';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-MediumItalic.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-MediumItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 400;
   font-style: italic;
@@ -549,7 +801,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'SF Mono';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-Medium.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-Medium.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 500;
   font-style: normal;
@@ -557,7 +809,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'SF Mono';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-MediumItalic.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-MediumItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 500;
   font-style: italic;
@@ -565,7 +817,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'SF Mono';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-Semibold.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-Semibold.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 600;
   font-style: normal;
@@ -573,7 +825,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'SF Mono';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-SemiboldItalic.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-SemiboldItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 600;
   font-style: italic;
@@ -581,7 +833,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'SF Mono';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-Bold.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-Bold.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 700;
   font-style: normal;
@@ -589,7 +841,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'SF Mono';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-BoldItalic.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-BoldItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 700;
   font-style: italic;
@@ -597,7 +849,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'SF Mono';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-Heavy.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-Heavy.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 800;
   font-style: normal;
@@ -605,7 +857,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'SF Mono';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-HeavyItalic.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-HeavyItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 800;
   font-style: italic;
@@ -613,7 +865,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'Consolas';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-Light.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-Light.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 200;
   font-style: normal;
@@ -621,7 +873,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'Consolas';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-LightItalic.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-LightItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 200;
   font-style: italic;
@@ -629,7 +881,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'Consolas';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-Regular.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-Regular.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 300;
   font-style: normal;
@@ -637,7 +889,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'Consolas';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-RegularItalic.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-RegularItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 300;
   font-style: italic;
@@ -645,7 +897,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'Consolas';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-Medium.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-Medium.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 400;
   font-style: normal;
@@ -653,7 +905,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'Consolas';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-MediumItalic.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-MediumItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 400;
   font-style: italic;
@@ -661,7 +913,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'Consolas';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-Medium.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-Medium.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 500;
   font-style: normal;
@@ -669,7 +921,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'Consolas';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-MediumItalic.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-MediumItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 500;
   font-style: italic;
@@ -677,7 +929,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'Consolas';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-Semibold.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-Semibold.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 600;
   font-style: normal;
@@ -685,7 +937,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'Consolas';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-SemiboldItalic.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-SemiboldItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 600;
   font-style: italic;
@@ -693,7 +945,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'Consolas';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-Bold.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-Bold.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 700;
   font-style: normal;
@@ -701,7 +953,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'Consolas';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-BoldItalic.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-BoldItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 700;
   font-style: italic;
@@ -709,7 +961,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'Consolas';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-Heavy.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-Heavy.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 800;
   font-style: normal;
@@ -717,7 +969,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'Consolas';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-HeavyItalic.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-HeavyItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 800;
   font-style: italic;
@@ -725,7 +977,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'Courier New';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-Light.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-Light.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 200;
   font-style: normal;
@@ -733,7 +985,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'Courier New';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-LightItalic.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-LightItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 200;
   font-style: italic;
@@ -741,7 +993,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'Courier New';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-Regular.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-Regular.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 300;
   font-style: normal;
@@ -749,7 +1001,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'Courier New';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-RegularItalic.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-RegularItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 300;
   font-style: italic;
@@ -757,7 +1009,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'Courier New';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-Medium.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-Medium.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 400;
   font-style: normal;
@@ -765,7 +1017,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'Courier New';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-MediumItalic.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-MediumItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 400;
   font-style: italic;
@@ -773,7 +1025,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'Courier New';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-Medium.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-Medium.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 500;
   font-style: normal;
@@ -781,7 +1033,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'Courier New';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-MediumItalic.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-MediumItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 500;
   font-style: italic;
@@ -789,7 +1041,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'Courier New';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-Semibold.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-Semibold.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 600;
   font-style: normal;
@@ -797,7 +1049,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'Courier New';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-SemiboldItalic.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-SemiboldItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 600;
   font-style: italic;
@@ -805,7 +1057,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'Courier New';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-Bold.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-Bold.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 700;
   font-style: normal;
@@ -813,7 +1065,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'Courier New';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-BoldItalic.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-BoldItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 700;
   font-style: italic;
@@ -821,7 +1073,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'Courier New';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-Heavy.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-Heavy.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 800;
   font-style: normal;
@@ -829,7 +1081,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'Courier New';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-HeavyItalic.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-HeavyItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 800;
   font-style: italic;
@@ -837,7 +1089,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'SFMono-Regular';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-Light.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-Light.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 200;
   font-style: normal;
@@ -845,7 +1097,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'SFMono-Regular';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-LightItalic.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-LightItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 200;
   font-style: italic;
@@ -853,7 +1105,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'SFMono-Regular';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-Regular.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-Regular.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 300;
   font-style: normal;
@@ -861,7 +1113,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'SFMono-Regular';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-RegularItalic.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-RegularItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 300;
   font-style: italic;
@@ -869,7 +1121,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'SFMono-Regular';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-Medium.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-Medium.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 400;
   font-style: normal;
@@ -877,7 +1129,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'SFMono-Regular';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-MediumItalic.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-MediumItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 400;
   font-style: italic;
@@ -885,7 +1137,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'SFMono-Regular';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-Medium.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-Medium.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 500;
   font-style: normal;
@@ -893,7 +1145,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'SFMono-Regular';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-MediumItalic.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-MediumItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 500;
   font-style: italic;
@@ -901,7 +1153,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'SFMono-Regular';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-Semibold.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-Semibold.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 600;
   font-style: normal;
@@ -909,7 +1161,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'SFMono-Regular';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-SemiboldItalic.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-SemiboldItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 600;
   font-style: italic;
@@ -917,7 +1169,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'SFMono-Regular';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-Bold.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-Bold.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 700;
   font-style: normal;
@@ -925,7 +1177,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'SFMono-Regular';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-BoldItalic.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-BoldItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 700;
   font-style: italic;
@@ -933,7 +1185,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'SFMono-Regular';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-Heavy.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-Heavy.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 800;
   font-style: normal;
@@ -941,7 +1193,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'SFMono-Regular';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-HeavyItalic.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-HeavyItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 800;
   font-style: italic;
@@ -949,7 +1201,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'ui-monospace';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-Light.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-Light.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 200;
   font-style: normal;
@@ -957,7 +1209,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'ui-monospace';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-LightItalic.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-LightItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 200;
   font-style: italic;
@@ -965,7 +1217,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'ui-monospace';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-Regular.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-Regular.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 300;
   font-style: normal;
@@ -973,7 +1225,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'ui-monospace';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-RegularItalic.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-RegularItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 300;
   font-style: italic;
@@ -981,7 +1233,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'ui-monospace';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-Medium.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-Medium.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 400;
   font-style: normal;
@@ -989,7 +1241,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'ui-monospace';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-MediumItalic.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-MediumItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 400;
   font-style: italic;
@@ -997,7 +1249,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'ui-monospace';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-Medium.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-Medium.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 500;
   font-style: normal;
@@ -1005,7 +1257,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'ui-monospace';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-MediumItalic.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-MediumItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 500;
   font-style: italic;
@@ -1013,7 +1265,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'ui-monospace';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-Semibold.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-Semibold.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 600;
   font-style: normal;
@@ -1021,7 +1273,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'ui-monospace';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-SemiboldItalic.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-SemiboldItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 600;
   font-style: italic;
@@ -1029,7 +1281,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'ui-monospace';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-Bold.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-Bold.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 700;
   font-style: normal;
@@ -1037,7 +1289,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'ui-monospace';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-BoldItalic.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-BoldItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 700;
   font-style: italic;
@@ -1045,7 +1297,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'ui-monospace';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-Heavy.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-Heavy.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 800;
   font-style: normal;
@@ -1053,7 +1305,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 @font-face {
   font-family: 'ui-monospace';
-  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/Mono-Wide-HeavyItalic.woff2') format('woff2');
+  src:  url('https://cdn.jsdelivr.net/gh/meewill/SF@main/Fonts/SF-Mono-025em-HeavyItalic.otf') format('OpenType');
   unicode-range: U+0000-024F, U+02B0-052F, U+1DC0-20CF, U+2190-22FF, U+2460-24FF, U+25A0-25FF, U+2700-27FF, U+2900-2BFF, U+2C60-2C7F, U+2DE0-2E7F, U+3200-32FF, U+A640-A69F, U+A700-A7FF, U+E000-F8FF, U+FFF0-FFFF, U+F0000-10FFFF, U+0250-02AF, U+1D00-1DBF, U+2190-22FF;
   font-weight: 800;
   font-style: italic;
