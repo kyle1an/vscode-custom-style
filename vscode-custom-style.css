@@ -93,6 +93,9 @@
 .notification-toast-container:has([aria-label='Your Code installation appears to be corrupt. Please reinstall., notification']) {
   display: none !important;
 }
+.notification-toast-container .notifications-list-container:has(.monaco-list-rows:empty) {
+  display: none;
+}
 .notifications-list-container:has([title='Quokka.js (Extension)']) {
   display: none;
 }
