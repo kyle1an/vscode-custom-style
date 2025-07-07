@@ -111,6 +111,7 @@
   letter-spacing: 0.04em;
 }
 
+pre,
 .terminal-groups-container {
   font-family: var(--mono) !important;
 }
@@ -302,10 +303,12 @@ html .search-view .linematch > .match {
   font-size: 10.8px !important;
 }
 
+[aria-label$=', Checking Out Branch/Tag...'],
+[aria-label$=', Checkout Branch/Tag...'],
 a:has(> .codicon-git-branch),
 [style*='/images/light/icon-branch'] + div > .monaco-icon-name-container {
   font-family: var(--mono);
-  font-size: 0.9em;
+  font-size: 0.9875em;
 }
 
 // branch name
