@@ -14,7 +14,7 @@
   --mono: 'Mono Widest', 'SF Mono Widest', 'SF Mono', ui-monospace, monospace;
   --fira: 'Fira Code', var(--mono);
   --xcode: XcodeDigits;
-  --tracking-xcode: 0.035em;
+  --tracking-xcode: 0.03em;
   --compact: 'SF Compact Text', var(--pro);
   --compact-rounded: 'SF Compact Rounded', var(--pro);
   --pro: 'SF Pro Text', -apple-system, sans-serif;
@@ -79,12 +79,10 @@
 //   font-family: var(--xcode), var(--mono) !important;
 // }
 
-/*
 [aria-label='Improve Copilot Agents with Nx-specific context? (MCP server & conventions file), source: Nx Console, notification, Inspect the response in the accessible view with Alt+F2'],
 [aria-label='Improve Copilot Agents with Nx-specific context?, source: Nx Console, notification, Inspect the response in the accessible view with Alt+F2'],
 [aria-label="It's time to migrate! \n To keep using Nx Console's powerful capabilities, please transition your Angular workspace to Nx. , source: Nx Console, notification, Inspect the response in the accessible view with Alt+F2"],
 [aria-label$="To keep using Nx Console's powerful capabilities, please transition your Angular workspace to Nx. , source: Nx Console, notification, Inspect the response in the accessible view with Alt+F2"],
-*/
 [aria-label='Your Code installation appears to be corrupt. Please reinstall., notification, Inspect the response in the accessible view with Alt+F2'],
 [aria-label='Your Code installation appears to be corrupt. Please reinstall., notification'] {
   .notification-toast-container:has(&) {
@@ -129,8 +127,8 @@ pre,
   font-family: var(--mono) !important;
   font-size: 0.85em;
   letter-spacing: var(--vs-lt-sp-file-name);
-  -webkit-font-smoothing: antialiased; /* // windows */
-  //font-weight: 500; /* windows */
+  //-webkit-font-smoothing: antialiased; /* // windows */
+  font-weight: 400;
 }
 
 // git tree compare
@@ -373,6 +371,8 @@ span:has(.codicon-git-branch) {
 // git line history
 .view-line [class*='-TextEditorDecorationType']:last-of-type::after {
   font-style: italic !important;
+  font-weight: 300;
+  opacity: 0.6;
 }
 
 .search-results [class*='ced-1-TextEditorDecorationType'] {
@@ -538,7 +538,6 @@ span [class|='mtk1 dyn-rule'] {
   /* : */
 }
 
-/*
 .load-fonts(@family-mono-original, {
   nam: 'SF Mono';
   dir: '/Fonts/Mono-';
@@ -552,18 +551,18 @@ span [class|='mtk1 dyn-rule'] {
   Heavy: 700;
   Heavy: 800;
 }, @unicode-all);
-*/
+
 .load-fonts(@family-mono, {
   nam: 'SF Mono';
-  dir: '/Fonts/SF-Mono-025em-';
-  ext: 'otf';
+  dir: '/Fonts/Mono-Wide-';
+  ext: 'woff2';
 }, {
   Light: 200;
   Regular: 300;
   Medium: 400;
-  Medium: 500;
-  Semibold: 600;
-  Bold: 700;
+  Semibold: 500;
+  Bold: 600;
+  Heavy: 700;
   Heavy: 800;
 }, @unicode-all);
 
@@ -591,7 +590,7 @@ span [class|='mtk1 dyn-rule'] {
 
 @family-mono-original: 'SF Mono';
 
-@family-mono: 'Mono Wide', 'Mono Wider', 'Mono Widest', @family-mono-original, 'Consolas', 'Courier New', 'SFMono-Regular', 'ui-monospace';
+@family-mono: 'Mono Wide', 'Mono Widest', 'Consolas', 'Courier New', 'SFMono-Regular', 'ui-monospace';
 
 @repo: 'https://cdn.jsdelivr.net/gh/meewill/SF@main';
 
