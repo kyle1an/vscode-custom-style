@@ -357,7 +357,13 @@ span [class|='mtk1 dyn-rule'],
 }
 .monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab > .tab-actions,
 .monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab > .tab-actions > .monaco-action-bar {
-  width: 21px;
+  width: 20px;
+}
+.monaco-workbench .part.editor > .content .editor-group-container.active > .title .tabs-container > .tab > .tab-actions .action-label.codicon {
+  padding: 1px;
+}
+.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.sizing-fit {
+  width: 100px;
 }
 .open-editors .monaco-list .monaco-list-row {
   padding-left: 0;
