@@ -437,7 +437,7 @@ span [class|='mtk1 dyn-rule'],
 
 .monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab:hover:not(.active) {
   outline: 1px dashed;
-  outline-offset: -5px;
+  outline-offset: -2px;
 }
 
 // .monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.active,
@@ -474,13 +474,22 @@ span [class|='mtk1 dyn-rule'],
   //   width: initial;
   // }
 
-  .tabs-container > .tab > .tab-actions > .monaco-action-bar {
-    width: 27px;
-  }
+  // .tabs-container > .tab > .tab-actions > .monaco-action-bar {
+  //   width: 27px;
+  // }
+}
+
+.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab > .tab-actions,
+.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab > .tab-actions > .monaco-action-bar {
+  width: 21px;
 }
 
 .open-editors .monaco-list .monaco-list-row {
-  padding-left: 14px;
+  padding-left: 0;
+}
+
+.explorer-folders-view .monaco-list-row {
+  padding-left: 0;
 }
 
 .monaco-list-row[aria-label='Changes'] {

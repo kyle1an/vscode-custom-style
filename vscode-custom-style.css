@@ -345,7 +345,7 @@ span [class|='mtk1 dyn-rule'],
 }
 .monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab:hover:not(.active) {
   outline: 1px dashed;
-  outline-offset: -5px;
+  outline-offset: -2px;
 }
 .monaco-list .monaco-list-row:hover {
   outline: 1px dashed #f38518;
@@ -355,11 +355,15 @@ span [class|='mtk1 dyn-rule'],
   justify-content: flex-end;
   display: flex;
 }
+.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab > .tab-actions,
 .monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab > .tab-actions > .monaco-action-bar {
-  width: 27px;
+  width: 21px;
 }
 .open-editors .monaco-list .monaco-list-row {
-  padding-left: 14px;
+  padding-left: 0;
+}
+.explorer-folders-view .monaco-list-row {
+  padding-left: 0;
 }
 .monaco-list-row[aria-label='Changes'] {
   border-top: 1px solid var(--vscode-list-focusAndSelectionOutline, var(--vscode-contrastActiveBorder, var(--vscode-list-focusOutline)));
