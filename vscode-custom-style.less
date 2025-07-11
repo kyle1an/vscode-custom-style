@@ -371,8 +371,11 @@ span:has(.codicon-git-branch) {
 }
 
 // git line history
-.view-line [class*='-TextEditorDecorationType']:last-of-type::after {
+.monaco-editor .view-line [class*='-TextEditorDecorationType']:last-of-type::after {
   font-style: italic !important;
+  font-weight: 200;
+  opacity: 0.65;
+  color: rgba(153, 153, 153) !important;
 }
 
 .search-results [class*='ced-1-TextEditorDecorationType'] {
@@ -436,7 +439,7 @@ span [class|='mtk1 dyn-rule'],
 
 .monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab:hover:not(.active) {
   outline: 1px dashed;
-  outline-offset: -5px;
+  outline-offset: -2px;
 }
 
 // .monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.active,
@@ -473,13 +476,27 @@ span [class|='mtk1 dyn-rule'],
   //   width: initial;
   // }
 
-  .tabs-container > .tab > .tab-actions > .monaco-action-bar {
-    width: 27px;
-  }
+  // .tabs-container > .tab > .tab-actions > .monaco-action-bar {
+  //   width: 27px;
+  // }
 }
 
+.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab > .tab-actions,
+.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab > .tab-actions > .monaco-action-bar {
+  width: 20px;
+}
+.monaco-workbench .part.editor > .content .editor-group-container.active > .title .tabs-container > .tab > .tab-actions .action-label.codicon {
+  padding: 1px;
+}
+.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.sizing-fit {
+  width: 100px;
+}
 .open-editors .monaco-list .monaco-list-row {
-  padding-left: 14px;
+  padding-left: 0;
+}
+
+.explorer-folders-view .monaco-list-row {
+  padding-left: 0;
 }
 
 .monaco-list-row[aria-label='Changes'] {
