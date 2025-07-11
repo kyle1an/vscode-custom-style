@@ -302,10 +302,11 @@ span:has(.codicon-git-branch) {
   width: var(--avatar-size) !important;
   background-size: var(--avatar-size) var(--avatar-size) !important;
 }
-.view-line [class*='-TextEditorDecorationType']:last-of-type::after {
+.monaco-editor .view-line [class*='-TextEditorDecorationType']:last-of-type::after {
   font-style: italic !important;
-  font-weight: 300;
-  opacity: 0.6;
+  font-weight: 200;
+  opacity: 0.65;
+  color: rgba(153, 153, 153) !important;
 }
 .search-results [class*='ced-1-TextEditorDecorationType'] {
   font-weight: normal;
