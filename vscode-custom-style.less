@@ -546,6 +546,17 @@ span [class|='mtk1 dyn-rule'] {
   margin-right: 0;
 }
 
+.debug-pane .debug-call-stack .stack-frame {
+  padding-right: 0;
+}
+
+.debug-pane .monaco-list-row:hover .monaco-action-bar,
+.debug-pane .monaco-list-row.focused .monaco-action-bar {
+  &:has(> *:only-child:empty) {
+    display: none;
+  }
+}
+
 /* fonts */
 @font-face {
   font-family: 'emptychar';

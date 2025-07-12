@@ -408,6 +408,13 @@ span [class|='mtk1 dyn-rule'] {
 .monaco-workbench .debug-toolbar .monaco-action-bar .action-item.menu-entry {
   margin-right: 0;
 }
+.debug-pane .debug-call-stack .stack-frame {
+  padding-right: 0;
+}
+.debug-pane .monaco-list-row:hover .monaco-action-bar:has(> *:only-child:empty),
+.debug-pane .monaco-list-row.focused .monaco-action-bar:has(> *:only-child:empty) {
+  display: none;
+}
 /* fonts */
 @font-face {
   font-family: 'emptychar';
