@@ -369,7 +369,7 @@ span:has(.codicon-git-branch) {
 }
 
 // git line history
-.monaco-editor .view-line [class*='-TextEditorDecorationType']:last-of-type::after {
+.monaco-editor [class*='-TextEditorDecorationType']:last-of-type::after {
   font-style: italic !important;
   font-weight: 200;
   opacity: 0.65;
@@ -398,10 +398,10 @@ span:has(.codicon-git-branch) {
 }
 
 // inlay hint
-span [class|='mtk1 dyn-rule'],
-[class|='dyn-rule'] {
-  vertical-align: baseline !important;
-}
+// span [class|='mtk1 dyn-rule'],
+// [class|='dyn-rule'] {
+//   vertical-align: baseline !important;
+// }
 
 .hover-contents,
 .sticky-widget,
@@ -552,11 +552,11 @@ span [class|='mtk1 dyn-rule'] {
 // }
 
 // padding
-[class|='mtk1 dyn-rule'] {
-  :not(&) + &:has(+ & + &) {
-    display: none;
-  }
-}
+// [class|='mtk1 dyn-rule'] {
+//   :not(&) + &:has(+ & + &) {
+//     display: none;
+//   }
+// }
 
 /* fonts */
 @font-face {

@@ -302,7 +302,7 @@ span:has(.codicon-git-branch) {
   width: var(--avatar-size) !important;
   background-size: var(--avatar-size) var(--avatar-size) !important;
 }
-.monaco-editor .view-line [class*='-TextEditorDecorationType']:last-of-type::after {
+.monaco-editor [class*='-TextEditorDecorationType']:last-of-type::after {
   font-style: italic !important;
   font-weight: 200;
   opacity: 0.65;
@@ -321,10 +321,6 @@ span:has(.codicon-git-branch) {
 }
 #workbench\.view\.search [aria-level='2'] [class='monaco-tl-twistie'] {
   padding-left: 14px !important;
-}
-span [class|='mtk1 dyn-rule'],
-[class|='dyn-rule'] {
-  vertical-align: baseline !important;
 }
 .hover-contents span .mtkb,
 .sticky-widget span .mtkb,
@@ -404,9 +400,6 @@ span [class|='mtk1 dyn-rule'] {
 }
 .monaco-workbench .debug-toolbar .monaco-action-bar .action-item.menu-entry {
   margin-right: 0;
-}
-:not([class|='mtk1 dyn-rule']) + [class|='mtk1 dyn-rule']:has( + [class|='mtk1 dyn-rule'] + [class|='mtk1 dyn-rule']) {
-  display: none;
 }
 /* fonts */
 @font-face {
