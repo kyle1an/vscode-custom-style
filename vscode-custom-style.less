@@ -544,6 +544,20 @@ span [class|='mtk1 dyn-rule'] {
   margin-right: 0;
 }
 
+// fix duplicated inline type notion
+// [class|='mtk1 dyn-rule'] {
+//   & + & + & + & {
+//     display: none;
+//   }
+// }
+
+// padding
+[class|='mtk1 dyn-rule'] {
+  :not(&) + &:has(+ & + &) {
+    display: none;
+  }
+}
+
 /* fonts */
 @font-face {
   font-family: 'emptychar';

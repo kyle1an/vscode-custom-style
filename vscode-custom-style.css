@@ -405,6 +405,9 @@ span [class|='mtk1 dyn-rule'] {
 .monaco-workbench .debug-toolbar .monaco-action-bar .action-item.menu-entry {
   margin-right: 0;
 }
+:not([class|='mtk1 dyn-rule']) + [class|='mtk1 dyn-rule']:has( + [class|='mtk1 dyn-rule'] + [class|='mtk1 dyn-rule']) {
+  display: none;
+}
 /* fonts */
 @font-face {
   font-family: 'emptychar';
