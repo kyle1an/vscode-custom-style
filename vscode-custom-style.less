@@ -371,7 +371,7 @@ span:has(.codicon-git-branch) {
 }
 
 // git line history
-.monaco-editor .view-line [class*='-TextEditorDecorationType']:last-of-type::after {
+.monaco-editor [class*='-TextEditorDecorationType']:last-of-type::after {
   font-style: italic !important;
   font-weight: 200;
   opacity: 0.65;
@@ -400,10 +400,10 @@ span:has(.codicon-git-branch) {
 }
 
 // inlay hint
-span [class|='mtk1 dyn-rule'],
-[class|='dyn-rule'] {
-  vertical-align: baseline !important;
-}
+// span [class|='mtk1 dyn-rule'],
+// [class|='dyn-rule'] {
+//   vertical-align: baseline !important;
+// }
 
 .hover-contents,
 .sticky-widget,
@@ -517,12 +517,8 @@ div.scm-editor-placeholder {
   letter-spacing: -0.015em;
 }
 
-[class|='mtk1 dyn-rule'] + [class|='mtk1 dyn-rule'] {
-  border-radius: 3px;
-}
-
 span [class|='mtk1 dyn-rule'] {
-  font-weight: 400;
+  font-weight: 300;
 }
 
 [aria-label='Stashes Section'] ~ .pane-body .monaco-list-row[aria-level='1'] {
@@ -546,15 +542,20 @@ span [class|='mtk1 dyn-rule'] {
   margin-right: 0;
 }
 
+// debug action
 .debug-pane .debug-call-stack .stack-frame {
   padding-right: 0;
 }
-
 .debug-pane .monaco-list-row:hover .monaco-action-bar,
 .debug-pane .monaco-list-row.focused .monaco-action-bar {
   &:has(> *:only-child:empty) {
     display: none;
   }
+}
+
+// space padding of colon - inlay hint
+[class|='mtk1 dyn-rule'] {
+  max-width: 0;
 }
 
 /* fonts */
