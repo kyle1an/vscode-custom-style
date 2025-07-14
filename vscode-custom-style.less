@@ -515,12 +515,8 @@ div.scm-editor-placeholder {
   letter-spacing: -0.015em;
 }
 
-[class|='mtk1 dyn-rule'] + [class|='mtk1 dyn-rule'] {
-  border-radius: 3px;
-}
-
 span [class|='mtk1 dyn-rule'] {
-  font-weight: 400;
+  font-weight: 300;
 }
 
 [aria-label='Stashes Section'] ~ .pane-body .monaco-list-row[aria-level='1'] {
@@ -544,19 +540,21 @@ span [class|='mtk1 dyn-rule'] {
   margin-right: 0;
 }
 
-// fix duplicated inline type notion
-// [class|='mtk1 dyn-rule'] {
-//   & + & + & + & {
-//     display: none;
-//   }
-// }
+// debug action
+.debug-pane .debug-call-stack .stack-frame {
+  padding-right: 0;
+}
+.debug-pane .monaco-list-row:hover .monaco-action-bar,
+.debug-pane .monaco-list-row.focused .monaco-action-bar {
+  &:has(> *:only-child:empty) {
+    display: none;
+  }
+}
 
-// padding
-// [class|='mtk1 dyn-rule'] {
-//   :not(&) + &:has(+ & + &) {
-//     display: none;
-//   }
-// }
+// space padding of colon - inlay hint
+[class|='mtk1 dyn-rule'] {
+  max-width: 0;
+}
 
 /* fonts */
 @font-face {

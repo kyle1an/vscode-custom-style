@@ -380,11 +380,8 @@ div.scm-editor-placeholder {
   font-size: 0.9em;
   letter-spacing: -0.015em;
 }
-[class|='mtk1 dyn-rule'] + [class|='mtk1 dyn-rule'] {
-  border-radius: 3px;
-}
 span [class|='mtk1 dyn-rule'] {
-  font-weight: 400;
+  font-weight: 300;
 }
 [aria-label='Stashes Section'] ~ .pane-body .monaco-list-row[aria-level='1'] {
   font-variant-numeric: tabular-nums;
@@ -400,6 +397,16 @@ span [class|='mtk1 dyn-rule'] {
 }
 .monaco-workbench .debug-toolbar .monaco-action-bar .action-item.menu-entry {
   margin-right: 0;
+}
+.debug-pane .debug-call-stack .stack-frame {
+  padding-right: 0;
+}
+.debug-pane .monaco-list-row:hover .monaco-action-bar:has(> *:only-child:empty),
+.debug-pane .monaco-list-row.focused .monaco-action-bar:has(> *:only-child:empty) {
+  display: none;
+}
+[class|='mtk1 dyn-rule'] {
+  max-width: 0;
 }
 /* fonts */
 @font-face {
