@@ -122,7 +122,7 @@ pre,
 .monaco-editor .diff-hidden-lines-widget,
 :is(.folder-icon, .file-icon).monaco-icon-label > .monaco-icon-label-container > .monaco-icon-name-container > .label-name {
   font-family: var(--mono) !important;
-  font-size: 0.85em;
+  font-size: var(--filename-size);
   letter-spacing: var(--vs-lt-sp-file-name);
   font-weight: 400;
 }
@@ -248,13 +248,16 @@ html .search-view .linematch > .match {
 [aria-label='Open Editors'] .monaco-icon-label-container {
   justify-content: space-between;
 }
+:root {
+  --filename-size: 0.85em;
+}
 .diff-hidden-lines,
 .monaco-editor .diff-hidden-lines-widget .breadcrumb-item,
 .outline-element.monaco-breadcrumb-item,
 .monaco-tl-contents.outline-element {
   font-family: var(--mono);
   letter-spacing: var(--vs-lt-sp-mono);
-  font-size: 10.8px !important;
+  font-size: var(--filename-size) !important;
 }
 [aria-label$=', Checking Out Branch/Tag...'],
 [aria-label$=', Checkout Branch/Tag...'],
