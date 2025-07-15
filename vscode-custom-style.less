@@ -114,6 +114,7 @@ pre,
   font-family: var(--mono) !important;
 }
 
+.debug-pane .debug-breakpoints .breakpoint .name:is(.codicon-debug-breakpoint ~ *),
 .monaco-workbench .explorer-folders-view .explorer-item .monaco-inputbox > .ibwrapper > .input, // rename input
 .zone-widget [aria-label="References"] .monaco-list-row .referenceMatch,
 .reference-file .monaco-highlighted-label,
@@ -129,6 +130,16 @@ pre,
   letter-spacing: var(--vs-lt-sp-file-name);
   //-webkit-font-smoothing: antialiased; /* // windows */
   font-weight: 400;
+}
+
+.monaco-pane-view .pane > .pane-header .description:is(.timeline-view > *) {
+  font-family: var(--mono) !important;
+  letter-spacing: var(--vs-lt-sp-file-name);
+}
+
+.monaco-breadcrumbs .file.monaco-breadcrumb-item .codicon-breadcrumb-separator {
+  font-weight: bold;
+  color: black;
 }
 
 // git tree compare
@@ -293,7 +304,7 @@ html .search-view .linematch > .match {
 }
 
 :root {
-  --filename-size: 0.85em;
+  --filename-size: 11.05px;
 }
 
 .diff-hidden-lines,
