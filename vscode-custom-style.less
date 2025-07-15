@@ -116,6 +116,7 @@ pre,
   font-family: var(--mono) !important;
 }
 
+.debug-pane .debug-breakpoints .breakpoint .name:is(.codicon-debug-breakpoint ~ *),
 .monaco-workbench .explorer-folders-view .explorer-item .monaco-inputbox > .ibwrapper > .input, // rename input
 .zone-widget [aria-label="References"] .monaco-list-row .referenceMatch,
 .reference-file .monaco-highlighted-label,
@@ -127,10 +128,20 @@ pre,
 .monaco-editor .diff-hidden-lines-widget,
 :is(.folder-icon, .file-icon).monaco-icon-label > .monaco-icon-label-container > .monaco-icon-name-container > .label-name {
   font-family: var(--mono) !important;
-  font-size: 0.85em;
+  font-size: var(--filename-size);
   letter-spacing: var(--vs-lt-sp-file-name);
   -webkit-font-smoothing: antialiased; /* // windows */
   //font-weight: 500; /* windows */
+}
+
+.monaco-pane-view .pane > .pane-header .description:is(.timeline-view > *) {
+  font-family: var(--mono) !important;
+  letter-spacing: var(--vs-lt-sp-file-name);
+}
+
+.monaco-breadcrumbs .file.monaco-breadcrumb-item .codicon-breadcrumb-separator {
+  font-weight: bold;
+  color: black;
 }
 
 // git tree compare
@@ -294,13 +305,17 @@ html .search-view .linematch > .match {
   justify-content: space-between;
 }
 
+:root {
+  --filename-size: 11.05px;
+}
+
 .diff-hidden-lines,
 .monaco-editor .diff-hidden-lines-widget .breadcrumb-item,
 .outline-element.monaco-breadcrumb-item,
 .monaco-tl-contents.outline-element {
   font-family: var(--mono);
   letter-spacing: var(--vs-lt-sp-mono);
-  font-size: 10.8px !important;
+  font-size: var(--filename-size) !important;
 }
 
 [aria-label$=', Checking Out Branch/Tag...'],
@@ -437,6 +452,21 @@ span:has(.codicon-git-branch) {
   font-size: 11px;
 }
 
+.monaco-workbench > .notifications-center > .notifications-center-header > .notifications-center-header-title,
+.monaco-workbench .pane-composite-part > .title > .composite-bar-container > .composite-bar > .monaco-action-bar .action-item,
+.monaco-workbench .pane-composite-part > .header-or-footer > .composite-bar-container > .composite-bar > .monaco-action-bar .action-item,
+.monaco-workbench .part.sidebar > .title > .title-label h2,
+.monaco-pane-view .pane > .pane-header > .title {
+  letter-spacing: 0.05em;
+}
+
+[class='badge compact'] .badge-content,
+.monaco-count-badge,
+.count {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.05em;
+}
+
 .monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab:hover:not(.active) {
   outline: 1px dashed;
   outline-offset: -2px;
@@ -540,6 +570,16 @@ span [class|='mtk1 dyn-rule'] {
 
 .monaco-workbench .debug-toolbar .monaco-action-bar .action-item.menu-entry {
   margin-right: 0;
+}
+[id='workbench.view.extension.gitTreeCompare'] {
+  ul[role='toolbar'] > li:has(> .codicon-discard) {
+    order: 9;
+  }
+}
+
+.scm-view .monaco-list-row .resource > .name > .monaco-icon-label:after,
+.scm-view .monaco-list-row .history-item-change > .label-container > .monaco-icon-label:after {
+  width: 14px;
 }
 
 // debug action
