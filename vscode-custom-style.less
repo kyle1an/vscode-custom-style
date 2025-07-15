@@ -117,6 +117,7 @@ pre,
 }
 
 .debug-pane .debug-breakpoints .breakpoint .name:is(.codicon-debug-breakpoint ~ *),
+.debug-pane .debug-breakpoints .breakpoint .name:is(.codicon-debug-breakpoint-disabled ~ *),
 .monaco-workbench .explorer-folders-view .explorer-item .monaco-inputbox > .ibwrapper > .input, // rename input
 .zone-widget [aria-label="References"] .monaco-list-row .referenceMatch,
 .reference-file .monaco-highlighted-label,
@@ -452,6 +453,27 @@ span:has(.codicon-git-branch) {
   font-size: 11px;
 }
 
+.monaco-action-bar .action-item .codicon:is(.debug-hover-widget *.codicon-debug-inspect-memory) {
+  height: 12px;
+}
+
+.monaco-editor .debug-hover-widget .complex-value {
+  max-width: 600px;
+}
+
+.monaco-workbench .part > .composite.title > .title-actions:has([aria-label='Run and Debug actions']),
+.monaco-workbench .part > .composite.title > .title-actions:has(.start-debug-action-item) {
+  padding-left: 10px;
+}
+
+.monaco-workbench .part > .title > .title-actions .start-debug-action-item {
+  flex-grow: 1;
+
+  .select-container {
+    flex-grow: 999;
+  }
+}
+
 .monaco-workbench > .notifications-center > .notifications-center-header > .notifications-center-header-title,
 .monaco-workbench .pane-composite-part > .title > .composite-bar-container > .composite-bar > .monaco-action-bar .action-item,
 .monaco-workbench .pane-composite-part > .header-or-footer > .composite-bar-container > .composite-bar > .monaco-action-bar .action-item,
@@ -567,7 +589,6 @@ span [class|='mtk1 dyn-rule'] {
     padding: 0 !important;
   }
 }
-
 .monaco-workbench .debug-toolbar .monaco-action-bar .action-item.menu-entry {
   margin-right: 0;
 }
@@ -594,7 +615,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 
 // space padding of colon - inlay hint
-[class|='mtk1 dyn-rule'] {
+[class|='mtk1 dyn-rule']:not(.colorpicker-color-decoration) {
   max-width: 0;
 }
 
@@ -622,6 +643,7 @@ span [class|='mtk1 dyn-rule'] {
   Heavy: 800;
 }, @unicode-all);
 */
+
 .load-fonts(@family-mono, {
   nam: 'SF Mono';
   dir: '/Fonts/SF-Mono-025em-';
