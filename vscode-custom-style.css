@@ -352,6 +352,15 @@ span:has(.codicon-git-branch) {
 .monaco-workbench .debug-pane .monaco-list-row .expression {
   font-size: 11px;
 }
+.monaco-workbench .part > .composite.title > .title-actions:has([aria-label='Run and Debug actions']) {
+  padding-left: 12px;
+}
+.monaco-workbench .part > .title > .title-actions .start-debug-action-item {
+  flex-grow: 1;
+}
+.monaco-workbench .part > .title > .title-actions .start-debug-action-item .select-container {
+  flex-grow: 999;
+}
 .monaco-workbench > .notifications-center > .notifications-center-header > .notifications-center-header-title,
 .monaco-workbench .pane-composite-part > .title > .composite-bar-container > .composite-bar > .monaco-action-bar .action-item,
 .monaco-workbench .pane-composite-part > .header-or-footer > .composite-bar-container > .composite-bar > .monaco-action-bar .action-item,
@@ -438,7 +447,7 @@ span [class|='mtk1 dyn-rule'] {
 .debug-pane .monaco-list-row.focused .monaco-action-bar:has(> *:only-child:empty) {
   display: none;
 }
-[class|='mtk1 dyn-rule'] {
+[class|='mtk1 dyn-rule']:not(.colorpicker-color-decoration) {
   max-width: 0;
 }
 /* fonts */
