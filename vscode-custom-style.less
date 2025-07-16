@@ -379,7 +379,7 @@ span:has(.codicon-git-branch) {
 // git line history
 :where(.monaco-editor) [class*='-TextEditorDecorationType']::after {
   font-style: italic;
-  font-weight: 300;
+  font-weight: 200;
 }
 // error lens
 .monaco-editor [class*='-TextEditorDecorationType']::after {
@@ -462,7 +462,7 @@ span:has(.codicon-git-branch) {
   opacity: unset !important;
 }
 
-.monaco-workbench .part > .composite.title > .title-actions:has([aria-label='Run and Debug actions']) {
+.monaco-workbench .part > .composite.title > .title-actions:has(.codicon-debug-start) {
   padding-left: 12px;
 }
 
