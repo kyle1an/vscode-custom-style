@@ -378,20 +378,14 @@ span:has(.codicon-git-branch) {
   --avatar-size: 14px;
 }
 
-:is(.sticky-line, .view-line) span:first-of-type [class*='-TextEditorDecorationType']:nth-of-type(2)::after,
-:is(.sticky-line, .view-line) span:first-of-type [class*='-TextEditorDecorationType']:nth-of-type(3)::after {
-  top: 0 !important;
-  height: var(--avatar-size) !important;
-  width: var(--avatar-size) !important;
-  background-size: var(--avatar-size) var(--avatar-size) !important;
-}
-
 // git line history
-.monaco-editor [class*='-TextEditorDecorationType']:last-of-type::after {
-  font-style: italic !important;
-  font-weight: 200;
-  opacity: 0.65;
-  color: rgba(153, 153, 153) !important;
+:where(.monaco-editor) [class*='-TextEditorDecorationType']::after {
+  font-style: italic;
+  font-weight: 300;
+}
+// error lens
+.monaco-editor [class*='-TextEditorDecorationType']::after {
+  top: 49%;
 }
 
 .search-results [class*='ced-1-TextEditorDecorationType'] {
@@ -459,6 +453,15 @@ span:has(.codicon-git-branch) {
 
 .monaco-editor .debug-hover-widget .complex-value {
   max-width: 600px;
+}
+
+[class^='monaco-hover fade-in'][style^='position: absolute; left: 95px; top: '][style$='px; z-index: 11;']:has(.hover-contents > .rendered-markdown > p:only-child),
+[class^='monaco-hover fade-in'][style^='position: absolute; left: 95px; top: '][style$='px; z-index: 11;']:has([style='overflow: hidden;'] > .hover-row:only-child) {
+  opacity: 0.4;
+  animation: unset !important;
+}
+[class^='monaco-hover fade-in'][style^='position: absolute; left: 95px; top: '][style$='px; z-index: 11;']:has(.hover-contents > .rendered-markdown > p:not(:only-child)) {
+  opacity: unset !important;
 }
 
 .monaco-workbench .part > .composite.title > .title-actions:has([aria-label='Run and Debug actions']),
