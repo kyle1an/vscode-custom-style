@@ -363,7 +363,6 @@ span:has(.codicon-git-branch) {
 [class^='monaco-hover fade-in'][style^='position: absolute; left: 95px; top: '][style$='px; z-index: 11;']:has(.hover-contents > .rendered-markdown > p:not(:only-child)) {
   opacity: unset !important;
 }
-.monaco-workbench .part > .composite.title > .title-actions:has([aria-label='Run and Debug actions']),
 .monaco-workbench .part > .composite.title > .title-actions:has(.start-debug-action-item) {
   padding-left: 10px;
 }
@@ -380,6 +379,7 @@ span:has(.codicon-git-branch) {
 .monaco-pane-view .pane > .pane-header > .title {
   letter-spacing: 0.05em;
 }
+.matchesCount,
 [class='badge compact'] .badge-content,
 .monaco-count-badge,
 .count {
