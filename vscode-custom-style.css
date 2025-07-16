@@ -376,6 +376,7 @@ span:has(.codicon-git-branch) {
 .monaco-pane-view .pane > .pane-header > .title {
   letter-spacing: 0.05em;
 }
+.matchesCount,
 [class='badge compact'] .badge-content,
 .monaco-count-badge,
 .count {
