@@ -85,6 +85,9 @@
   font-weight: normal !important;
   letter-spacing: var(--tracking-xcode) !important;
 }
+[widgetid='editor.contrib.findWidget'] {
+  right: 80px !important;
+}
 /*
 [aria-label='Improve Copilot Agents with Nx-specific context? (MCP server & conventions file), source: Nx Console, notification, Inspect the response in the accessible view with Alt+F2'],
 [aria-label='Improve Copilot Agents with Nx-specific context?, source: Nx Console, notification, Inspect the response in the accessible view with Alt+F2'],
@@ -273,6 +276,14 @@ html .search-view .linematch > .match {
   font-family: var(--mono);
   letter-spacing: var(--vs-lt-sp-mono);
   font-size: var(--filename-size) !important;
+}
+.monaco-diff-editor .diffOverview {
+  box-shadow: -6px 0 5px -5px var(--vscode-scrollbar-shadow);
+  border-left: 1px solid var(--vscode-scrollbar-shadow);
+}
+.native-edit-context[style$='; text-wrap: nowrap;'] ~ .monaco-scrollable-element canvas.decorationsOverviewRuler,
+[class='visible scrollbar horizontal'] + canvas.decorationsOverviewRuler {
+  box-shadow: -6px 0 5px -5px var(--vscode-scrollbar-shadow);
 }
 [aria-label$=', Checking Out Branch/Tag...'],
 [aria-label$=', Checkout Branch/Tag...'],

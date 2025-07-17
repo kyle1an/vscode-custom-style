@@ -75,6 +75,10 @@
   letter-spacing: var(--tracking-xcode) !important;
 }
 
+[widgetid='editor.contrib.findWidget'] {
+  right: 80px !important;
+}
+
 // .pane-body .detected-link {
 //   font-family: var(--xcode), var(--mono) !important;
 // }
@@ -319,6 +323,15 @@ html .search-view .linematch > .match {
   font-family: var(--mono);
   letter-spacing: var(--vs-lt-sp-mono);
   font-size: var(--filename-size) !important;
+}
+
+.monaco-diff-editor .diffOverview {
+  box-shadow: -6px 0 5px -5px var(--vscode-scrollbar-shadow);
+  border-left: 1px solid var(--vscode-scrollbar-shadow);
+}
+.native-edit-context[style$='; text-wrap: nowrap;'] ~ .monaco-scrollable-element canvas.decorationsOverviewRuler,
+[class='visible scrollbar horizontal'] + canvas.decorationsOverviewRuler {
+  box-shadow: -6px 0 5px -5px var(--vscode-scrollbar-shadow);
 }
 
 [aria-label$=', Checking Out Branch/Tag...'],
