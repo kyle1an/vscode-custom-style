@@ -327,6 +327,10 @@ html .search-view .linematch > .match {
   box-shadow: -6px 0 5px -5px var(--vscode-scrollbar-shadow);
   border-left: 1px solid var(--vscode-scrollbar-shadow);
 }
+.native-edit-context[style$='; text-wrap: nowrap;'] ~ .monaco-scrollable-element canvas.decorationsOverviewRuler,
+[class='visible scrollbar horizontal'] + canvas.decorationsOverviewRuler {
+  box-shadow: -6px 0 5px -5px var(--vscode-scrollbar-shadow);
+}
 
 [aria-label$=', Checking Out Branch/Tag...'],
 [aria-label$=', Checkout Branch/Tag...'],
@@ -473,8 +477,8 @@ span:has(.codicon-git-branch) {
   opacity: unset !important;
 }
 
-.monaco-workbench .part > .composite.title > .title-actions:has(.codicon-debug-start) {
-  padding-left: 12px;
+.monaco-workbench .part > .composite.title > .title-actions:has(.start-debug-action-item) {
+  padding-left: 10px;
 }
 
 .monaco-workbench .part > .title > .title-actions .start-debug-action-item {
