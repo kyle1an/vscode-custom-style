@@ -150,10 +150,12 @@ pre,
 .monaco-editor .find-widget .monaco-findInput .input[title='Find'],
 .monaco-inputbox > .ibwrapper > .input[title='Search'],
 .monaco-inputbox > .ibwrapper > .input[aria-label='Replace'],
+.monaco-inputbox > .ibwrapper > .input[aria-label='files to include'],
+.monaco-inputbox > .ibwrapper > .input[aria-label='files to exclude'],
 html .search-view .linematch > .match {
   font-family: var(--mono);
   font-size: 0.6875rem;
-  letter-spacing: var(--vs-lt-sp-mono);
+  letter-spacing: 0;
 }
 .test-explorer .test-item .label,
 .test-output-peek-tree .test-peek-item .name {
@@ -379,12 +381,16 @@ span:has(.codicon-git-branch) {
 .monaco-pane-view .pane > .pane-header > .title {
   letter-spacing: 0.05em;
 }
+.search-view .message,
 .matchesCount,
 [class='badge compact'] .badge-content,
 .monaco-count-badge,
 .count {
   font-variant-numeric: tabular-nums;
   letter-spacing: 0.05em;
+}
+.search-view .message > .pointer {
+  letter-spacing: initial;
 }
 .monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab:hover:not(.active) {
   outline: 1px dashed;
