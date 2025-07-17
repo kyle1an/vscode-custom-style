@@ -85,6 +85,9 @@
   font-weight: normal !important;
   letter-spacing: var(--tracking-xcode) !important;
 }
+[widgetid='editor.contrib.findWidget'] {
+  right: 80px !important;
+}
 .notification-toast-container:has([aria-label='Improve Copilot Agents with Nx-specific context? (MCP server & conventions file), source: Nx Console, notification, Inspect the response in the accessible view with Alt+F2']),
 .notification-toast-container:has([aria-label='Improve Copilot Agents with Nx-specific context?, source: Nx Console, notification, Inspect the response in the accessible view with Alt+F2']),
 .notification-toast-container:has([aria-label="It's time to migrate! \n To keep using Nx Console's powerful capabilities, please transition your Angular workspace to Nx. , source: Nx Console, notification, Inspect the response in the accessible view with Alt+F2"]),
