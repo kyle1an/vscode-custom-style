@@ -642,6 +642,29 @@ span [class|='mtk1 dyn-rule'] {
   max-width: 0;
 }
 
+// terminal auto complete
+[id='workbench.parts.panel'] .workbench-suggest-widget.with-status-bar {
+  .monaco-list-row [style*='monospace'] {
+    &,
+    :is(& *) {
+      letter-spacing: 0;
+    }
+  }
+  .monaco-list-row[style*='font-size: 10px;'] {
+    font-size: 10.5px !important;
+  }
+  .suggest-status-bar {
+    .monaco-action-bar .action-label {
+      font-size: 9px;
+    }
+  }
+}
+
+// gitlens
+.hover-row-contents:has([data-href^='command:gitlens.showQuickCommitDetails?']) {
+  flex-grow: 1;
+}
+
 /* fonts */
 @font-face {
   font-family: 'emptychar';
@@ -677,7 +700,7 @@ span [class|='mtk1 dyn-rule'] {
   Medium: 400;
   Medium: 500;
   Semibold: 600;
-  Bold: 700;
+  Heavy: 700;
   Heavy: 800;
 }, @unicode-all);
 
