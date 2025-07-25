@@ -73,6 +73,7 @@
 .action-item.command-center-center.multiple {
   padding-left: 0 !important;
 }
+.line-number,
 .debug-pane .line-number,
 .sticky-line-number,
 .sticky-line-number-inner,
