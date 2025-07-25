@@ -661,6 +661,11 @@ span [class|='mtk1 dyn-rule'] {
   }
 }
 
+// terminal tab
+.monaco-list[aria-label='Terminal tabs'] .monaco-list-row:has(> .terminal-tabs-entry.is-active) {
+  background-color: var(--vscode-list-inactiveSelectionBackground) !important;
+}
+
 // gitlens
 .hover-row-contents:has([data-href^='command:gitlens.showQuickCommitDetails?']) {
   flex-grow: 1;

@@ -490,6 +490,9 @@ span [class|='mtk1 dyn-rule'] {
 [id='workbench.parts.panel'] .workbench-suggest-widget.with-status-bar .suggest-status-bar .monaco-action-bar .action-label {
   font-size: 9px;
 }
+.monaco-list[aria-label='Terminal tabs'] .monaco-list-row:has(> .terminal-tabs-entry.is-active) {
+  background-color: var(--vscode-list-inactiveSelectionBackground) !important;
+}
 .hover-row-contents:has([data-href^='command:gitlens.showQuickCommitDetails?']) {
   flex-grow: 1;
 }
