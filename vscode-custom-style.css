@@ -378,6 +378,9 @@ span:has(.codicon-git-branch) {
 [class^='monaco-hover fade-in'][style^='position: absolute; left: 95px; top: '][style$='px; z-index: 11;']:has(.hover-contents > .rendered-markdown > p:not(:only-child)) {
   opacity: unset !important;
 }
+.monaco-editor .monaco-hover .hover-row .verbosity-actions {
+  min-width: 22px;
+}
 .monaco-editor .monaco-hover .hover-row .verbosity-actions-inner {
   padding-left: 0;
   padding-right: 0;
