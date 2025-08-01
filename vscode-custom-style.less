@@ -349,6 +349,7 @@ a:has(> .codicon-git-branch),
   .label-name:not(:has(.codicon)),
 .custom-view-tree-node-item-icon.codicon.codicon-git-compare + .monaco-icon-label-container .label-name,
 span:has(.codicon-cloud),
+span:has(.codicon-target),
 span:has(.codicon-git-branch) {
   font-family: var(--mono);
   font-size: 11px !important;
@@ -481,6 +482,18 @@ span:has(.codicon-git-branch) {
 .monaco-editor .monaco-hover .hover-row .verbosity-actions-inner {
   padding-left: 0;
   padding-right: 0;
+  top: calc(100% - 12px * 2) !important;
+}
+.monaco-editor .monaco-hover .hover-row .verbosity-actions-inner .codicon {
+  height: 12px;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
 .monaco-workbench .part > .composite.title > .title-actions:has(.start-debug-action-item) {
@@ -644,6 +657,34 @@ span [class|='mtk1 dyn-rule'] {
 // space padding of colon - inlay hint
 [class|='mtk1 dyn-rule']:not(.colorpicker-color-decoration) {
   max-width: 0;
+}
+
+// terminal auto complete
+[id='workbench.parts.panel'] .workbench-suggest-widget.with-status-bar {
+  .monaco-list-row [style*='monospace'] {
+    &,
+    :is(& *) {
+      letter-spacing: 0;
+    }
+  }
+  .monaco-list-row[style*='font-size: 10px;'] {
+    font-size: 10.5px !important;
+  }
+  .suggest-status-bar {
+    .monaco-action-bar .action-label {
+      font-size: 9px;
+    }
+  }
+}
+
+// terminal tab
+.monaco-list[aria-label='Terminal tabs'] .monaco-list-row:has(> .terminal-tabs-entry.is-active) {
+  background-color: var(--vscode-list-inactiveSelectionBackground) !important;
+}
+
+// gitlens
+.hover-row-contents:has([data-href^='command:gitlens.showQuickCommitDetails?']) {
+  flex-grow: 1;
 }
 
 /* fonts */
