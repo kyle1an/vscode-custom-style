@@ -90,19 +90,18 @@
 [aria-label="It's time to migrate! \n To keep using Nx Console's powerful capabilities, please transition your Angular workspace to Nx. , source: Nx Console, notification, Inspect the response in the accessible view with Alt+F2"],
 [aria-label$="To keep using Nx Console's powerful capabilities, please transition your Angular workspace to Nx. , source: Nx Console, notification, Inspect the response in the accessible view with Alt+F2"],
 */
-[aria-label='Your Code installation appears to be corrupt. Please reinstall., notification, Inspect the response in the accessible view with Alt+F2'],
-[aria-label='Your Code installation appears to be corrupt. Please reinstall., notification'] {
-  .notification-toast-container:has(&) {
+[aria-label*='Your Code installation appears to be corrupt. Please reinstall., notification'] {
+  .notification-toast-container:has(.notifications-list-container > &.monaco-list:nth-child(2):last-child) {
     display: none !important;
   }
 }
 
 .notification-toast-container .notifications-list-container:has(.monaco-list-rows:empty) {
-  display: none;
+  // display: none;
 }
 
 .notifications-list-container:has([title='Quokka.js (Extension)']) {
-  display: none;
+  // display: none;
 }
 
 //.windows,
@@ -724,7 +723,7 @@ span [class|='mtk1 dyn-rule'] {
 }, {
   Light: 200;
   Regular: 300;
-  Medium: 400;
+  Regular: 400;
   Medium: 500;
   Semibold: 600;
   Heavy: 700;
