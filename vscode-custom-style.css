@@ -89,19 +89,12 @@
 [widgetid='editor.contrib.findWidget'] {
   right: 80px !important;
 }
-.notification-toast-container:has([aria-label='Improve Copilot Agents with Nx-specific context? (MCP server & conventions file), source: Nx Console, notification, Inspect the response in the accessible view with Alt+F2']),
-.notification-toast-container:has([aria-label='Improve Copilot Agents with Nx-specific context?, source: Nx Console, notification, Inspect the response in the accessible view with Alt+F2']),
-.notification-toast-container:has([aria-label="It's time to migrate! \n To keep using Nx Console's powerful capabilities, please transition your Angular workspace to Nx. , source: Nx Console, notification, Inspect the response in the accessible view with Alt+F2"]),
-.notification-toast-container:has([aria-label$="To keep using Nx Console's powerful capabilities, please transition your Angular workspace to Nx. , source: Nx Console, notification, Inspect the response in the accessible view with Alt+F2"]),
-.notification-toast-container:has([aria-label='Your Code installation appears to be corrupt. Please reinstall., notification, Inspect the response in the accessible view with Alt+F2']),
-.notification-toast-container:has([aria-label='Your Code installation appears to be corrupt. Please reinstall., notification']) {
+.notification-toast-container:has(.notifications-list-container > [aria-label='Improve Copilot Agents with Nx-specific context? (MCP server & conventions file), source: Nx Console, notification, Inspect the response in the accessible view with Alt+F2'].monaco-list:nth-child(2):last-child),
+.notification-toast-container:has(.notifications-list-container > [aria-label='Improve Copilot Agents with Nx-specific context?, source: Nx Console, notification, Inspect the response in the accessible view with Alt+F2'].monaco-list:nth-child(2):last-child),
+.notification-toast-container:has(.notifications-list-container > [aria-label="It's time to migrate! \n To keep using Nx Console's powerful capabilities, please transition your Angular workspace to Nx. , source: Nx Console, notification, Inspect the response in the accessible view with Alt+F2"].monaco-list:nth-child(2):last-child),
+.notification-toast-container:has(.notifications-list-container > [aria-label$="To keep using Nx Console's powerful capabilities, please transition your Angular workspace to Nx. , source: Nx Console, notification, Inspect the response in the accessible view with Alt+F2"].monaco-list:nth-child(2):last-child),
+.notification-toast-container:has(.notifications-list-container > [aria-label*='Your Code installation appears to be corrupt. Please reinstall., notification'].monaco-list:nth-child(2):last-child) {
   display: none !important;
-}
-.notification-toast-container .notifications-list-container:has(.monaco-list-rows:empty) {
-  display: none;
-}
-.notifications-list-container:has([title='Quokka.js (Extension)']) {
-  display: none;
 }
 .mac,
 .bb svg {
