@@ -363,6 +363,8 @@ span:has(.codicon-git-branch) {
 .monaco-editor .debug-hover-widget .complex-value {
   max-width: 600px;
 }
+[class^='monaco-hover fade-in'][style^='position: absolute; left: 96px; top: '][style$='px; z-index: 11;']:has(.hover-contents > .rendered-markdown > p:only-child),
+[class^='monaco-hover fade-in'][style^='position: absolute; left: 96px; top: '][style$='px; z-index: 11;']:has([style='overflow: hidden;'] > .hover-row:only-child),
 [class^='monaco-hover fade-in'][style^='position: absolute; left: 95px; top: '][style$='px; z-index: 11;']:has(.hover-contents > .rendered-markdown > p:only-child),
 [class^='monaco-hover fade-in'][style^='position: absolute; left: 95px; top: '][style$='px; z-index: 11;']:has([style='overflow: hidden;'] > .hover-row:only-child) {
   opacity: 0.4;
