@@ -477,7 +477,7 @@ span [class|='mtk1 dyn-rule'] {
 }
 .scm-view .monaco-list-row .resource > .name > .monaco-icon-label:after,
 .scm-view .monaco-list-row .history-item-change > .label-container > .monaco-icon-label:after {
-  width: 14px;
+  min-width: 14px;
 }
 .debug-pane .debug-call-stack .stack-frame {
   padding-right: 0;
