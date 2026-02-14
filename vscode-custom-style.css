@@ -42,7 +42,7 @@
   font-display: swap;
 }
 :root {
-  --mono: 'Mono Widest', 'SF Mono Widest', 'SF Mono', ui-monospace, monospace;
+  --mono: 'SF Mono 02em', 'Mono Widest', 'SF Mono Widest', 'SF Mono', ui-monospace, monospace;
   --fira: 'Fira Code', var(--mono);
   --xcode: XcodeDigits;
   --tracking-xcode: 0.035em;
