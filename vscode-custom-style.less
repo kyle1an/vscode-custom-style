@@ -160,8 +160,8 @@ pre,
 .search-view .search-widget .monaco-inputbox > .ibwrapper > textarea.input,
 .monaco-workbench .simple-find-part .monaco-findInput input,
 .monaco-editor .find-widget .monaco-findInput .input[title='Find'],
-.monaco-inputbox > .ibwrapper > .input[title='Search'],
-.monaco-inputbox > .ibwrapper > .input[aria-label='Replace'],
+body .monaco-inputbox > .ibwrapper > .input[title='Search'],
+body .monaco-inputbox > .ibwrapper > .input[aria-label='Replace'],
 .monaco-inputbox > .ibwrapper > .input[aria-label='files to include'],
 .monaco-inputbox > .ibwrapper > .input[aria-label='files to exclude'],
 html .search-view .linematch > .match {
@@ -187,11 +187,6 @@ html .search-view .linematch > .match {
   min-width: 26px;
   text-align: right;
   opacity: 0.35;
-}
-
-/* sidebar */
-.monaco-icon-label-container {
-  display: flex;
 }
 
 [aria-label^='this, value '],
